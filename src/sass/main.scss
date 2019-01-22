@@ -1,8 +1,10 @@
+@import 'base/reset';
+@import 'base/normalize';
+
 @import 'abstracts/variables';
 
 @import 'base/base';
 @import 'base/helpers';
-@import 'base/reset';
 
 @import 'pages/index-html';
 @import 'pages/projects-html';

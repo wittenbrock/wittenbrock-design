@@ -1,13 +1,17 @@
 {
-  "name": "modern-environment-practice",
+  "name": "wittenbrock.github.io",
   "version": "1.0.0",
-  "description": "",
+  "description": "William Wittenbrock's portfolio website",
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode development",
     "server": "npm run build; webpack-dev-server --open --mode development"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wittenbrock/wittenbrock.github.io.git"
+  },
+  "keywords": ["Wittenbrock Design", "William Wittenbrock", "portfolio"],
   "author": "William Wittenbrock",
   "license": "MIT",
   "devDependencies": {
@@ -23,8 +27,5 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
-  },
-  "dependencies": {
-    "npm": "^6.6.0"
   }
 }

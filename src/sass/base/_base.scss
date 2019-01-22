@@ -1,0 +1,29 @@
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  background-color: $white;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $font-stack;
+  color: $font-color;
+  background-color: $white;
+}
+
+// Make images responsive.
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+// Remove text underline.
+a {
+  text-decoration: none;
+}
