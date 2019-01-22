@@ -1,0 +1,54 @@
+.main-container {
+  background-color: $background-color;
+  border: 20px solid $white;
+  height: 100vh;
+  width: 100%;
+}
+
+.wittenbrock-logo {
+  margin: auto;
+  margin-top: 6.8rem;
+  margin-bottom: 4.8rem;
+  width: 13rem;
+  height: auto;
+}
+
+.about {
+  margin: auto;
+  max-width: 60rem;
+  background-color: $background-color;
+  padding: 2rem;
+  padding-top: 0;
+}
+
+.article-header {
+  font-size: 2.6rem;
+}
+
+.name {
+  display: inline;
+}
+
+.link {
+  color: $link-color;
+  font-weight: 500;
+  transition: border 0.2s ease-in-out;
+  border-bottom: 1px solid transparent;
+
+  &:hover {
+    color: $hover-color;
+    border-color: $hover-color;
+  }
+
+
+  &:active {
+    color: $active-color;
+    border-color: $active-color;
+  }
+}
+.margin-zero {
+  margin-bottom: 0;
+}
+.japanese-text {
+  margin-top: 0;
+}

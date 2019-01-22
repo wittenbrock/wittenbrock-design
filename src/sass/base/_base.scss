@@ -13,7 +13,7 @@ html {
 body {
   font-family: $font-stack;
   color: $font-color;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.5;
 }
 
@@ -27,4 +27,13 @@ img {
 // Remove text underline.
 a {
   text-decoration: none;
+}
+
+p {
+  font-size: 1.6rem;
+}
+
+p,
+header {
+  margin-bottom: 2.4rem;
 }
