@@ -10,12 +10,29 @@
   height: 20px;
 }
 
-.wittenbrock-logo {
+
+.wittenbrock-logo-container {
+  position: relative;
+  top: 0;
   margin: auto;
-  margin-top: 6.8rem;
+  margin-top: 4.8rem;
   margin-bottom: 4.8rem;
-  width: 13rem;
-  height: auto;
+  width: 130px;
+  height: 130px;
+}
+
+.circle-square,
+.wittenbrock-logo {
+  position: absolute;
+  left: 0;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+  transition: opacity .5s ease-in-out;
+}
+
+.wittenbrock-logo:hover {
+  opacity:0;
 }
 
 .about {
@@ -33,24 +50,55 @@
   display: inline;
 }
 
+.margin-zero {
+  margin: 0;
+}
+
+
 .link {
+  position: relative;
   color: $link-color;
   font-weight: 500;
-  transition: border 0.2s ease-in-out;
-  border-bottom: 1px solid transparent;
+  padding-bottom: .3rem;
 
   &:hover {
     color: $hover-color;
-    border-color: $hover-color;
   }
 
-
-  &:active {
-    color: $active-color;
-    border-color: $active-color;
+  &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0; right: 0;
+		height: .1rem;
+		background-color: $hover-color;
   }
-}
+  
+	&:before {
+		opacity: 0;
+		transform: translateY(- $distance);
+		transition: transform 0s $easeOutBack, opacity 0s;
+  }
+  
+	&:after {
+		opacity: 0;
+		transform: translateY($distance/2);
+		transition: transform $duration $easeOutBack, opacity $duration;
+  }
 
-.margin-zero {
-  margin: 0;
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		&:before {
+			transition: transform $duration $easeOutBack, opacity $duration;
+		}
+		&:after {
+			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+		}
+	}
 }
