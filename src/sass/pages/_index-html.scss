@@ -35,6 +35,12 @@
   opacity:0;
 }
 
+.wittenbrock-logo:hover {
+  -webkit-box-shadow: 0px 0px 3px 4px $link-color;
+  -moz-box-shadow: 0px 0px 3px 4px $link-color;
+  box-shadow: 0px 0px 3px 4px $link-color;
+}
+
 .about {
   margin: auto;
   max-width: 60rem;
@@ -63,6 +69,15 @@
 
   &:hover {
     color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+
+  &:active:before,
+  &:active:after {
+    background-color: $active-color;
   }
 
   &:before,
@@ -102,3 +117,29 @@
 		}
 	}
 }
+
+.svg-icon-handler {
+  display: inline-flex;
+  position: relative;
+  width: 1.7rem; //If height and width are any larger, line height will be altered.
+  height: 1.7rem;
+  margin-right: .75rem;
+}
+
+.translate-button {
+  position: absolute;
+  fill: $link-color;
+  width: 2.1rem;
+  height: 2.1rem;
+
+  &:hover {
+    fill: $hover-color;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  &:active {
+    fill: $active-color;
+  }
+}
+
