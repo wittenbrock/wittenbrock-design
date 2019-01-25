@@ -1,5 +1,6 @@
 import './sass/main.scss';
 
+
 // When the translate button is clicked:
 document.querySelector('.translate-button').addEventListener('click', () => {
   const japanese = "人生のミッションは、世界一のラーメン屋さんを見つけること。";
