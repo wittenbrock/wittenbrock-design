@@ -6,9 +6,12 @@ document.querySelector('.translate-button').addEventListener('click', () => {
   const english = "This is an English translation.";
   let visibleText = document.getElementById("visible-text");
   
-  if (visibleText.innerHTML === japanese) {
-    visibleText.innerHTML = english;
+
+  if (visibleText.textContent === japanese) {
+    visibleText.textContent = english;
+    visibleText.setAttribute("lang", "en-US")
   } else {
-    visibleText.innerHTML = japanese;
+    visibleText.textContent = japanese;
+    visibleText.setAttribute("lang", "ja");
   }
 });
