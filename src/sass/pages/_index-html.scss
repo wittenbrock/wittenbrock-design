@@ -1,11 +1,11 @@
 .main-container {
-  box-shadow: inset 0 -20px 0 $white,inset 20px 0 0 $white,inset -20px 0 0 $white;
+  box-shadow: inset 0 -20px 0 $white, inset 20px 0 0 $white, inset -20px 0 0 $white;
   min-height: 100vh;
   min-width: 100%;
   background: $background-color;
 
   @include for-phone-only {
-    box-shadow: inset 0 -10px 0 $white,inset 10px 0 0 $white,inset -10px 0 0 $white;
+    box-shadow: inset 0 -10px 0 $white, inset 10px 0 0 $white, inset -10px 0 0 $white;
   }
 }
 
@@ -22,7 +22,7 @@
   position: relative;
   top: 0;
   margin: auto;
-  margin-top: 4.8rem;
+  margin-top: 4.8rem; //48px
   margin-bottom: 4.8rem;
   width: 130px;
   height: 130px;
@@ -39,19 +39,11 @@
 .wittenbrock-logo {
   position: absolute;
   left: 0;
-  -webkit-transition: opacity .5s ease-in-out;
-  -moz-transition: opacity .5s ease-in-out;
-  -o-transition: opacity .5s ease-in-out;
   transition: opacity .5s ease-in-out;
 }
 
 .wittenbrock-logo:hover {
   opacity:0;
-}
-
-.wittenbrock-logo:hover {
-  -webkit-box-shadow: $box-shadow;
-  -moz-box-shadow: $box-shadow;
   box-shadow: $box-shadow;
 }
 
@@ -78,6 +70,31 @@
 
 .margin-zero {
   margin: 0;
+}
+
+.svg-icon-handler {
+  display: inline-flex;
+  position: relative;
+  width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
+  height: 1.7rem;
+  margin-right: .75rem;
+}
+
+.translate-button {
+  position: absolute;
+  fill: $link-color;
+  width: 2.1rem;
+  height: 2.1rem;
+
+  &:hover {
+    fill: $hover-color;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  &:active {
+    fill: $active-color;
+  }
 }
 
 .link {
@@ -135,30 +152,5 @@
 			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
 		}
 	}
-}
-
-.svg-icon-handler {
-  display: inline-flex;
-  position: relative;
-  width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
-  height: 1.7rem;
-  margin-right: .75rem;
-}
-
-.translate-button {
-  position: absolute;
-  fill: $link-color;
-  width: 2.1rem;
-  height: 2.1rem;
-
-  &:hover {
-    fill: $hover-color;
-    transform: scale(1.1);
-    cursor: pointer;
-  }
-
-  &:active {
-    fill: $active-color;
-  }
 }
 
