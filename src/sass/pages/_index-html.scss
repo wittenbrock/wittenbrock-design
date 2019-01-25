@@ -3,13 +3,20 @@
   min-height: 100vh;
   min-width: 100%;
   background: $background-color;
+
+  @include for-phone-only {
+    box-shadow: inset 0 -10px 0 $white,inset 10px 0 0 $white,inset -10px 0 0 $white;
+  }
 }
 
 .top-border {
   box-shadow: inset 0 20px 0 $white;
   height: 20px;
-}
 
+  @include for-phone-only {
+    box-shadow: inset 0 10px 0 $white;
+  }
+}
 
 .wittenbrock-logo-container {
   position: relative;
@@ -19,6 +26,13 @@
   margin-bottom: 4.8rem;
   width: 130px;
   height: 130px;
+
+  @include for-phone-only {
+    width: 104px; //20% reduction in size
+    height: 104px;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .circle-square,
@@ -52,6 +66,10 @@
   display: inline;
   font-size: 2.8rem;
   font-weight: inherit;
+
+  @include for-phone-only {
+    font-size: 2.52rem; //10% reduction in size
+  }
 }
 
 .name-header {
@@ -122,7 +140,7 @@
 .svg-icon-handler {
   display: inline-flex;
   position: relative;
-  width: 1.7rem; //If height and width are any larger, line height will be altered.
+  width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
   height: 1.7rem;
   margin-right: .75rem;
 }
