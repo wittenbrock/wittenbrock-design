@@ -22,5 +22,8 @@ logs
 npm-debug.log*
 node_modules/
 
-#Webpack generated files
+# Webpack generated files #
 dist/
+
+# Adobe XD Mockup #
+portfolio.xd
