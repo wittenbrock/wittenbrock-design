@@ -1,0 +1,14 @@
+.small-wittenbrock-logo {
+  @extend %wittenbrock-design-logo;
+  
+  margin-top: 2rem; //28px
+  margin-bottom: 4.8rem;
+  margin-left: 4rem;
+  height: 65px; //50% smaller than .large-wittenbrock-logo
+  width: 65px;
+}
+
+.page-header {
+  @extend %header;
+  text-align: center;
+}
