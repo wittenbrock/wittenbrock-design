@@ -8,7 +8,21 @@
   width: 65px;
 }
 
+.page-header-container {
+  margin-bottom: 8.8rem;
+}
+
 .page-header {
   @extend %header;
   text-align: center;
+}
+
+.page-subtitle {
+  text-align: center;
+}
+
+.project {
+  margin: auto;
+  width: 30rem;
+  height: auto;
 }
