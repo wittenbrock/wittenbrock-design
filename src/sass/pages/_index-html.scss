@@ -48,7 +48,7 @@
 
 .wittenbrock-logo:hover {
   opacity:0;
-  box-shadow: $logo-box-shadow;
+  box-shadow: $logo-shadow;
 }
 
 .about {
@@ -79,6 +79,9 @@
 .svg-icon-handler {
   display: inline-flex;
   position: relative;
+}
+
+.translate-button-container {
   width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
   height: 1.7rem;
   margin-right: .75rem;
