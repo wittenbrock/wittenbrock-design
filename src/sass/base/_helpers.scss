@@ -13,3 +13,9 @@
 .margin-zero {
   margin: 0;
 }
+
+.display-block {
+  @include for-phone-only {
+    display: block;
+  }
+}
