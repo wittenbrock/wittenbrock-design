@@ -1,0 +1,131 @@
+.main-container {
+  box-shadow: inset 0 -20px 0 $white, inset 20px 0 0 $white, inset -20px 0 0 $white;
+  min-height: 100vh;
+  min-width: 100%;
+  background: $background-color;
+
+  @include for-phone-only {
+    box-shadow: inset 0 -10px 0 $white, inset 10px 0 0 $white, inset -10px 0 0 $white;
+  }
+}
+
+.top-border {
+  box-shadow: inset 0 20px 0 $white;
+  height: 20px;
+
+  @include for-phone-only {
+    box-shadow: inset 0 10px 0 $white;
+    height: 10px;
+  }
+}
+
+.about {
+  margin: auto;
+  max-width: 60rem;
+  padding: 20px;
+  padding-top: 0;
+}
+
+%header {
+  font-size: 2.8rem;
+  font-weight: inherit;
+}
+
+.article-header {
+  @extend %header;
+  display: inline;
+  
+  @include for-phone-only {
+    font-size: 2.52rem; //10% reduction in size
+  }
+}
+
+.name-header {
+  padding-right: .5rem;
+}
+
+.svg-icon-handler {
+  display: inline-flex;
+  position: relative;
+}
+
+.translate-button-container {
+  width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
+  height: 1.7rem;
+  margin-right: .75rem;
+}
+
+.translate-button {
+  position: absolute;
+  fill: $link-color;
+  width: 2.1rem;
+  height: 2.1rem;
+
+  &:hover {
+    fill: $hover-color;
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+
+  &:active {
+    fill: $active-color;
+  }
+}
+
+.link {
+  position: relative;
+  color: $link-color;
+  font-weight: 500;
+  padding-bottom: .3rem;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+
+  &:active:before,
+  &:active:after {
+    background-color: $active-color;
+  }
+
+  &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0; right: 0;
+		height: .1rem;
+		background-color: $hover-color;
+  }
+  
+	&:before {
+		opacity: 0;
+		transform: translateY(- $distance);
+		transition: transform 0s $easeOutBack, opacity 0s;
+  }
+  
+	&:after {
+		opacity: 0;
+		transform: translateY($distance/2);
+		transition: transform $duration $easeOutBack, opacity $duration;
+  }
+
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		&:before {
+			transition: transform $duration $easeOutBack, opacity $duration;
+		}
+		&:after {
+			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+		}
+	}
+}
+
