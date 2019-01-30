@@ -1,6 +1,7 @@
 {
   "name": "wittenbrock.github.io",
   "version": "1.0.0",
+  "home": "https://github.com/wittenbrock/wittenbrock.github.io",
   "description": "William Wittenbrock's portfolio website",
   "main": "index.js",
   "scripts": {
