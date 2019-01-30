@@ -5,7 +5,7 @@
   "description": "William Wittenbrock's portfolio website",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode production",
+    "build": "webpack --mode development",
     "start": "npm run build; webpack-dev-server --open --mode development"
   },
   "repository": {

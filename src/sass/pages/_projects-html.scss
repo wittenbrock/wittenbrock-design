@@ -123,6 +123,7 @@
   border-radius: 290486px;
   transition: background 0.2s ease-in-out;
   width: 15rem;
+  cursor: pointer;
   
   &:hover {
     background-color: $active-color;
