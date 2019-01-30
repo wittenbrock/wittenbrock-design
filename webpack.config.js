@@ -1,13 +1,14 @@
 const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: { main: './src/index.js', },
   output: {
-    filename: 'main.js',
+    filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
   },
   devtool: 'eval-source-map',
@@ -20,7 +21,9 @@ module.exports = {
         test: /\.scss$/,
         use: [
           "style-loader",
+          MiniCssExtractPlugin.loader,
           "css-loader",
+          "postcss-loader",
           "sass-loader"
         ]
       },
@@ -44,6 +47,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new MiniCssExtractPlugin({
+      filename: "style.[contenthash].css",
+    }),
     new HtmlWebpackPlugin({
       inject: 'body',
       template: './src/index.html',
@@ -62,7 +68,7 @@ module.exports = {
       }
     }),
     new UglifyJsPlugin(),
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin('dist', {} ),
     new FaviconsWebpackPlugin({
       logo: './src/assets/images/favicon.png',
       persistentCache: true,
