@@ -47,3 +47,9 @@ header {
     margin-bottom: 1.44rem; //10% reduction in size
   }
 }
+
+abbr[title] {
+  border-bottom: none;
+  cursor: inherit;
+  text-decoration: none;
+}

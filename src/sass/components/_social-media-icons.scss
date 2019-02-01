@@ -8,7 +8,10 @@
   display: inline-block;
   height: 40px;
   width: 40px;
-  margin: 2rem;
+  margin-top: 1.6rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 
   &:hover .icon {
     fill: $background-color;

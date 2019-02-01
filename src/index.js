@@ -12,6 +12,6 @@ document.querySelector('.translate-button').addEventListener('click', () => {
     visibleText.setAttribute("lang", "en-US")
   } else {
     visibleText.textContent = japanese;
-    visibleText.setAttribute("lang", "ja");
+    visibleText.setAttribute("lang", "ja-jp");
   }
 });

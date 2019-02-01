@@ -52,14 +52,15 @@
 .translate-button-container {
   width: 1.7rem; //If height and width are larger, <p> element's height be higher than all the others (27px).
   height: 1.7rem;
-  margin-right: .75rem;
+  margin-right: 2rem;
 }
 
 .translate-button {
   position: absolute;
+  top: -.6rem;
   fill: $link-color;
-  width: 2.1rem;
-  height: 2.1rem;
+  width: 3.1rem;
+  height: 3.1rem;
 
   &:hover {
     fill: $hover-color;
