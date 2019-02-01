@@ -130,7 +130,8 @@
   }
 
   &:active {
-    background-color: darken($active-color, 10%);
+    transform: translateY(2px);
+    background: darken($active-color, 10%);
     border-color: darken($active-color, 10%);
   }
 

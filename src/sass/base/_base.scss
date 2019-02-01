@@ -34,7 +34,7 @@ p {
   font-size: 1.8rem; //18px
 
   @include for-phone-only {
-    font-size: 1.62rem; //10% reduction in size
+    font-size: 1.7rem; //6% reduction in size
   }
 }
 

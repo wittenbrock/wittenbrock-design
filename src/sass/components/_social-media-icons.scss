@@ -26,6 +26,11 @@
     fill: $active-color;
     stroke: $active-color;
   }
+
+  &:active .circle,
+  &:active .icon {
+    transform: translateY(2px);
+  }
 }
 
 .icon {
