@@ -1,0 +1,34 @@
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+.social-media-icon {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  margin: 2rem;
+
+  &:hover .icon {
+    fill: $background-color;
+  }
+
+  &:hover .circle {
+    fill: $hover-color;
+    stroke: $hover-color;
+  }
+
+  &:active .circle {
+    fill: $active-color;
+    stroke: $active-color;
+  }
+}
+
+.icon {
+  fill: #304e74;
+}
+
+.circle {
+  stroke: #304e74;
+}
