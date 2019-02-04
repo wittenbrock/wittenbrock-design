@@ -5,6 +5,8 @@
 .page-header {
   @extend %header;
   text-align: center;
+  font-weight: 500;
+  font-size: 3.13rem;
 
   @include for-phone-only {
     font-size: 2.52rem; //10% reduction in size
@@ -13,6 +15,7 @@
 
 .page-subtitle {
   text-align: center;
+  font-size: 2rem;
 
   @include for-phone-only {
     padding-left: 2rem;
@@ -20,6 +23,126 @@
   }
 }
 
+.project-grid {
+  max-width: 100rem;
+  margin: auto;
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  position: relative;
+  border-radius: 6px;
+  margin-bottom: 7rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+  padding-bottom: 4rem;
+}
+
+.project-caption {
+  position: absolute;
+  z-index: 2;
+  padding: 3rem;
+  border-radius: 6px;
+  background: white;
+  width: 35rem;
+  box-shadow: $project-caption-shadow;
+  transition: transform .5s ease-in-out;
+}
+
+.caption-right {
+  right: .5rem;
+}
+
+.caption-left {
+  left: .5rem;
+}
+
+.project-caption:hover {
+  transform: scale(1.1);
+  transition: transform .5s ease-in-out;
+}
+
+.project-caption:hover ~ .project-image {
+  transform: scale(.95);
+  transition: transform .5s ease-in-out;
+}
+
+
+.project-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+}
+
+.project-subtitle {
+  font-size: 1.8rem;
+}
+
+.project-description {
+  font-size: 1.4rem;
+  text-align: left;
+}
+
+.project-image {
+  position: relative;
+  width: 65%;
+  height: auto;
+  border-radius: 6px;
+  transition: transform .5s ease-in-out;
+}
+
+.image-right {
+  left: 35%;
+}
+
+.project-button {
+	background: $hover-color;
+	font-size: 1.25rem;
+	padding: 1.1rem 1.8rem;
+	color: #fff;
+	border-radius: 8px;
+	text-transform: uppercase;
+	font-weight: 700;
+  display: block;
+  width: 15rem;
+  text-align: center;
+	box-shadow: $project-button-shadow;
+	text-transform: uppercase;
+  margin: auto;
+}
+
+.gradient-overlay {
+  z-index: 1;
+  width: 65%;
+  height: 100%;
+  background: rgba(89,130,255,0);
+  background: $overlay-gradient;
+  opacity: .6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: .2;
+  border-radius: 6px;
+  transition: all .5s ease-in-out;
+}
+
+.overlay-right {
+  left: 35%;
+}
+
+.project-caption:hover ~ .gradient-overlay {
+  opacity: 0;
+  transform: scale(.95);
+  transition: all .5s ease-in-out;
+}
+
+
+
+/*
 .project-overlay,
 .project-thumbnail {
   border-radius: 6px;
@@ -153,4 +276,4 @@
   height: 1rem;
   width: 1rem;
 }
-
+*/

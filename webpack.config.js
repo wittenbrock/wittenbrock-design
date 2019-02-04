@@ -60,8 +60,8 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/projects.html',
-      filename: 'projects.html',
+      template: './src/recent-work.html',
+      filename: 'recent-work.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true
