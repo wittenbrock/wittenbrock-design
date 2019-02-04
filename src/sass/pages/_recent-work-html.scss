@@ -1,12 +1,13 @@
 .page-header-container {
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
 }
 
-.page-header {
-  @extend %header;
+.page-title {
+  font-family: $font-stack;
   text-align: center;
   font-weight: 500;
   font-size: 3.13rem;
+  color: black;
 
   @include for-phone-only {
     font-size: 2.52rem; //10% reduction in size
@@ -26,6 +27,7 @@
 .project-grid {
   max-width: 100rem;
   margin: auto;
+  padding-bottom: 4rem;
 }
 
 .project {
@@ -38,10 +40,9 @@
   margin-right: 4rem;
 }
 
-.project:last-child {
-  margin-bottom: 0;
-  padding-bottom: 4rem;
-}
+// .project:last-child {
+//   margin-bottom: 0;
+// }
 
 .project-caption {
   position: absolute;
@@ -74,8 +75,10 @@
 
 
 .project-title {
+  font-family: $header-font;
   font-size: 2.4rem;
   font-weight: 500;
+  color: black;
 }
 
 .project-subtitle {
@@ -102,30 +105,39 @@
 .project-button {
 	background: $hover-color;
 	font-size: 1.25rem;
-	padding: 1.1rem 1.8rem;
-	color: #fff;
+	padding: 1rem 1.6rem;
+	color: $white;
 	border-radius: 8px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: 500;
   display: block;
   width: 15rem;
   text-align: center;
 	box-shadow: $project-button-shadow;
 	text-transform: uppercase;
   margin: auto;
+  border: 2px solid $hover-color;
+
+  &:hover {
+    background: transparent;
+    color: $hover-color;
+  }
+
+  &:active {
+    color: $white;
+    background: $active-color;
+    border: 2px solid $active-color;
+    transform: $button-down-press;
+  }
 }
 
-.gradient-overlay {
+.overlay {
   z-index: 1;
   width: 65%;
   height: 100%;
-  background: rgba(89,130,255,0);
-  background: $overlay-gradient;
-  opacity: .6;
   position: absolute;
   top: 0;
   left: 0;
-  opacity: .2;
   border-radius: 6px;
   transition: all .5s ease-in-out;
 }
@@ -134,7 +146,7 @@
   left: 35%;
 }
 
-.project-caption:hover ~ .gradient-overlay {
+.project-caption:hover ~ .overlay {
   opacity: 0;
   transform: scale(.95);
   transition: all .5s ease-in-out;

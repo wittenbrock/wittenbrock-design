@@ -26,21 +26,8 @@
   padding-top: 0;
 }
 
-%header {
-  font-size: 2rem;
-  font-weight: inherit;
-}
-
-.article-header {
-  @extend %header;
-  display: block;
-  
-  @include for-phone-only {
-    font-size: 2.52rem; //10% reduction in size
-  }
-}
-
 .name-header {
+  font-size: 1.8rem;
   padding-right: .5rem;
 }
 
@@ -143,10 +130,10 @@
   font-weight: 500;
   display: inline;
   position: relative;
-  padding-bottom: .3rem;
+  padding-bottom: .2rem;
   background-image: linear-gradient(120deg, #d1e1f7, #4788e0);
   background-repeat: no-repeat;
   background-position: 0 88%;
-  background-size: 200% .25rem;
+  background-size: 200% .4rem;
 }
 */
