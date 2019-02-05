@@ -40,27 +40,24 @@
   margin-right: 4rem;
 }
 
-// .project:last-child {
-//   margin-bottom: 0;
-// }
-
 .project-caption {
   position: absolute;
   z-index: 2;
-  padding: 3rem;
+  padding: 2rem;
   border-radius: 6px;
   background: white;
-  width: 35rem;
+  width: 38rem;
+  height: 23.75rem;
   box-shadow: $project-caption-shadow;
   transition: transform .5s ease-in-out;
 }
 
 .caption-right {
-  right: .5rem;
+  right: .25rem;
 }
 
 .caption-left {
-  left: .5rem;
+  left: .25rem;
 }
 
 .project-caption:hover {
