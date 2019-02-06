@@ -27,6 +27,7 @@
 }
 
 .name-header {
+  font-weight: 500;
   font-size: 1.8rem;
   padding-right: .5rem;
 }
@@ -62,8 +63,9 @@
 
 .link {
   position: relative;
-  color: $link-color;
+  font-family: $font-stack;
   font-weight: 500;
+  color: $link-color;
   padding-bottom: .3rem;
 
   &:focus {

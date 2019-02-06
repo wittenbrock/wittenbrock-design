@@ -4,13 +4,13 @@
 
 .page-title {
   font-family: $font-stack;
-  text-align: center;
   font-weight: 500;
+  text-align: center;
   font-size: 3.13rem;
   color: black;
 
   @include for-phone-only {
-    font-size: 2.52rem; //10% reduction in size
+    font-size: 2.52rem; //20% reduction in size
   }
 }
 
@@ -19,6 +19,7 @@
   font-size: 2rem;
 
   @include for-phone-only {
+    font-size: 1.6rem;
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -28,96 +29,195 @@
   max-width: 100rem;
   margin: auto;
   padding-bottom: 4rem;
+  
+  @include for-tablet-down {
+    padding-bottom: 1rem;
+  }
+
+  @include for-phone-only {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
 }
 
 .project {
   display: flex;
   align-items: center;
   position: relative;
-  border-radius: 6px;
   margin-bottom: 7rem;
   margin-left: 4rem;
   margin-right: 4rem;
+
+  @include for-tablet-down {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22rem;
+  }
+
+  @include for-phone-only {
+    margin-bottom: 27rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 26.75em) { //428px
+    margin-bottom: 9rem;
+    flex-direction: column;
+  }
 }
 
 .project-caption {
   position: absolute;
   z-index: 2;
-  padding: 2rem;
-  border-radius: 6px;
+  padding: 3rem;
   background: white;
-  width: 38rem;
-  height: 23.75rem;
+  width: 42rem;
+  height: auto;
   box-shadow: $project-caption-shadow;
   transition: transform .5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform .5s ease-in-out;
+  }
+
+  &:hover ~ .project-image {
+    transform: scale(.95);
+    transition: transform .5s ease-in-out;
+  }
+
+  // &:hover ~ .overlay {
+  //   opacity: 0;
+  //   transform: scale(.95);
+  //   transition: all .5s ease-in-out;
+  // }
+
+  @include for-tablet-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 55%;
+    margin: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 35rem;
+
+    &:hover { 
+      transform: initial;
+      transition: none;
+    }
+
+    &:hover ~ .project-image {
+      transform: initial;
+      transition: none;
+    }
+
+    // &:hover ~ .overlay {
+    //   opacity: 0;
+    //   transform: initial;
+    //   transition: none;
+    // }
+
+    @media screen and (max-width: 26.75em) { //428px
+      position: inherit;
+      z-index: inherit;
+      width: 100%;
+      margin: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,.16); //no shadow on top border
+      order: 2; //goes against normal document flow, shows caption below picture
+    }
+  }
 }
 
 .caption-right {
   right: .25rem;
+
+  @include for-phone-only {
+    right: inherit;
+  }
 }
 
 .caption-left {
   left: .25rem;
-}
 
-.project-caption:hover {
-  transform: scale(1.1);
-  transition: transform .5s ease-in-out;
-}
-
-.project-caption:hover ~ .project-image {
-  transform: scale(.95);
-  transition: transform .5s ease-in-out;
+  @include for-phone-only {
+    left: inherit;
+  }
 }
 
 .project-title {
   font-family: $header-font;
+  font-weight: 700;
   font-size: 2.4rem;
-  font-weight: 500;
   color: black;
+  margin-bottom: .25rem;
+
+  @include for-phone-only {
+    font-size: 2.2rem;
+  }
 }
 
 .project-subtitle {
   font-size: 1.8rem;
+  font-weight: 100;
+  color: $light-grey;
+
+  @include for-phone-only {
+    font-size: 1.7rem;
+  }
 }
 
 .project-description {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-align: left;
+  line-height: 2.8rem;
 }
 
 .project-image {
   position: relative;
   width: 65%;
   height: auto;
-  border-radius: 6px;
   transition: transform .5s ease-in-out;
+
+  @include for-tablet-down {
+    width: 85%;
+  }
+
+  @include for-phone-only {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 32em) { //512px
+    position: inherit;
+    z-index: inherit;
+    width: 100%;
+    box-shadow: $project-caption-shadow;
+    order: 1; //goes against normal document flow, shows image above caption
+  }
 }
 
 .image-right {
   left: 35%;
+  
+  @include for-tablet-down {
+    left: initial;
+  }
 }
 
-.overlay {
-  z-index: 1;
-  width: 65%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 6px;
-  transition: all .5s ease-in-out;
-}
+// .overlay {
+//   z-index: 1;
+//   width: 65%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   border-radius: 6px;
+//   transition: all .5s ease-in-out;
+// }
 
-.overlay-right {
-  left: 35%;
-}
-
-.project-caption:hover ~ .overlay {
-  opacity: 0;
-  transform: scale(.95);
-  transition: all .5s ease-in-out;
-}
+// .overlay-right {
+//   left: 35%;
+// }
 
 .button-container {
   display: flex;
