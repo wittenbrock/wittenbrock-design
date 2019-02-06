@@ -26,9 +26,37 @@
   padding-top: 0;
 }
 
+.article-header {
+  @media screen and (max-width: 29.81em) {//477px
+    display: inline;
+  }
+
+  @media screen and (max-width: 20em) { //320px
+    display: block;
+  }
+}
+
 .name-header {
   font-size: 1.8rem;
+  font-weight: 300;
   padding-right: .5rem;
+
+  @media screen and (max-width: 29.81em) {//477px
+    display: inline;
+    padding-left: .5rem;
+  }
+
+  @media screen and (max-width: 20em) { //320px
+    display: block;
+    padding-left: 0;
+  }
+}
+
+
+
+
+.margin-zero {
+  display: inline;
 }
 
 .svg-icon-handler {
@@ -62,8 +90,9 @@
 
 .link {
   position: relative;
-  color: $link-color;
+  font-family: $font-stack;
   font-weight: 500;
+  color: $link-color;
   padding-bottom: .3rem;
 
   &:focus {
