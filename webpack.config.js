@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   entry: { main: './src/index.js', },
@@ -60,8 +61,8 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/projects.html',
-      filename: 'projects.html',
+      template: './src/recent-work.html',
+      filename: 'recent-work.html',
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -74,6 +75,13 @@ module.exports = {
       persistentCache: true,
       inject: true,
       title: 'Wittenbrock Design',
-    })
+    }),
+    new StyleLintPlugin({
+      configFile: path.resolve(__dirname, 'stylelint.config.js'),
+      context: path.resolve(__dirname, '../src/css'),
+      files: '**/*.css',
+      failOnError: false,
+      quiet: false,
+    }),
   ]
 };

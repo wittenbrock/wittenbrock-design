@@ -26,22 +26,37 @@
   padding-top: 0;
 }
 
-%header {
-  font-size: 2.8rem;
-  font-weight: inherit;
-}
-
 .article-header {
-  @extend %header;
-  display: inline;
-  
-  @include for-phone-only {
-    font-size: 2.52rem; //10% reduction in size
+  @media screen and (max-width: 29.81em) {//477px
+    display: inline;
+  }
+
+  @media screen and (max-width: 20em) { //320px
+    display: block;
   }
 }
 
 .name-header {
+  font-size: 1.8rem;
+  font-weight: 300;
   padding-right: .5rem;
+
+  @media screen and (max-width: 29.81em) {//477px
+    display: inline;
+    padding-left: .5rem;
+  }
+
+  @media screen and (max-width: 20em) { //320px
+    display: block;
+    padding-left: 0;
+  }
+}
+
+
+
+
+.margin-zero {
+  display: inline;
 }
 
 .svg-icon-handler {
@@ -73,78 +88,81 @@
   }
 }
 
-// .link {
-//   position: relative;
-//   color: $link-color;
-//   font-weight: 500;
-//   padding-bottom: .3rem;
+.link {
+  position: relative;
+  font-family: $font-stack;
+  font-weight: 500;
+  color: $link-color;
+  padding-bottom: .3rem;
 
-//   &:focus {
-//     transform: scale(1.1);
-//     color: $active-color;
-//   }
+  &:focus {
+    transform: scale(1.1);
+    color: $active-color;
+  }
 
-//   &:hover {
-//     color: $hover-color;
-//   }
+  &:hover {
+    color: $hover-color;
+  }
 
-//   &:active {
-//     color: $active-color;
-//   }
+  &:active {
+    color: $active-color;
+  }
 
-//   &:active:before,
-//   &:active:after {
-//     background-color: $active-color;
-//   }
+  &:active:before,
+  &:active:after {
+    background-color: $active-color;
+  }
 
-//   &:before,
-// 	&:after {
-// 		content: '';
-// 		position: absolute;
-// 		bottom: .1rem;
-// 		left: 0; right: 0;
-// 		height: .1rem;
-// 		background-color: $hover-color;
-//   }
+  &:before,
+	&:after {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0; right: 0;
+		height: .15rem;
+		background-color: $hover-color;
+  }
   
-// 	&:before {
-// 		opacity: 0;
-// 		transform: translateY(- $distance);
-// 		transition: transform 0s $easeOutBack, opacity 0s;
-//   }
+	&:before {
+		opacity: 0;
+		transform: translateY(- $distance);
+		transition: transform 0s $easeOutBack, opacity 0s;
+  }
   
-// 	&:after {
-// 		opacity: 0;
-// 		transform: translateY($distance/2);
-// 		transition: transform $duration $easeOutBack, opacity $duration;
-//   }
+	&:after {
+		opacity: 0;
+		transform: translateY($distance/2);
+		transition: transform $duration $easeOutBack, opacity $duration;
+  }
 
-// 	&:hover,
-// 	&:focus {
-// 		&:before,
-// 		&:after {
-// 			opacity: 1;
-// 			transform: translateY(0);
-// 		}
-// 		&:before {
-// 			transition: transform $duration $easeOutBack, opacity $duration;
-// 		}
-// 		&:after {
-// 			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
-// 		}
-//   }
-// }
+	&:hover,
+	&:focus {
+		&:before,
+		&:after {
+			opacity: 1;
+			transform: translateY(0);
+		}
+		&:before {
+			transition: transform $duration $easeOutBack, opacity $duration;
+		}
+		&:after {
+			transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
+		}
+  }
+}
 
 /*For touch screens only*/
 
+/*
 .link {
   color: $link-color;
   font-weight: 500;
   display: inline;
   position: relative;
-  padding-bottom: .3rem;
+  padding-bottom: .2rem;
   background-image: linear-gradient(120deg, #d1e1f7, #4788e0);
   background-repeat: no-repeat;
   background-position: 0 88%;
-  background-size: 200% .25rem;
+  background-size: 200% .4rem;
 }
+*/

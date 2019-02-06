@@ -6,3 +6,7 @@
 @mixin for-touchscreens-only {
   @media (pointer: coarse) { @content; }
 }
+
+@mixin for-tablet-down {
+  @media only screen and (max-width: 53.125em) { @content; } //850px
+}

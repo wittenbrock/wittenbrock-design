@@ -1,0 +1,362 @@
+.page-header-container {
+  margin-bottom: 7rem;
+}
+
+.page-title {
+  font-family: $font-stack;
+  font-weight: 500;
+  text-align: center;
+  font-size: 3.13rem;
+  color: black;
+
+  @include for-phone-only {
+    font-size: 2.52rem; //20% reduction in size
+  }
+}
+
+.page-subtitle {
+  text-align: center;
+  font-size: 2rem;
+
+  @include for-phone-only {
+    font-size: 1.6rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.project-grid {
+  max-width: 100rem;
+  margin: auto;
+  padding-bottom: 4rem;
+  
+  @include for-tablet-down {
+    padding-bottom: 1rem;
+  }
+
+  @include for-phone-only {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+
+.project {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 7rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+
+  @include for-tablet-down {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22rem;
+  }
+
+  @include for-phone-only {
+    margin-bottom: 27rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 26.75em) { //428px
+    margin-bottom: 9rem;
+    flex-direction: column;
+  }
+}
+
+.project-caption {
+  position: absolute;
+  z-index: 2;
+  padding: 3rem;
+  background: white;
+  width: 42rem;
+  height: auto;
+  box-shadow: $project-caption-shadow;
+  transition: transform .5s ease-in-out;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: transform .5s ease-in-out;
+  }
+
+  &:hover ~ .project-image {
+    transform: scale(.95);
+    transition: transform .5s ease-in-out;
+  }
+
+  // &:hover ~ .overlay {
+  //   opacity: 0;
+  //   transform: scale(.95);
+  //   transition: all .5s ease-in-out;
+  // }
+
+  @include for-tablet-down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 55%;
+    margin: auto;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    width: 35rem;
+
+    &:hover { 
+      transform: initial;
+      transition: none;
+    }
+
+    &:hover ~ .project-image {
+      transform: initial;
+      transition: none;
+    }
+
+    // &:hover ~ .overlay {
+    //   opacity: 0;
+    //   transform: initial;
+    //   transition: none;
+    // }
+
+    @media screen and (max-width: 26.75em) { //428px
+      position: inherit;
+      z-index: inherit;
+      width: 100%;
+      margin: 0;
+      box-shadow: 0 2px 4px rgba(0,0,0,.16); //no shadow on top border
+      order: 2; //goes against normal document flow, shows caption below picture
+    }
+  }
+}
+
+.caption-right {
+  right: .25rem;
+
+  @include for-phone-only {
+    right: inherit;
+  }
+}
+
+.caption-left {
+  left: .25rem;
+
+  @include for-phone-only {
+    left: inherit;
+  }
+}
+
+.project-title {
+  font-family: $header-font;
+  font-weight: 700;
+  font-size: 2.4rem;
+  color: black;
+  margin-bottom: .25rem;
+
+  @include for-phone-only {
+    font-size: 2.2rem;
+  }
+}
+
+.project-subtitle {
+  font-size: 1.8rem;
+  font-weight: 100;
+  color: $light-grey;
+
+  @include for-phone-only {
+    font-size: 1.7rem;
+  }
+}
+
+.project-description {
+  font-size: 1.3rem;
+  text-align: left;
+  line-height: 2.8rem;
+}
+
+.project-image {
+  position: relative;
+  width: 65%;
+  height: auto;
+  transition: transform .5s ease-in-out;
+
+  @include for-tablet-down {
+    width: 85%;
+  }
+
+  @include for-phone-only {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 32em) { //512px
+    position: inherit;
+    z-index: inherit;
+    width: 100%;
+    box-shadow: $project-caption-shadow;
+    order: 1; //goes against normal document flow, shows image above caption
+  }
+}
+
+.image-right {
+  left: 35%;
+  
+  @include for-tablet-down {
+    left: initial;
+  }
+}
+
+// .overlay {
+//   z-index: 1;
+//   width: 65%;
+//   height: 100%;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   border-radius: 6px;
+//   transition: all .5s ease-in-out;
+// }
+
+// .overlay-right {
+//   left: 35%;
+// }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+
+/*
+.project-overlay,
+.project-thumbnail {
+  border-radius: 6px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-row-gap: 3rem;
+  grid-column-gap: 3rem;
+  max-width: 80rem;
+  margin: auto;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  @include for-phone-only {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    grid-row-gap: 0; //Firefox renders the grid-gap, ignoring the switch to display:flex
+    grid-column-gap: 0;
+    padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.project {
+  position: relative;
+  align-self: center;
+  box-shadow: $project-shadow;
+  transition-duration: 86ms;
+  transition-property: box-shadow, transform;
+
+  &:hover {
+    transform: translateY(-.5rem);
+    box-shadow: $project-shadow-hover;
+  }
+
+  @include for-phone-only {
+    min-width: 24.7rem;
+    max-width: 31rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.project:last-child {
+  @include for-phone-only {
+    margin-bottom: 1rem;
+  }
+}
+
+.project-overlay {
+  position: absolute;
+	top: 0;
+	left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: $white;
+  background: $dark-blue;
+	width: 100%;
+	height: 100%;
+  opacity: 0;
+  text-align: center;
+	transition: .45s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+
+  @include for-phone-only {
+    font-size: 1.8rem;
+  }
+}
+
+.project-subtitle {
+  font-size: 1.5rem;
+  
+  @include for-phone-only {
+    font-size: 1.35rem;
+    width: 30.7rem;
+  }
+}
+
+.project-button {
+  align-self: center;
+  padding: .8rem;
+  border: 2px solid $active-color;
+  color: $white;
+  text-align: center;
+  background-color: transparent;
+  border-radius: 290486px;
+  transition: background 0.2s ease-in-out;
+  width: 15rem;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $active-color;
+  }
+
+  &:active {
+    transform: translateY(2px);
+    background: darken($active-color, 10%);
+    border-color: darken($active-color, 10%);
+  }
+
+  @include for-phone-only {
+    width: 13.5rem; //10% reduction in size
+    padding: .72rem;
+  }
+}
+
+.project-button-text {
+  font-size: 1.5rem;
+
+  @include for-phone-only {
+    font-size: 1.35rem;
+  }
+}
+
+.arrow-icon-container {
+  height: 1rem;
+  width: 1rem;
+}
+*/
