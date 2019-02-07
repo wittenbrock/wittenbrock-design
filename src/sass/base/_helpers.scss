@@ -12,10 +12,21 @@
 
 .margin-zero {
   margin: 0;
+  display: inline;
 }
 
 .display-block {
   @include for-phone-only {
     display: block;
+  }
+}
+
+.flexible-display {
+  @include for-phone-only {
+    display: block;
+  }
+
+  @media screen and (max-width: 22.5em) { //360px
+    display: inline;
   }
 }

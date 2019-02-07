@@ -27,32 +27,45 @@
 </head>
 
 <body>
-  <form action="">
+  <div class="main-container">
+    <div class="top-border"></div>
+    <figure class="small-wittenbrock-logo">
+      <a href="index.html">
+        <img class="circle-square" src="assets/images/circle-in-square-800x800.svg" alt="A circle in a square.">
+        <img class="wittenbrock-logo" src="assets/images/wittenbrock-design-logo.svg" alt="The Wittenbrock Design logo.">
+      </a>
+    </figure>
 
-    <label>
-      First Name:
-      <input type="text" name="first-name" required>
-    </label>
+    <header class="page-header-container">
+      <h1 class="screen-reader-only">Wittenbrock Design</h1>
+      <h2 class="page-title"><b>Get In Touch</b></h2>
+      <p class="page-subtitle">Thanks for taking the time to reach out. <span class="flexible-display">How can I help you?</span></p>
+    </header>
 
-    <label>
-      Last Name:
-      <input type="text" name="last-name" required>
-    </label>
+    <section class="form-container">
+      <form name="contact" method="POST" data-netlify="true">
+        <div class="name-email-container">
+          <label class="form-label">
+            Name
+            <input class="form-input name-input" type="text" name="name" required>
+          </label>
+        
+          <label class="form-label">
+            Email
+            <input class="form-input" type="email" name="email" required>
+          </label>
+        </div>
+        
+        <label class="form-label">
+          Message
+          <textarea class="form-textarea" name="message" required></textarea>
+        </label>
+        <div data-netlify-recaptcha="true"></div>
+        <button class="form-button" type="submit">Send</button>
+      </form>
 
-    <label>
-      Email Address:
-      <input type="email" name="email-address" required>
-    </label>
-
-    <label>
-      Subject:
-      <input type="text" name="subject" required>
-    </label>
-
-    <textarea name="message" id="" cols="30" rows="10" required></textarea>
-
-    <button type="submit">Send</button>
-  </form>
+    </section>
+  </div> <!-- .main-container ends -->
 </body>
 
 </html>

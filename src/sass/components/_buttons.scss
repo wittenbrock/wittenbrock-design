@@ -49,3 +49,9 @@
     transform: $button-down-press;
   }
 }
+
+.form-button {
+  @extend %button-base-styles;
+  margin: 3rem auto;
+  width: 15rem;
+}

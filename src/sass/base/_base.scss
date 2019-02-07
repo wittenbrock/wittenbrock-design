@@ -53,3 +53,17 @@ abbr[title] {
   cursor: inherit;
   text-decoration: none;
 }
+
+//Make form elements stack on top of each other in a column
+textarea,
+input,
+button,
+label {
+  display: block;
+  font-weight: 300;
+  font-size: 1.6rem; //18px
+
+  @include for-phone-only {
+    font-size: 1.5rem; //6% reduction in size
+  }
+}

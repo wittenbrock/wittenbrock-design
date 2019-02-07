@@ -68,6 +68,7 @@ module.exports = {
       }
     }),
     new HtmlWebpackPlugin({
+      inject: 'body',
       template: './src/contact.html',
       filename: 'contact.html',
       minify: {
