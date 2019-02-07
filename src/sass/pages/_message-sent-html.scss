@@ -1,0 +1,16 @@
+.page-header-container { //This class is also declared in _recent-work-html.scss
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.title-flexible-display {
+  @media screen and (max-width: 27.1875em) { //436px
+    display: block;
+  }
+}
+
+.flexible-display {
+  @media screen and (max-width: 24.9em) {// (397px) This class is also declared in _contact-html.scss
+    display: inline;
+  }
+}

@@ -1,3 +1,9 @@
+.flexible-subtitle {
+  @media screen and (max-width: 47em) { //752px
+    display: block;
+  }
+}
+
 .form-container {
   @extend .about;
   display: flex;

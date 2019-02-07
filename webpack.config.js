@@ -76,6 +76,14 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/message-sent.html',
+      filename: 'message-sent.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
     new UglifyJsPlugin(),
     new CleanWebpackPlugin('dist', {} ),
     new FaviconsWebpackPlugin({
