@@ -1,6 +1,9 @@
 .flexible-subtitle {
-  @media screen and (max-width: 47em) { //752px
-    display: block;
+  display: block;
+
+  @media screen and (min-width: 47em) {
+    //752px
+    display: inline;
   }
 }
 
@@ -12,10 +15,11 @@
 
 .name-email-container {
   display: flex;
+  flex-direction: column;
   padding: 0;
 
-  @include for-phone-only {
-    flex-direction: column;
+  @include for-tablet-up {
+    flex-direction: row;
   }
 }
 
@@ -24,12 +28,11 @@
 }
 
 .form-input {
-  width: 26.5rem;
   height: 5rem;
-
-
-  @include for-phone-only {
-    width: 100%;
+  width: 100%;
+  
+  @include for-tablet-up {
+    width: 26.5rem;
   }
 }
 
@@ -54,7 +57,7 @@
   }
 
   &:invalid {
-    box-shadow: none; //remove Firefox's red box shadow on invalid elements
+    box-shadow: none; //remove Firefox's red box-shadow on invalid elements
   }
 }
 
@@ -65,7 +68,7 @@ textarea.error {
   border-color: red;
   border-width: 1px;
   border-style: solid;
-  
+
   // Use CSS to visually restore valid fields
   &:valid {
     border: 1px solid #dadcdd;

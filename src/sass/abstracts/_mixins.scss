@@ -1,12 +1,8 @@
-/* Media query mixins */
-@mixin for-phone-only {
-  @media only screen and (max-width: 40em) { @content; } //640px
+/* Media queries: mobile first design */
+@mixin for-tablet-up {
+  @media only screen and (min-width: 40em) { @content; } //640px
 }
 
-@mixin for-touchscreens-only {
-  @media (pointer: coarse) { @content; }
-}
-
-@mixin for-tablet-down {
-  @media only screen and (max-width: 53.125em) { @content; } //850px
+@mixin for-desktop-up {
+  @media only screen and (min-width: 53.125em) { @content; } //850px
 }

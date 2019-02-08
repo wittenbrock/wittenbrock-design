@@ -13,13 +13,8 @@
   margin-right: 2rem;
   margin-bottom: 2rem;
 
-  &:hover .icon {
+  &:active .icon {
     fill: $background-color;
-  }
-
-  &:hover .circle {
-    fill: $hover-color;
-    stroke: $hover-color;
   }
 
   &:active .circle {
@@ -30,6 +25,17 @@
   &:active .circle,
   &:active .icon {
     transform: $button-down-press;
+  }
+
+  @include for-desktop-up {
+    &:hover .icon {
+      fill: $background-color;
+    }
+
+    &:hover .circle {
+      fill: $hover-color;
+      stroke: $hover-color;
+    }
   }
 }
 
