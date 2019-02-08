@@ -1,5 +1,6 @@
 /* Hide element while making it readable for screen readers */
 .screen-reader-only {
+  //used on index.html, recent-work.html, contact.html, message-sent.html
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -11,11 +12,17 @@
 }
 
 .margin-zero {
+  //used in index.html
   margin: 0;
+  display: inline;
 }
 
-.display-block {
-  @include for-phone-only {
-    display: block;
+.display-block { 
+  //used in recent-work.html
+  display: block;
+
+  @media screen and (min-width: 42.1875em) {
+    //675px
+    display: inline;
   }
 }

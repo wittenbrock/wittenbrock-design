@@ -18,33 +18,28 @@ body {
   line-height: 1.5;
 }
 
-// Make images responsive.
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
 // Remove text underline.
 a {
   text-decoration: none;
 }
 
 p {
-  font-size: 1.8rem; //18px
+  font-size: 1.7rem; //17px
+  
 
-  @include for-phone-only {
-    font-size: 1.7rem; //6% reduction in size
+  @include for-tablet-up {
+    font-size: 1.8rem; 
   }
 }
 
 h1, h2, h3, h4,  h5, h6,
 p,
 header {
-  margin-bottom: 1.6rem; //16px
+  margin-bottom: 1.44rem; //16px
+  
 
-  @include for-phone-only {
-    margin-bottom: 1.44rem; //10% reduction in size
+  @include for-tablet-up {
+    margin-bottom: 1.6rem;
   }
 }
 
@@ -52,4 +47,18 @@ abbr[title] {
   border-bottom: none;
   cursor: inherit;
   text-decoration: none;
+}
+
+//Make form elements stack on top of each other in a column
+textarea,
+input,
+button,
+label {
+  display: block;
+  font-weight: 300;
+  font-size: 1.5rem; //6% reduction in size
+
+  @include for-tablet-up {
+    font-size: 1.6rem; //18px
+  }
 }
