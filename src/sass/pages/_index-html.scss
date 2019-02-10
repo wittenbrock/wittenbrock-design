@@ -22,8 +22,12 @@
 .about {
   margin: auto;
   max-width: 60rem;
-  padding: 20px;
+  padding: 2rem;
   padding-top: 0;
+
+  @include for-tablet-up {
+    padding-bottom: 4rem;
+  }
 }
 
 .article-header {
@@ -56,6 +60,11 @@
     display: block;
     padding-left: 0;
   }
+}
+
+.translatable-text {
+  position: absolute;
+  max-width: 56rem;
 }
 
 .svg-icon-handler {

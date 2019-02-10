@@ -60,4 +60,8 @@
 
   margin: 3rem auto;
   width: 15rem;
+
+  &:active {
+    box-shadow: none; //remove blue box-shadow from Mozilla Firefox
+  }
 }

@@ -14,7 +14,6 @@
 .margin-zero {
   //used in index.html
   margin: 0;
-  display: inline;
 }
 
 .display-block {
@@ -25,4 +24,8 @@
     //675px
     display: inline;
   }
+}
+
+.position-relative {
+  position: relative;
 }
