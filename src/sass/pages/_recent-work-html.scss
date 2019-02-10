@@ -50,7 +50,7 @@
   }
 
   @include for-desktop-up {
-    position: relative; //allow for absolute positioning of .project-caption 
+    position: relative; //allow for absolute positioning of .project-caption
     margin-bottom: 7rem;
   }
 }
@@ -82,33 +82,33 @@
     z-index: 2; //Put the caption above the project's image
     width: 42rem;
     box-shadow: $project-caption-shadow;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
 
     &:hover {
       transform: scale(1.1);
-      transition: transform .5s ease-in-out;
+      transition: transform 0.5s ease-in-out;
     }
 
-    &:hover~.project-image {
-      transform: scale(.95);
-      transition: transform .5s ease-in-out;
+    &:hover ~ .project-image {
+      transform: scale(0.95);
+      transition: transform 0.5s ease-in-out;
     }
   }
 }
 
 .caption-right {
-  right: .25rem;
+  right: 0.25rem;
 }
 
 .caption-left {
-  left: .25rem;
+  left: 0.25rem;
 }
 
 .project-title {
   font-weight: 500;
   font-size: 2.2rem;
   color: black;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 
   @include for-tablet-up {
     font-size: 2.4rem;
@@ -137,7 +137,7 @@
   @include for-desktop-up {
     position: relative;
     width: 65%;
-    transition: transform .5s ease-in-out;
+    transition: transform 0.5s ease-in-out;
   }
 }
 

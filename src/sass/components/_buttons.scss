@@ -1,17 +1,17 @@
 %button-base-styles {
-	display: block;
+  display: block;
   width: 10rem;
   background: $hover-color;
   font-family: $font-stack;
-	font-size: 1.25rem;
+  font-size: 1.25rem;
   color: $white;
   text-transform: uppercase;
-	font-weight: 500;
+  font-weight: 500;
   text-align: center;
-	padding: .8rem 1.4rem;
+  padding: 0.8rem 1.4rem;
   border: 2px solid $hover-color;
   border-radius: 8px;
-	box-shadow: $project-button-shadow;
+  box-shadow: $project-button-shadow;
 
   &:active {
     color: $white;
@@ -30,6 +30,7 @@
 
 .project-button {
   @extend %button-base-styles;
+
   display: inline-block;
   margin-right: 1rem;
 }
@@ -56,6 +57,7 @@
 
 .form-button {
   @extend %button-base-styles;
+
   margin: 3rem auto;
   width: 15rem;
 }

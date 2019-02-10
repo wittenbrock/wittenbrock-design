@@ -4,6 +4,14 @@
   padding-bottom: 2rem;
 }
 
+.icon {
+  fill: #304e74;
+}
+
+.circle {
+  stroke: #304e74;
+}
+
 .social-media-icon {
   display: inline-block;
   height: 40px;
@@ -37,12 +45,4 @@
       stroke: $hover-color;
     }
   }
-}
-
-.icon {
-  fill: #304e74;
-}
-
-.circle {
-  stroke: #304e74;
 }

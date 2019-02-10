@@ -5,6 +5,7 @@
 
 .small-wittenbrock-logo {
   @extend %wittenbrock-design-logo;
+
   margin-top: 1rem;
   margin-bottom: 5rem;
   margin-left: 2rem;
@@ -22,6 +23,7 @@
 
 .large-wittenbrock-logo {
   @extend %wittenbrock-design-logo;
+
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -42,7 +44,7 @@
   left: 0;
 
   @include for-desktop-up {
-    transition: opacity .5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
   }
 }
 

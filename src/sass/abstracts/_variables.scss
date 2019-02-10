@@ -1,25 +1,25 @@
 /* Colors */
-$background-color: #EFF1F3;
+$background-color: #eff1f3;
 $font-color: #454545;
-$link-color: #3F689D;
-$active-color: #16C598;
+$link-color: #3f689d;
+$active-color: #16c598;
 $hover-color: #4483d9;
-$dark-blue: rgba(33,56,83, 1);
+$dark-blue: rgba(33, 56, 83, 1);
 $white: white;
 $light-grey:rgb(102, 102, 102);
 
 /* Box Shadow */
-$logo-shadow: 0px 0px 5px 5px rgba(63,104,157,0.35);
-$project-caption-shadow: 0 2px 4px rgba(0,0,0,.16),0 0 2px rgba(0,0,0,.08);
-$project-button-shadow: 0 0 2px rgba(0,0,0,.08), 0 2px 2px rgba(0,0,0,.16);
+$logo-shadow: 0 0 5px 5px rgba(63, 104, 157, 0.35);
+$project-caption-shadow: 0 2px 4px rgba(0, 0, 0, 0.16),0 0 2px rgba(0, 0, 0, 0.08);
+$project-button-shadow: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0, 0.16);
 
 /* Color Gradients */
-$overlay-gradient: linear-gradient(0deg,rgba(89,130,255,0) 0,#5982ff 100%);
+$overlay-gradient: linear-gradient(0deg, rgba(89, 130, 255, 0) 0, #5982ff 100%);
 
-/* Text-underline on hover*/
-$duration: .2s;
+/* Text-underline on hover */
+$duration: 0.2s;
 $distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 /* Simulate button down press */
 $button-down-press: translateY(2px);

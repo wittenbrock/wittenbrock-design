@@ -9,6 +9,7 @@
 
 .form-container {
   @extend .about;
+
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +31,7 @@
 .form-input {
   height: 5rem;
   width: 100%;
-  
+
   @include for-tablet-up {
     width: 26.5rem;
   }

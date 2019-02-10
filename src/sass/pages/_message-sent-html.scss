@@ -16,7 +16,7 @@
 .flexible-display {
   display: inline;
 
-  @media screen and (min-width: 25em) { 
+  @media screen and (min-width: 25em) {
     //400px
     display: block;
   }

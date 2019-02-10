@@ -48,7 +48,7 @@
   @media screen and (min-width: 20.125em) {
     //322px
     display: inline;
-    padding-left: .5rem;
+    padding-left: 0.5rem;
   }
 
   @media screen and (min-width: 30.5rem) {
@@ -71,7 +71,7 @@
 
 .translate-button {
   position: absolute;
-  top: -.6rem;
+  top: -0.6rem;
   fill: $link-color;
   width: 3.1rem;
   height: 3.1rem;
@@ -94,11 +94,11 @@
   position: relative;
   color: $link-color;
   font-weight: 500;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
   background-image: linear-gradient(120deg, #d1e1f7, #4788e0);
   background-repeat: no-repeat;
   background-position: 0 88%;
-  background-size: 200% .2rem;
+  background-size: 200% 0.2rem;
 
   @include for-desktop-up {
     background: none;
@@ -116,29 +116,24 @@
       color: $active-color;
     }
 
-    &:active:before,
-    &:active:after {
-      background-color: $active-color;
-    }
-
-    &:before,
-    &:after {
+    &::before,
+    &::after {
       content: '';
       position: absolute;
-      bottom: .1rem;
+      bottom: 0.1rem;
       left: 0;
       right: 0;
-      height: .15rem;
+      height: 0.15rem;
       background-color: $hover-color;
     }
 
-    &:before {
+    &::before {
       opacity: 0;
       transform: translateY(- $distance);
       transition: transform 0s $easeOutBack, opacity 0s;
     }
 
-    &:after {
+    &::after {
       opacity: 0;
       transform: translateY($distance/2);
       transition: transform $duration $easeOutBack, opacity $duration;
@@ -146,20 +141,24 @@
 
     &:hover,
     &:focus {
-
-      &:before,
-      &:after {
+      &::before,
+      &::after {
         opacity: 1;
         transform: translateY(0);
       }
 
-      &:before {
+      &::before {
         transition: transform $duration $easeOutBack, opacity $duration;
       }
 
-      &:after {
+      &::after {
         transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
       }
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: $active-color;
     }
   }
 }
