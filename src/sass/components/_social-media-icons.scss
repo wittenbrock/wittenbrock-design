@@ -4,20 +4,20 @@
 }
 
 .icon {
-  fill: #304e74;
+  fill: #7b8ea6;
 }
 
 .circle {
-  stroke: #304e74;
+  stroke: #7b8ea6;
 }
 
 .social-media-icon {
   display: inline-block;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: 13rem;
+  margin-top: 16rem;
   margin-bottom: 2rem;
 
   &:active .icon {
@@ -44,4 +44,8 @@
       stroke: $hover-color;
     }
   }
+}
+
+.github-logo {
+  fill: #556e8d;
 }

@@ -1,16 +1,16 @@
 %button-base-styles {
   display: block;
-  width: 10rem;
+  width: 7rem;
   background: $hover-color;
   font-family: $font-stack;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: $white;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 300;
   text-align: center;
-  padding: 0.8rem 1.4rem;
+  padding: 0.6rem 1.4rem;
   border: 2px solid $hover-color;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: $project-button-shadow;
 
   &:active {
@@ -31,14 +31,16 @@
 .project-button {
   @extend %button-base-styles;
 
+  background-color: $light-grey;
   display: inline-block;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .github-button {
-  background: $light-grey;
+  background: #818181;
   border: solid 2px $light-grey;
-  margin-left: 1rem;
+  margin-left: 2rem;
+  margin-right: 0;
 
   &:active {
     color: $white;

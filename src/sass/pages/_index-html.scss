@@ -21,7 +21,8 @@
 
 .about {
   margin: auto;
-  max-width: 60rem;
+  // max-width: 60rem;
+  max-width: 51rem;
   padding: 2rem;
   padding-top: 0;
 
@@ -64,7 +65,8 @@
 
 .translatable-text {
   position: absolute;
-  max-width: 56rem;
+  // max-width: 56rem;
+  max-width: 47rem;
 }
 
 .svg-icon-handler {
@@ -132,7 +134,7 @@
       bottom: 0.1rem;
       left: 0;
       right: 0;
-      height: 0.15rem;
+      height: 0.08rem;
       background-color: $hover-color;
     }
 

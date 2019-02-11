@@ -1,4 +1,5 @@
 .page-header-container {
+  margin-top: 6rem;
   margin-bottom: 7rem;
 }
 
@@ -6,11 +7,12 @@
   font-family: $font-stack;
   font-weight: 500;
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   color: black;
 
   @include for-tablet-up {
-    font-size: 3.13rem;
+    // font-size: 3.8rem;
+    font-size: 3rem;
   }
 }
 
@@ -22,12 +24,12 @@
   padding-right: 2rem;
 
   @include for-tablet-up {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 }
 
 .project-grid {
-  max-width: 100rem;
+  max-width: 110rem;
   margin: auto;
   padding-bottom: 1rem;
 
@@ -74,15 +76,20 @@
 
 .project-caption {
   order: 2; //goes against normal document flow, shows picture above caption
-  padding: 3rem;
+  padding: 2rem;
   background: white;
 
   @include for-desktop-up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     position: absolute;
     z-index: 2; //Put the caption above the project's image
     width: 42rem;
     box-shadow: $project-caption-shadow;
     transition: transform 0.5s ease-in-out;
+    margin-top: 7rem;
+    min-height: 22.5rem;
 
     &:hover {
       transform: scale(1.1);
@@ -108,10 +115,10 @@
   font-weight: 500;
   font-size: 2.2rem;
   color: black;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
 
   @include for-tablet-up {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 }
 
@@ -121,14 +128,14 @@
   color: $light-grey;
 
   @include for-tablet-up {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 
 .project-description {
   font-size: 1.3rem;
-  text-align: left;
-  line-height: 2.8rem;
+  text-align: justify;
+  line-height: 2.3rem;
 }
 
 .project-image {
