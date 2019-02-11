@@ -27,14 +27,14 @@
   margin: auto;
   margin-top: 3rem;
   margin-bottom: 3rem;
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
 
   @include for-tablet-up {
     width: 90px;
     height: 90px;
-    margin-top: 6rem;
-    margin-bottom: 7rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
   }
 }
 
@@ -49,14 +49,9 @@
 }
 
 .wittenbrock-logo {
-  &:active {
-    opacity: 0;
-  }
-
   @include for-desktop-up {
     &:hover {
       opacity: 0;
-      box-shadow: $logo-shadow;
     }
   }
 }

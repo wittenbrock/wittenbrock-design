@@ -3,7 +3,6 @@ html {
   font-size: 62.5%; /* 1rem = 10px */
   background-color: $white;
   min-width: 307px;
-  text-align: justify;
 }
 
 *,
@@ -65,4 +64,8 @@ label {
   @include for-tablet-up {
     font-size: 1.6rem; //18px
   }
+}
+
+b {
+  color: $black;
 }

@@ -17,24 +17,16 @@
   width: 36px;
   margin-left: 2rem;
   margin-right: 2rem;
-  margin-top: 16rem;
+  margin-top: 14rem;
   margin-bottom: 2rem;
 
-  &:active .icon {
-    fill: $background-color;
-  }
-
-  &:active .circle {
-    fill: $active-color;
-    stroke: $active-color;
-  }
-
-  &:active .circle,
-  &:active .icon {
-    transform: $button-down-press;
+  @media screen and (min-width: 350px) and (max-width: 500px) {
+    margin-top: 12rem;
   }
 
   @include for-desktop-up {
+    margin-top: 12rem;
+
     &:hover .icon {
       fill: $background-color;
     }
@@ -42,6 +34,20 @@
     &:hover .circle {
       fill: $hover-color;
       stroke: $hover-color;
+    }
+
+    &:active .icon {
+      fill: $background-color;
+    }
+
+    &:active .circle {
+      fill: $active-color;
+      stroke: $active-color;
+    }
+
+    &:active .circle,
+    &:active .icon {
+      transform: $button-down-press;
     }
   }
 }
