@@ -29,11 +29,15 @@
 }
 
 .project-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   max-width: 110rem;
-  margin: auto;
   padding-bottom: 1rem;
 
   @include for-desktop-up {
+    margin-top: 11rem;
     padding-bottom: 4rem;
   }
 }

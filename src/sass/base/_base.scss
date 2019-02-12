@@ -39,10 +39,10 @@ h5,
 h6,
 p,
 header {
-  margin-bottom: 1.44rem; //16px
+  margin-bottom: 1.44rem;
 
   @include for-tablet-up {
-    margin-bottom: 1.6rem;
+    margin-bottom: 1.6rem; //16px
   }
 }
 
@@ -59,7 +59,7 @@ button,
 label {
   display: block;
   font-weight: 300;
-  font-size: 1.5rem; //6% reduction in size
+  font-size: 1.5rem;
 
   @include for-tablet-up {
     font-size: 1.6rem; //18px

@@ -3,23 +3,23 @@
   top: 0;
 }
 
-.small-wittenbrock-logo {
-  @extend %wittenbrock-design-logo;
+// .small-wittenbrock-logo {
+//   @extend %wittenbrock-design-logo;
 
-  margin-top: 1rem;
-  margin-bottom: 5rem;
-  margin-left: 2rem;
-  height: 52px;
-  width: 52px;
+//   margin-top: 1rem;
+//   margin-bottom: 5rem;
+//   margin-left: 2rem;
+//   height: 52px;
+//   width: 52px;
 
-  @include for-tablet-up {
-    margin-top: 2rem;
-    margin-bottom: 4rem;
-    margin-left: 4rem;
-    height: 65px;
-    width: 65px;
-  }
-}
+//   @include for-tablet-up {
+//     margin-top: 2rem;
+//     margin-bottom: 4rem;
+//     margin-left: 4rem;
+//     height: 65px;
+//     width: 65px;
+//   }
+// }
 
 .large-wittenbrock-logo {
   @extend %wittenbrock-design-logo;
