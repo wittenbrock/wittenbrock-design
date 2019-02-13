@@ -8,7 +8,7 @@
   font-weight: 500;
   text-align: center;
   font-size: 2.5rem;
-  color: black;
+  color: $black;
 
   @include for-tablet-up {
     // font-size: 3.8rem;
@@ -86,7 +86,7 @@
 .project-caption {
   order: 2; //goes against normal document flow, shows picture above caption
   padding: 2rem;
-  background: white;
+  background: $white;
 
   @include for-desktop-up {
     display: flex;
@@ -123,7 +123,7 @@
 .project-title {
   font-weight: 500;
   font-size: 2.2rem;
-  color: black;
+  color: $black;
   margin-bottom: 0;
 
   @include for-tablet-up {

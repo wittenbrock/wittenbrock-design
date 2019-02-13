@@ -88,18 +88,17 @@
 .translate-button {
   position: absolute;
   top: -0.6rem;
-  fill: $link-color;
+  fill: $black;
   width: 3.1rem;
   height: 3.1rem;
   cursor: pointer;
 
-  &:active {
-    fill: $active-color;
-  }
-
   @include for-desktop-up {
+    &:active {
+      fill: $active-color;
+    }
+
     &:hover {
-      fill: $hover-color;
       transform: scale(1.1);
     }
   }
@@ -107,13 +106,17 @@
 
 .link {
   position: relative;
-  color: $link-color;
+  color: $black;
   font-weight: 500;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $black;
 
   @include for-desktop-up {
     background: none;
     border: none;
+
+    &:active {
+      color: $active-color;
+    }
 
     &::before,
     &::after {
@@ -153,6 +156,11 @@
       &::after {
         transition: transform 0s $duration $easeOutBack, opacity 0s $duration;
       }
+    }
+
+    &:active::before,
+    &:active::after {
+      background-color: $active-color;
     }
   }
 }
