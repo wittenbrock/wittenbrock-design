@@ -51,9 +51,9 @@ module.exports = {
       filename: "style.[contenthash].css",
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
       template: './src/index.html',
       filename: 'index.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -62,15 +62,16 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/recent-work.html',
       filename: 'recent-work.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
       template: './src/contact.html',
       filename: 'contact.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -79,6 +80,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/message-sent.html',
       filename: 'message-sent.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
