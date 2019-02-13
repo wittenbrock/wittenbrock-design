@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
 module.exports = {
   entry: { main: './src/index.js', },
@@ -88,7 +88,7 @@ module.exports = {
     }),
     new UglifyJsPlugin(),
     new CleanWebpackPlugin('dist', {} ),
-    new FaviconsWebpackPlugin({
+    new WebappWebpackPlugin({
       logo: './src/assets/images/favicon.png',
       persistentCache: true,
       inject: true,
