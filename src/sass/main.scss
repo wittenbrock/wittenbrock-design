@@ -1,17 +1,19 @@
-@import 'base/mini-reset';
-@import 'base/normalize';
-
-@import 'base/fonts';
+//Dependencies
+@import 'base/fonts'; // Google fonts
+@import 'vendors/mini-reset';
+@import 'vendors/normalize';
+@import 'abstracts/mixins'; // media queries are used in AOS
+@import 'vendors/aos'; //AOS (Animation On Scroll) library
+//Abstracts
 @import 'abstracts/variables';
-@import 'abstracts/mixins';
-
+//Base
 @import 'base/base';
 @import 'base/helpers';
-
+//Components
 @import 'components/buttons';
 @import 'components/wittenbrock-logo';
 @import 'components/social-media-icons';
-
+//Pages
 @import 'pages/index-html';
 @import 'pages/recent-work-html';
 @import 'pages/contact-html';

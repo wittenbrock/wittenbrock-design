@@ -1,5 +1,14 @@
 import './sass/main.scss';
+import AOS from 'aos';
 
+//Animate On Scroll (AOS) Initialization
+AOS.init({
+  disable: window.innerWidth < 850,
+  duration: 300,
+  easing: 'ease-in-out',
+  delay: 50,
+  once: true,
+});
 
 //contact.html form validation:
 const inputs = document.querySelectorAll('input, textarea');
@@ -19,16 +28,16 @@ for(let input of inputs) {
 
 // When the translate button on index.html is clicked:
 document.querySelector('.translate-button').addEventListener('click', () => {
-  const japanese = "東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。";
-  const english = "There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chime of my train-stop.";
-  let visibleText = document.getElementById("visible-text");
+  const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
+  const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chime of my train-stop.';
+  let visibleText = document.getElementById('visible-text');
   
   if (visibleText.textContent === japanese) {
     visibleText.textContent = english;
-    visibleText.setAttribute("lang", "en-US")
+    visibleText.setAttribute('lang', 'en-US')
   } else {
     visibleText.textContent = japanese;
-    visibleText.setAttribute("lang", "ja-jp");
+    visibleText.setAttribute('lang', 'ja-jp');
   }
 });
 
