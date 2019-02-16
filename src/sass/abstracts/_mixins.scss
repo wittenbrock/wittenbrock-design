@@ -6,3 +6,56 @@
 @mixin for-desktop-up {
   @media only screen and (min-width: 53.125em) { @content; } //850px
 }
+
+/* Fluid Typography Mixin */
+
+/* https://css-tricks.com/snippets/css/fluid-typography/ */
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+//Used for index.html and contact.html fonts
+@mixin fluid-type-index($min-vw-i, $max-vw-i, $min-font-size-i, $max-font-size-i) {
+  //i is short for index.html
+  $u1: unit($min-vw-i);
+  $u2: unit($max-vw-i);
+  $u3: unit($min-font-size-i);
+  $u4: unit($max-font-size-i);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size-i;
+
+      @media screen and (min-width: $min-vw-i) {
+        font-size: calc(#{$min-font-size-i} + #{strip-unit($max-font-size-i - $min-font-size-i)} * ((100vw - #{$min-vw-i}) / #{strip-unit($max-vw-i - $min-vw-i)}));
+      }
+
+      @media screen and (min-width: $max-vw-i) {
+        font-size: $max-font-size-i;
+      }
+    }
+  }
+}
+
+//Used for recent-work.html fonts
+@mixin fluid-type-recent-work($min-vw-rw, $max-vw-rw, $min-font-size-rw, $max-font-size-rw) {
+  //rw is short for recent-work.html
+  $u1: unit($min-vw-rw);
+  $u2: unit($max-vw-rw);
+  $u3: unit($min-font-size-rw);
+  $u4: unit($max-font-size-rw);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size-rw;
+
+      @media screen and (min-width: $min-vw-rw) {
+        font-size: calc(#{$min-font-size-rw} + #{strip-unit($max-font-size-rw - $min-font-size-rw)} * ((100vw - #{$min-vw-rw}) / #{strip-unit($max-vw-rw - $min-vw-rw)}));
+      }
+
+      @media screen and (min-width: $max-vw-rw) {
+        font-size: $max-font-size-rw;
+      }
+    }
+  }
+}

@@ -27,3 +27,15 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 /* Simulate button down press */
 $button-down-press: translateY(2px);
+
+/* Fluid typography variables for index.html and contact.html */
+$min-width-i: 320px;
+$max-width-i: 560px;
+$min-font-i: 16px;
+$max-font-i: 18px;
+
+/* Fluid typography variables for recent-work.html */
+$min-width-rw: 320px;
+$max-width-rw: 560px;
+$min-font-rw: 16px;
+$max-font-rw: 18px;
