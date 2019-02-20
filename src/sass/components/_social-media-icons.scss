@@ -13,19 +13,19 @@
 
 .social-media-icon {
   display: inline-block;
-  height: 36px;
-  width: 36px;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 14rem;
-  margin-bottom: 2rem;
+  height: 2.25rem; //36px
+  width: 2.25rem; //36px
+  margin-left: 1.25rem; //20px
+  margin-right: 1.25rem; //20px
+  margin-top: 8.75rem; //140px
+  margin-bottom: 1.25rem; //20px
 
-  @media screen and (min-width: 350px) and (max-width: 500px) {
-    margin-top: 12rem;
+  @media screen and (min-width: 21.875em) and (max-width: 31.25em) { //350px 500px
+    margin-top: 8.75rem; //120px
   }
 
   @include for-desktop-up {
-    margin-top: 12rem;
+    margin-top: 7.5rem; //120px
 
     &:hover .icon {
       fill: $background-color;

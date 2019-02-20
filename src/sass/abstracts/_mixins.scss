@@ -1,10 +1,10 @@
 /* Media queries: mobile first design */
 @mixin for-tablet-up {
-  @media only screen and (min-width: 40em) { @content; } //640px
+  @media only screen and (min-width: 40em) { @content; } //16 * 40 = 640px
 }
 
 @mixin for-desktop-up {
-  @media only screen and (min-width: 53.125em) { @content; } //850px
+  @media only screen and (min-width: 53.125em) { @content; } //16 * 53.125 = 850px
 }
 
 /* Fluid Typography, Heigh, and Width Mixins */
@@ -16,14 +16,7 @@
   @return $value / ($value * 0 + 1);
 }
 
-//Turns pixels into rem
-@function calculate-rem($size) {
-  $remSize: $size / 10px; //1rem = 10px, :root font-size is 62.5%, not 100%
-
-  @return #{$remSize}rem;
-}
-
-//Used to create fluid typography, variables must always be in pixels, outputs to rems
+//Used to create fluid typography
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
@@ -32,20 +25,20 @@
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
-      font-size: calculate-rem($min-font-size);
+      font-size: $min-font-size;
 
       @media screen and (min-width: $min-vw) {
-        font-size: calc(#{calculate-rem(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))});
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
 
       @media screen and (min-width: $max-vw) {
-        font-size: calculate-rem($max-font-size); //Takes pixels and outputs to rems
+        font-size: $max-font-size;
       }
     }
   }
 }
 
-//Used to create fluid widths, variables must always be in pixels, outputs to rems
+//Used to create fluid widths
 @mixin fluid-width($min-viewport, $max-viewport, $min-item-width, $max-item-width) {
   $a1: unit($min-viewport);
   $a2: unit($max-viewport);
@@ -67,7 +60,7 @@
   }
 }
 
-//Used to create fluid heights, variables must always be in pixels, outputs to rems
+//Used to create fluid heights
 @mixin fluid-height($min-window-size, $max-window-size, $min-item-height, $max-item-height) {
   $a1: unit($min-window-size);
   $a2: unit($max-window-size);

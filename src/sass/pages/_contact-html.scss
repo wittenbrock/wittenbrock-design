@@ -1,8 +1,7 @@
 .flexible-subtitle {
   display: block;
 
-  @media screen and (min-width: 47em) {
-    //752px
+  @media screen and (min-width: 47em) { //752px
     display: inline;
   }
 }
@@ -27,33 +26,33 @@
 }
 
 .form-label {
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem; //20px
 }
 
 .form-input {
-  height: 5rem;
+  height: 3.125rem; //50px
   width: 100%;
 
   @include for-tablet-up {
-    width: 26.5rem;
+    width: 16.5625rem; //265px
   }
 }
 
 .name-input {
-  margin-right: 3rem;
+  margin-right: 1.875rem; //30px
 }
 
 .form-textarea {
   width: 100%;
-  height: 20rem;
+  height: 12.5rem; //200px
   line-height: 1.5;
 }
 
 .form-input,
 .form-textarea {
-  margin-top: 1rem;
+  margin-top: 0.625rem; //10px
   border-radius: 4px;
-  padding: 1.5rem;
+  padding: 0.9375rem; //15px
   border: 1px solid #dadcdd;
 
   &:focus {
