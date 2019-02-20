@@ -24,7 +24,7 @@ a {
 }
 
 p {
-  @include fluid-type-index($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
 }
 
 h1,
@@ -35,7 +35,7 @@ h5,
 h6,
 p,
 header {
-  @include fluid-type-index($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
   margin-bottom: 1.44rem;
 
@@ -56,7 +56,7 @@ textarea,
 input,
 button,
 label {
-  @include fluid-type-index($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
   display: block;
   font-weight: 300;

@@ -1,5 +1,6 @@
 import './sass/main.scss';
 import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 //Animate On Scroll (AOS) Initialization
 AOS.init({

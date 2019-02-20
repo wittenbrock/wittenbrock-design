@@ -3,23 +3,12 @@
   top: 0;
 }
 
-// .small-wittenbrock-logo {
-//   @extend %wittenbrock-design-logo;
+.small-wittenbrock-logo {
+  @extend %wittenbrock-design-logo;
 
-//   margin-top: 1rem;
-//   margin-bottom: 5rem;
-//   margin-left: 2rem;
-//   height: 52px;
-//   width: 52px;
-
-//   @include for-tablet-up {
-//     margin-top: 2rem;
-//     margin-bottom: 4rem;
-//     margin-left: 4rem;
-//     height: 65px;
-//     width: 65px;
-//   }
-// }
+  @include fluid-width($min-vw-nav-logo, $max-vw-nav-logo, $min-width-nav-logo, $max-width-nav-logo);
+  @include fluid-height($min-vw-nav-logo, $max-vw-nav-logo, $min-height-nav-logo, $max-height-nav-logo);
+}
 
 .large-wittenbrock-logo {
   @extend %wittenbrock-design-logo;

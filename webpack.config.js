@@ -5,6 +5,9 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
+const baseLoaders = ["css-loader", "postcss-loader", "sass-loader"];
+const mode = process.env.NODE_ENV || 'production';
+
 module.exports = {
   entry: { main: './src/index.js', },
   output: {
@@ -18,13 +21,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
-          "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          mode === 'development' ? "style-loader" : MiniCssExtractPlugin.loader,
+          ...baseLoaders
         ]
       },
       {
@@ -80,6 +80,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/message-sent.html',
       filename: 'message-sent.html',
+      hash: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/nav-bar.html',
+      filename: 'nav-bar.html',
       hash: true,
       minify: {
         removeComments: true,

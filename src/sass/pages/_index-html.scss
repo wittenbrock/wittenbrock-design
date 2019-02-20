@@ -106,8 +106,6 @@
 .link {
   position: relative;
   color: $black;
-  font-weight: 500;
-  border-bottom: 1px solid $black;
 
   @include for-desktop-up {
     background: none;
@@ -124,7 +122,7 @@
       bottom: 0.1rem;
       left: 0;
       right: 0;
-      height: 0.08rem;
+      height: 0.05rem;
       background-color: $hover-color;
     }
 

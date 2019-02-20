@@ -7,54 +7,83 @@
   @media only screen and (min-width: 53.125em) { @content; } //850px
 }
 
-/* Fluid Typography Mixin */
+/* Fluid Typography, Heigh, and Width Mixins */
 
 /* https://css-tricks.com/snippets/css/fluid-typography/ */
+
+//Removes units
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
-//Used for index.html and contact.html fonts
-@mixin fluid-type-index($min-vw-i, $max-vw-i, $min-font-size-i, $max-font-size-i) {
-  //i is short for index.html
-  $u1: unit($min-vw-i);
-  $u2: unit($max-vw-i);
-  $u3: unit($min-font-size-i);
-  $u4: unit($max-font-size-i);
+//Turns pixels into rem
+@function calculate-rem($size) {
+  $remSize: $size / 10px; //1rem = 10px, :root font-size is 62.5%, not 100%
+
+  @return #{$remSize}rem;
+}
+
+//Used to create fluid typography, variables must always be in pixels, outputs to rems
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
 
   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
     & {
-      font-size: $min-font-size-i;
+      font-size: calculate-rem($min-font-size);
 
-      @media screen and (min-width: $min-vw-i) {
-        font-size: calc(#{$min-font-size-i} + #{strip-unit($max-font-size-i - $min-font-size-i)} * ((100vw - #{$min-vw-i}) / #{strip-unit($max-vw-i - $min-vw-i)}));
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{calculate-rem(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}))});
       }
 
-      @media screen and (min-width: $max-vw-i) {
-        font-size: $max-font-size-i;
+      @media screen and (min-width: $max-vw) {
+        font-size: calculate-rem($max-font-size); //Takes pixels and outputs to rems
       }
     }
   }
 }
 
-//Used for recent-work.html fonts
-@mixin fluid-type-recent-work($min-vw-rw, $max-vw-rw, $min-font-size-rw, $max-font-size-rw) {
-  //rw is short for recent-work.html
-  $u1: unit($min-vw-rw);
-  $u2: unit($max-vw-rw);
-  $u3: unit($min-font-size-rw);
-  $u4: unit($max-font-size-rw);
+//Used to create fluid widths, variables must always be in pixels, outputs to rems
+@mixin fluid-width($min-viewport, $max-viewport, $min-item-width, $max-item-width) {
+  $a1: unit($min-viewport);
+  $a2: unit($max-viewport);
+  $a3: unit($min-item-width);
+  $a4: unit($max-item-width);
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
     & {
-      font-size: $min-font-size-rw;
+      width: $min-item-width;
 
-      @media screen and (min-width: $min-vw-rw) {
-        font-size: calc(#{$min-font-size-rw} + #{strip-unit($max-font-size-rw - $min-font-size-rw)} * ((100vw - #{$min-vw-rw}) / #{strip-unit($max-vw-rw - $min-vw-rw)}));
+      @media screen and (min-width: $min-viewport) {
+        width: calc(#{$min-item-width} + #{strip-unit($max-item-width - $min-item-width)} * ((100vw - #{$min-viewport}) / #{strip-unit($max-viewport - $min-viewport)}));
       }
 
-      @media screen and (min-width: $max-vw-rw) {
-        font-size: $max-font-size-rw;
+      @media screen and (min-width: $max-viewport) {
+        width: $max-item-width;
+      }
+    }
+  }
+}
+
+//Used to create fluid heights, variables must always be in pixels, outputs to rems
+@mixin fluid-height($min-window-size, $max-window-size, $min-item-height, $max-item-height) {
+  $a1: unit($min-window-size);
+  $a2: unit($max-window-size);
+  $a3: unit($min-item-height);
+  $a4: unit($max-item-height);
+
+  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
+    & {
+      height: $min-item-height;
+
+      @media screen and (min-width: $min-window-size) {
+        height: calc(#{$min-item-height} + #{strip-unit($max-item-height - $min-item-height)} * ((100vw - #{$min-window-size}) / #{strip-unit($max-window-size - $min-window-size)}));
+      }
+
+      @media screen and (min-width: $max-window-size) {
+        height: $max-item-height;
       }
     }
   }
