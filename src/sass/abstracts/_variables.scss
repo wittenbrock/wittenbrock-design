@@ -31,35 +31,39 @@ $easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 $button-down-press: translateY(2px);
 
 /* Fluid typography variables for index.html and contact.html */
-$min-width-i: 320px;
-$max-width-i: 560px;
-$min-font-i: 16px;
-$max-font-i: 18px;
+$min-width-i: 20rem;
+$max-width-i: 35rem;
+$min-font-i: 1rem;
+$max-font-i: 1.125rem;
 
 /* Fluid typography variables for the navigation bar */
-$min-width-nav: 320px;
-$max-width-nav: 1000px;
-$min-font-nav: 9px;
-$max-font-nav: 16px;
+$min-width-nav: 20rem;
+$max-width-nav: 62.5rem;
+$min-font-nav: 0.5625rem;
+$max-font-nav: 1rem;
 
 /* Fluid width variables for svg icons in the navigation bar */
-$min-vw-nav-icons: 32px;
-$max-vw-nav-icons: 1000px;
-$min-width-nav-icons: 16px;
-$max-width-nav-icons: 24px;
+$min-vw-nav-icons: 2rem;
+$max-vw-nav-icons: 62.5rem;
+$min-width-nav-icons: 1rem;
+$max-width-nav-icons: 1.5rem;
+
+/* Fluid height variables for svg icons in the navigation bar */
+$min-height-nav-icons: 1rem;
+$max-height-nav-icons: 1.5rem;
 
 /* Fluid width variables for the Wittenbrock logo in the navigation bar */
-$min-vw-nav-logo: 320px;
-$max-vw-nav-logo: 850px;
-$min-width-nav-logo: 35px;
-$max-width-nav-logo: 65px;
+$min-vw-nav-logo: 20rem;
+$max-vw-nav-logo: 53.125rem;
+$min-width-nav-logo: 2.1875rem;
+$max-width-nav-logo: 4.0625rem;
 
 /* Fluid height variables for the Wittenbrock logo in the navigation bar */
-$min-height-nav-logo: 35px;
-$max-height-nav-logo: 65px;
+$min-height-nav-logo: 2.1875rem;
+$max-height-nav-logo: 4.0625rem;
 
 /* Fluid height variables for the navigation bar's height */
-$min-vw-nav-bar: 320px;
-$max-vw-nav-bar: 850px;
-$min-height-nav-bar: 50px;
-$max-height-nav-bar: 80px;
+$min-vw-nav-bar: 20rem;
+$max-vw-nav-bar: 53.125rem;
+$min-height-nav-bar: 3.125rem;
+$max-height-nav-bar: 5rem;

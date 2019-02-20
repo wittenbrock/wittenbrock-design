@@ -1,8 +1,8 @@
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
+  font-size: 100%; //1rem = 16px
   background-color: $white;
-  min-width: 307px;
+  min-width: 19.1875px; //307px
 }
 
 *,
@@ -37,10 +37,10 @@ p,
 header {
   @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
-  margin-bottom: 1.44rem;
+  margin-bottom: 0.9rem; //14.4px
 
   @include for-tablet-up {
-    margin-bottom: 1.6rem; //16px
+    margin-bottom: 1rem; //16px
   }
 }
 

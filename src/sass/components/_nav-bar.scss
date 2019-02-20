@@ -16,7 +16,7 @@
 
 .nav-bar {
   width: 100%;
-  max-width: 100rem;
+  max-width: 62.5rem; //1000px
 }
 
 .nav-list {
@@ -29,7 +29,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex: 1 1 8rem;
+  flex: 1 1 3.125rem; //50px
 }
 
 .nav-icon {
@@ -42,6 +42,7 @@
 
 .nav-svg {
   @include fluid-width($min-vw-nav-icons, $max-vw-nav-icons, $min-width-nav-icons, $max-width-nav-icons);
+  @include fluid-height($min-vw-nav-icons, $max-vw-nav-icons, $min-height-nav-icons, $max-height-nav-icons);
 
   height: auto;
   fill: $black;
