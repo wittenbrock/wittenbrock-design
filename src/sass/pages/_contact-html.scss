@@ -1,7 +1,7 @@
 .flexible-subtitle {
   display: block;
 
-  @media screen and (min-width: 47em) { //752px
+  @media screen and (min-width: 752px) {
     display: inline;
   }
 }

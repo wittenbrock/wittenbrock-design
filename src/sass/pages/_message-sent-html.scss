@@ -7,7 +7,7 @@
 .title-flexible-display {
   display: block;
 
-  @media screen and (min-width: 27.1875em) { //436px
+  @media screen and (min-width: 436px) {
     display: inline;
   }
 }
@@ -15,7 +15,7 @@
 .flexible-display {
   display: inline;
 
-  @media screen and (min-width: 25em) { //400px
+  @media screen and (min-width: 400px) {
     display: block;
   }
 }

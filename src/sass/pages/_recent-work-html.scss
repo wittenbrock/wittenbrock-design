@@ -66,7 +66,7 @@
   position: relative; //allow for absolute positioning of .project-caption
   box-shadow: $project-caption-shadow;
 
-  @media screen and (min-width: 31.25em) and (max-width: 39.9em) { //500px ~ 638px
+  @media screen and (min-width: 500px) and (max-width: 638px) {
     width: 85%;
   }
 

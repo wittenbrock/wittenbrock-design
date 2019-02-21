@@ -39,11 +39,11 @@
 .article-header {
   display: inline;
 
-  @media screen and (min-width: 29.81em) { //477px
+  @media screen and (min-width: 477px) {
     display: block;
   }
 
-  @media screen and (min-width: 20em) { //320px
+  @media screen and (min-width: 320px) {
     display: inline;
   }
 }
@@ -52,12 +52,12 @@
   display: block;
   font-weight: 300;
 
-  @media screen and (min-width: 20.125em) { //322px
+  @media screen and (min-width: 322px) {
     display: inline;
     padding-left: px-to-rem(5px);
   }
 
-  @media screen and (min-width: 30.5em) { //488px
+  @media screen and (min-width: 488px) {
     display: block;
     padding-left: 0;
   }

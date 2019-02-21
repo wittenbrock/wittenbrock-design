@@ -20,8 +20,7 @@
   //used in recent-work.html
   display: block;
 
-  @media screen and (min-width: 42.1875em) {
-    //675px
+  @media screen and (min-width: 675px) {
     display: inline;
   }
 }
