@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 100%; //1rem = 16px
   background-color: $white;
-  min-width: 19.1875px; //307px
+  min-width: px-to-rem(307px);
 }
 
 *,
@@ -16,6 +16,12 @@ body {
   color: $font-color;
   font-weight: 300;
   line-height: 1.5;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 // Remove text underline.
@@ -37,10 +43,10 @@ p,
 header {
   @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
-  margin-bottom: 0.9rem; //14.4px
+  margin-bottom: px-to-rem(14.4px);
 
   @include for-tablet-up {
-    margin-bottom: 1rem; //16px
+    margin-bottom: px-to-rem(16px);
   }
 }
 

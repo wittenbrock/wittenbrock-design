@@ -1,7 +1,7 @@
 .page-header-container {
   //This class is also declared in _recent-work-html.scss
-  padding-left: 1.25rem; //20px
-  padding-right: 1.252rem; //20px
+  padding-left: px-to-rem(20px);
+  padding-right: px-to-rem(20px);
 }
 
 .title-flexible-display {

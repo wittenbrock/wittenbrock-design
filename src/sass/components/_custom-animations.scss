@@ -1,0 +1,8 @@
+//Disables the slide-left animation on mobile and tablet
+@media screen and (max-width: 53.125em) {
+  .disable-fade-right[data-aos=fade-right],
+  .disable-fade-left[data-aos=fade-left] {
+    -webkit-transform: translate3d(0);
+    transform: translate3d(0, 0, 0);
+  }
+}

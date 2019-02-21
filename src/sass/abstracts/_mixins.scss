@@ -16,6 +16,13 @@
   @return $value / ($value * 0 + 1);
 }
 
+//Converts pixels to rems
+@function px-to-rem($size) {
+  $remSize: $size / 16px;
+
+  @return #{$remSize}rem;
+}
+
 //Used to create fluid typography
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);

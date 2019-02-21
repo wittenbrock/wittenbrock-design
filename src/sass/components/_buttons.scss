@@ -1,14 +1,14 @@
 %button-base-styles {
   display: block;
-  width: 4.375rem; //70px
+  width: px-to-rem(70px);
   background: $hover-color;
   font-family: $font-stack;
-  font-size: 0.625rem; //10px
+  font-size: px-to-rem(10px);
   color: $white;
   text-transform: uppercase;
   font-weight: 300;
   text-align: center;
-  padding: 0.375rem 0.875rem; //6px 14px
+  padding: px-to-rem(6px) px-to-rem(14px);
   border: 2px solid $hover-color;
   border-radius: 5px;
   box-shadow: $project-button-shadow;
@@ -33,13 +33,13 @@
 
   background-color: $light-grey;
   display: inline-block;
-  margin-right: 1.25rem; //20px
+  margin-right: px-to-rem(20px);
 }
 
 .github-button {
   background: #818181;
   border: solid 2px $light-grey;
-  margin-left: 1.25rem; //20px
+  margin-left: px-to-rem(20px);
 
   &:active {
     color: $white;
@@ -59,8 +59,8 @@
 .form-button {
   @extend %button-base-styles;
 
-  margin: 1.875rem auto; //30px
-  width: 9.375rem; //150px
+  margin: px-to-rem(30px) auto;
+  width: px-to-rem(150px);
 
   &:active {
     box-shadow: none; //remove blue box-shadow from Mozilla Firefox

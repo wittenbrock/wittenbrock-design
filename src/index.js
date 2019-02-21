@@ -4,7 +4,6 @@ import 'aos/dist/aos.css';
 
 //Animate On Scroll (AOS) Initialization
 AOS.init({
-  disable: window.innerWidth < 850,
   duration: 300,
   easing: 'ease-in-out',
   delay: 50,
