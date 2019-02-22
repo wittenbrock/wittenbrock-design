@@ -11,19 +11,20 @@
 
 /* https://css-tricks.com/snippets/css/fluid-typography/ */
 
-//Removes units
+/* Removes units */
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
-//Converts pixels to rems
-@function px-to-rem($size) {
-  $remSize: $size / 16px;
+/* Converts rems to pixels */
+@function rem-to-px($size) {
+  $rems: $size * 16;
+  $pixels: strip-unit($rems);
 
-  @return #{$remSize}rem;
+  @return #{$pixels}px;
 }
 
-//Used to create fluid typography
+/* Used to create fluid typography */
 @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
   $u1: unit($min-vw);
   $u2: unit($max-vw);
@@ -34,18 +35,18 @@
     & {
       font-size: $min-font-size;
 
-      @media screen and (min-width: $min-vw) {
+      @media screen and (min-width: rem-to-px($min-vw)) { //all media queries are in px
         font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
 
-      @media screen and (min-width: $max-vw) {
+      @media screen and (min-width: rem-to-px($max-vw)) {
         font-size: $max-font-size;
       }
     }
   }
 }
 
-//Used to create fluid widths
+/* Used to create fluid widths */
 @mixin fluid-width($min-viewport, $max-viewport, $min-item-width, $max-item-width) {
   $a1: unit($min-viewport);
   $a2: unit($max-viewport);
@@ -56,18 +57,18 @@
     & {
       width: $min-item-width;
 
-      @media screen and (min-width: $min-viewport) {
+      @media screen and (min-width: rem-to-px($min-viewport)) { //all media queries are in px
         width: calc(#{$min-item-width} + #{strip-unit($max-item-width - $min-item-width)} * ((100vw - #{$min-viewport}) / #{strip-unit($max-viewport - $min-viewport)}));
       }
 
-      @media screen and (min-width: $max-viewport) {
+      @media screen and (min-width: rem-to-px($max-viewport)) {
         width: $max-item-width;
       }
     }
   }
 }
 
-//Used to create fluid heights
+/* Used to create fluid heights */
 @mixin fluid-height($min-window-size, $max-window-size, $min-item-height, $max-item-height) {
   $a1: unit($min-window-size);
   $a2: unit($max-window-size);
@@ -78,11 +79,11 @@
     & {
       height: $min-item-height;
 
-      @media screen and (min-width: $min-window-size) {
+      @media screen and (min-width: rem-to-px($min-window-size)) { //all media queries are in px
         height: calc(#{$min-item-height} + #{strip-unit($max-item-height - $min-item-height)} * ((100vw - #{$min-window-size}) / #{strip-unit($max-window-size - $min-window-size)}));
       }
 
-      @media screen and (min-width: $max-window-size) {
+      @media screen and (min-width: rem-to-px($max-window-size)) {
         height: $max-item-height;
       }
     }

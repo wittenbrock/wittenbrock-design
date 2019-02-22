@@ -5,5 +5,6 @@ module.exports = {
       preset: 'default',
     }),
     require("css-mqpacker"),
+    require('postcss-rem')
   ],
 };

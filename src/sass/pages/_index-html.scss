@@ -26,12 +26,12 @@
 
 .about {
   margin: auto;
-  max-width: px-to-rem(510px);
-  padding: px-to-rem(20px);
+  max-width: rem(510px);
+  padding: rem(20px);
   padding-top: 0;
 
   @include for-tablet-up {
-    padding-bottom: px-to-rem(40px);
+    padding-bottom: rem(40px);
     text-align: justify;
   }
 }
@@ -54,7 +54,7 @@
 
   @media screen and (min-width: 322px) {
     display: inline;
-    padding-left: px-to-rem(5px);
+    padding-left: rem(5px);
   }
 
   @media screen and (min-width: 488px) {
@@ -65,8 +65,8 @@
 
 .translatable-text {
   position: absolute;
-  max-width: px-to-rem(470px);
-  margin-right: px-to-rem(20px);
+  max-width: rem(470px);
+  margin-right: rem(20px);
 }
 
 .svg-icon-handler {
@@ -75,18 +75,18 @@
 }
 
 .translate-button-container {
-  width: px-to-rem(17px);
+  width: rem(17px);
   // If height and width are larger, the svg's <p> element's height is higher than all the others (27px).
-  height: px-to-rem(17px);
-  margin-right: px-to-rem(20px);
+  height: rem(17px);
+  margin-right: rem(20px);
 }
 
 .translate-button {
   position: absolute;
-  top: px-to-rem(-6px);
+  top: rem(-6px);
   fill: $black;
-  width: px-to-rem(31px);
-  height: px-to-rem(31px);
+  width: rem(31px);
+  height: rem(31px);
   cursor: pointer;
 
   @include for-desktop-up {
@@ -116,10 +116,10 @@
     &::after {
       content: '';
       position: absolute;
-      bottom: px-to-rem(1px);
+      bottom: rem(1px);
       left: 0;
       right: 0;
-      height: px-to-rem(1px);
+      height: rem(1px);
       background-color: $hover-color;
     }
 

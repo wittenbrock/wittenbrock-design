@@ -26,33 +26,33 @@
 }
 
 .form-label {
-  margin-bottom: px-to-rem(20px);
+  margin-bottom: rem(20px);
 }
 
 .form-input {
-  height: px-to-rem(50px);
+  height: rem(50px);
   width: 100%;
 
   @include for-tablet-up {
-    width: px-to-rem(265px);
+    width: rem(265px);
   }
 }
 
 .name-input {
-  margin-right: px-to-rem(30px);
+  margin-right: rem(30px);
 }
 
 .form-textarea {
   width: 100%;
-  height: px-to-rem(200px);
+  height: rem(200px);
   line-height: 1.5;
 }
 
 .form-input,
 .form-textarea {
-  margin-top: px-to-rem(10px);
+  margin-top: rem(10px);
   border-radius: 4px;
-  padding: px-to-rem(15px);
+  padding: rem(15px);
   border: 1px solid #dadcdd;
 
   &:focus {

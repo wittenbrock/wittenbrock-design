@@ -1,6 +1,7 @@
 import './sass/main.scss';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from 'aos'; //animate on scroll JavaScript
+import 'aos/dist/aos.css'; //animate on scroll CSS styles
+
 
 //Animate On Scroll (AOS) Initialization
 AOS.init({
@@ -40,5 +41,3 @@ document.querySelector('.translate-button').addEventListener('click', () => {
     visibleText.setAttribute('lang', 'ja-jp');
   }
 });
-
-

@@ -14,16 +14,16 @@
   @extend %wittenbrock-design-logo;
 
   margin: auto;
-  margin-top: px-to-rem(30px);
-  margin-bottom: px-to-rem(30px);
+  margin-top: rem(30px);
+  margin-bottom: rem(30px);
   width: 85px;
   height: 85px;
 
   @include for-tablet-up {
     width: 90px;
     height: 90px;
-    margin-top: px-to-rem(40px);
-    margin-bottom: px-to-rem(40px);
+    margin-top: rem(40px);
+    margin-bottom: rem(40px);
   }
 }
 

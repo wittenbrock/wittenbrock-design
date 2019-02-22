@@ -1,29 +1,29 @@
 .page-header-container {
-  margin-top: px-to-rem(60px);
-  margin-bottom: px-to-rem(70px);
+  margin-top: rem(60px);
+  margin-bottom: rem(70px);
 }
 
 .page-title {
   font-family: $font-stack;
   font-weight: 500;
   text-align: center;
-  font-size: px-to-rem(25px);
+  font-size: rem(25px);
   color: $black;
 
   @include for-tablet-up {
-    font-size: px-to-rem(30px);
+    font-size: rem(30px);
   }
 }
 
 .page-subtitle {
   text-align: center;
-  font-size: px-to-rem(18px);
+  font-size: rem(18px);
   font-weight: 300;
-  padding-left: px-to-rem(20px);
-  padding-right: px-to-rem(20px);
+  padding-left: rem(20px);
+  padding-right: rem(20px);
 
   @include for-tablet-up {
-    font-size: px-to-rem(18px);
+    font-size: rem(18px);
   }
 }
 
@@ -32,12 +32,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: px-to-rem(1100px);
-  margin-top: px-to-rem(110px);
-  padding-bottom: px-to-rem(10px);
+  max-width: rem(1100px);
+  margin-top: rem(110px);
+  padding-bottom: rem(10px);
 
   @include for-desktop-up {
-    padding-bottom: px-to-rem(40px);
+    padding-bottom: rem(40px);
   }
 }
 
@@ -45,17 +45,17 @@
   display: flex; //put projects into a centered column down the page
   flex-direction: column;
   align-items: center;
-  margin-bottom: px-to-rem(100px);
-  margin-left: px-to-rem(25px);
-  margin-right: px-to-rem(25px);
+  margin-bottom: rem(100px);
+  margin-left: rem(25px);
+  margin-right: rem(25px);
 
   @include for-tablet-up {
-    margin-left: px-to-rem(40px);
-    margin-right: px-to-rem(40px);
+    margin-left: rem(40px);
+    margin-right: rem(40px);
   }
 
   @include for-desktop-up {
-    margin-bottom: px-to-rem(70px);
+    margin-bottom: rem(70px);
   }
 }
 
@@ -81,15 +81,15 @@
   }
 }
 
+/* AOS (animate on scroll) uses transitions to animate its elements. Because of this, its JavaScript overrides any written transitions not related to AOS. */
 .project-transition {
-  //AOS (animate on scroll) uses transitions to animate its elements. Because of this, its JavaScript overrides any written transitions not related to AOS.
   order: 2; //goes against normal document flow, this puts the picture above caption
   transition: transform 0.5s ease-in-out;
   z-index: 2; //Elevate the caption above the project's image
 
   @include for-desktop-up {
     position: absolute;
-    margin-top: px-to-rem(70px);
+    margin-top: rem(70px);
 
     &:hover {
       transform: scale(1.1);
@@ -107,53 +107,53 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: px-to-rem(20px);
+  padding: rem(20px);
   background: $white;
 
   @include for-desktop-up {
-    width: px-to-rem(420px);
+    width: rem(420px);
     box-shadow: $project-caption-shadow;
-    min-height: px-to-rem(225px);
+    min-height: rem(225px);
   }
 }
 
 .caption-right {
   @include for-desktop-up {
-    right: px-to-rem(2.5px);
+    right: rem(2.5px);
   }
 }
 
 .caption-left {
   @include for-desktop-up {
-    left: px-to-rem(2.5px);
+    left: rem(2.5px);
   }
 }
 
 .project-title {
   font-weight: 500;
-  font-size: px-to-rem(22px);
+  font-size: rem(22px);
   color: $black;
   margin-bottom: 0;
 
   @include for-tablet-up {
-    font-size: px-to-rem(20px);
+    font-size: rem(20px);
   }
 }
 
 .project-subtitle {
-  font-size: px-to-rem(17px);
+  font-size: rem(17px);
   font-weight: 100;
   color: $light-grey;
 
   @include for-tablet-up {
-    font-size: px-to-rem(15px);
+    font-size: rem(15px);
   }
 }
 
 .project-description {
-  font-size: px-to-rem(13px);
+  font-size: rem(13px);
   text-align: justify;
-  line-height: px-to-rem(23px);
+  line-height: rem(23px); //TO DO: make this unitless
 }
 
 .project-image-transition {
