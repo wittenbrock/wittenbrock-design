@@ -1,6 +1,6 @@
 .nav-container {
-  @include fluid-type($min-width-nav, $max-width-nav, $min-font-nav, $max-font-nav);
-  @include fluid-height($min-vw-nav-bar, $max-vw-nav-bar, $min-height-nav-bar, $max-height-nav-bar);
+  @include fluid-property('font-size', $min-width-nav, $max-width-nav, $min-font-nav, $max-font-nav);
+  @include fluid-property('height', $min-vw-nav-bar, $max-vw-nav-bar, $min-height-nav-bar, $max-height-nav-bar);
 
   display: flex;
   justify-content: center;
@@ -41,8 +41,8 @@
 }
 
 .nav-svg {
-  @include fluid-width($min-vw-nav-icons, $max-vw-nav-icons, $min-width-nav-icons, $max-width-nav-icons);
-  @include fluid-height($min-vw-nav-icons, $max-vw-nav-icons, $min-height-nav-icons, $max-height-nav-icons);
+  @include fluid-property('width', $min-vw-nav-icons, $max-vw-nav-icons, $min-width-nav-icons, $max-width-nav-icons);
+  @include fluid-property('height', $min-vw-nav-icons, $max-vw-nav-icons, $min-height-nav-icons, $max-height-nav-icons);
 
   height: auto;
   fill: $black;

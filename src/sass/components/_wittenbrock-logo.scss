@@ -6,8 +6,8 @@
 .small-wittenbrock-logo {
   @extend %wittenbrock-design-logo;
 
-  @include fluid-width($min-vw-nav-logo, $max-vw-nav-logo, $min-width-nav-logo, $max-width-nav-logo);
-  @include fluid-height($min-vw-nav-logo, $max-vw-nav-logo, $min-height-nav-logo, $max-height-nav-logo);
+  @include fluid-property('width', $min-vw-nav-logo, $max-vw-nav-logo, $min-width-nav-logo, $max-width-nav-logo);
+  @include fluid-property('height', $min-vw-nav-logo, $max-vw-nav-logo, $min-height-nav-logo, $max-height-nav-logo);
 }
 
 .large-wittenbrock-logo {
@@ -16,12 +16,12 @@
   margin: auto;
   margin-top: rem(30px);
   margin-bottom: rem(30px);
-  width: 85px;
-  height: 85px;
+  width: rem(85px);
+  height: rem(85px);
 
   @include for-tablet-up {
-    width: 90px;
-    height: 90px;
+    width: rem(90px);
+    height: rem(90px);
     margin-top: rem(40px);
     margin-bottom: rem(40px);
   }

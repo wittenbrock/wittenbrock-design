@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 100%; //1rem = 16px
   background-color: $white;
-  min-width: px-to-rem(307px);
+  min-width: rem(307px);
 }
 
 *,
@@ -30,7 +30,7 @@ a {
 }
 
 p {
-  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-property('font-size', $min-width-i, $max-width-i, $min-font-i, $max-font-i);
 }
 
 h1,
@@ -41,12 +41,12 @@ h5,
 h6,
 p,
 header {
-  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-property('font-size', $min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
-  margin-bottom: px-to-rem(14.4px);
+  margin-bottom: rem(14.4px);
 
   @include for-tablet-up {
-    margin-bottom: px-to-rem(16px);
+    margin-bottom: rem(16px);
   }
 }
 
@@ -62,7 +62,7 @@ textarea,
 input,
 button,
 label {
-  @include fluid-type($min-width-i, $max-width-i, $min-font-i, $max-font-i);
+  @include fluid-property('font-size', $min-width-i, $max-width-i, $min-font-i, $max-font-i);
 
   display: block;
   font-weight: 300;

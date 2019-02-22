@@ -7,9 +7,12 @@
   @media only screen and (min-width: 850px) { @content; }
 }
 
-/* Fluid Typography, Heigh, and Width Mixins */
-
-/* https://css-tricks.com/snippets/css/fluid-typography/ */
+/* Fluid Mixin
+ * Original idea from https://css-tricks.com/snippets/css/fluid-typography
+ * Modified by adding the $property value, so that it can be used for any property.
+ * Requires a min and max viewport sizes and min and max sizes for the property.
+ * All media queries output to pixels.
+ */
 
 /* Removes units */
 @function strip-unit($value) {
@@ -24,67 +27,23 @@
   @return #{$pixels}px;
 }
 
-/* Used to create fluid typography */
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
+/* All inputted values must be in rems, $property must be a string */
+@mixin fluid-property($property, $min-vw, $max-vw, $min-size, $max-size) {
+  $a1: unit($min-vw);
+  $a2: unit($max-vw);
+  $a3: unit($min-size);
+  $a4: unit($max-size);
 
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
     & {
-      font-size: $min-font-size;
+      #{$property}: $min-size;
 
       @media screen and (min-width: rem-to-px($min-vw)) { //all media queries are in px
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+        #{$property}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
 
       @media screen and (min-width: rem-to-px($max-vw)) {
-        font-size: $max-font-size;
-      }
-    }
-  }
-}
-
-/* Used to create fluid widths */
-@mixin fluid-width($min-viewport, $max-viewport, $min-item-width, $max-item-width) {
-  $a1: unit($min-viewport);
-  $a2: unit($max-viewport);
-  $a3: unit($min-item-width);
-  $a4: unit($max-item-width);
-
-  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
-    & {
-      width: $min-item-width;
-
-      @media screen and (min-width: rem-to-px($min-viewport)) { //all media queries are in px
-        width: calc(#{$min-item-width} + #{strip-unit($max-item-width - $min-item-width)} * ((100vw - #{$min-viewport}) / #{strip-unit($max-viewport - $min-viewport)}));
-      }
-
-      @media screen and (min-width: rem-to-px($max-viewport)) {
-        width: $max-item-width;
-      }
-    }
-  }
-}
-
-/* Used to create fluid heights */
-@mixin fluid-height($min-window-size, $max-window-size, $min-item-height, $max-item-height) {
-  $a1: unit($min-window-size);
-  $a2: unit($max-window-size);
-  $a3: unit($min-item-height);
-  $a4: unit($max-item-height);
-
-  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
-    & {
-      height: $min-item-height;
-
-      @media screen and (min-width: rem-to-px($min-window-size)) { //all media queries are in px
-        height: calc(#{$min-item-height} + #{strip-unit($max-item-height - $min-item-height)} * ((100vw - #{$min-window-size}) / #{strip-unit($max-window-size - $min-window-size)}));
-      }
-
-      @media screen and (min-width: rem-to-px($max-window-size)) {
-        height: $max-item-height;
+        #{$property}: $max-size;
       }
     }
   }
