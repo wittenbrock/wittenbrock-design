@@ -60,10 +60,10 @@
 }
 
 .box-shadow {
+  position: relative; //allow for absolute positioning of .project-caption
   display: flex;
   align-items: center;
   flex-direction: column;
-  position: relative; //allow for absolute positioning of .project-caption
   box-shadow: $project-caption-shadow;
 
   @media screen and (min-width: 500px) and (max-width: 638px) {

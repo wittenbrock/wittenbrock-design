@@ -5,10 +5,12 @@ import 'aos/dist/aos.css'; //animate on scroll CSS styles
 
 //Animate On Scroll (AOS) Initialization
 AOS.init({
-  duration: 300,
+  duration: 500,
   easing: 'ease-in-out',
-  delay: 50,
+  delay: 150,
   once: true,
+  anchorPlacement: 'bottom-bottom',
+  offset: 100
 });
 
 //contact.html form validation:

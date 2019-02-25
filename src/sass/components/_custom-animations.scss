@@ -1,8 +1,52 @@
 //Disables the slide-left animation on mobile and tablet
-@media screen and (max-width: 53.125em) {
-  .disable-fade-right[data-aos=fade-right],
-  .disable-fade-left[data-aos=fade-left] {
-    -webkit-transform: translate3d(0);
-    transform: translate3d(0, 0, 0);
+
+@media screen and (max-width: 849px) {
+  [data-aos="custom-fade-up"] {
+    transform: translate3d(0, 100px, 0);
+    opacity: 0;
+    transition-property: opacity, transform;
+
+    &.aos-animate {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+}
+
+@include for-desktop-up {
+  [data-aos="custom-fade-in"] {
+    opacity: 0;
+    transition-property: opacity, transform;
+
+    &.aos-animate {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+}
+
+@include for-desktop-up {
+  [data-aos="custom-fade-right"] {
+    transform: translate3d(-100px, 0, 0); //fade right on desktop
+    opacity: 0;
+    transition-property: opacity, transform;
+
+    &.aos-animate {
+      transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+}
+
+@include for-desktop-up {
+  [data-aos="custom-fade-left"] {
+    transform: translate3d(100px, 0, 0); //fade left on desktop
+    opacity: 0;
+    transition-property: opacity, transform;
+
+    &.aos-animate {
+      transform: translateZ(0);
+      opacity: 1;
+    }
   }
 }
