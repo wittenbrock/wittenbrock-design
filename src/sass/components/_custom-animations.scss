@@ -1,5 +1,3 @@
-//Disables the slide-left animation on mobile and tablet
-
 @media screen and (max-width: 849px) {
   [data-aos="custom-fade-up"] {
     transform: translate3d(0, 100px, 0);

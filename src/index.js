@@ -2,7 +2,6 @@ import './sass/main.scss';
 import AOS from 'aos'; //animate on scroll JavaScript
 import 'aos/dist/aos.css'; //animate on scroll CSS styles
 
-
 //Animate On Scroll (AOS) Initialization
 AOS.init({
   duration: 500,
@@ -10,7 +9,7 @@ AOS.init({
   delay: 150,
   once: true,
   anchorPlacement: 'bottom-bottom',
-  offset: 100
+  offset: 100,
 });
 
 //contact.html form validation:
