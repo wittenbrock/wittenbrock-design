@@ -1,67 +1,6 @@
-%wittenbrock-design-logo {
-  position: relative;
-  top: 0;
-}
-
-.small-wittenbrock-logo {
-  @extend %wittenbrock-design-logo;
-
-  @include fluid-property('width', $min-vw-nav-logo, $max-vw-nav-logo, $min-width-nav-logo, $max-width-nav-logo);
-  @include fluid-property('height', $min-vw-nav-logo, $max-vw-nav-logo, $min-height-nav-logo, $max-height-nav-logo);
-}
-
-.large-wittenbrock-logo {
-  @extend %wittenbrock-design-logo;
-
-  margin: auto;
-  margin-top: rem(30px);
-  margin-bottom: rem(30px);
-  width: rem(85px);
-  height: rem(85px);
-
-  @include for-tablet-up {
-    width: rem(90px);
-    height: rem(90px);
-    margin-top: rem(40px);
-    margin-bottom: rem(40px);
-  }
-}
-
-.circle-square,
 .wittenbrock-logo {
-  position: absolute;
-  left: 0;
-
-  @include for-desktop-up {
-    transition: opacity 0.5s ease-in-out;
-  }
-}
-
-.wittenbrock-logo {
-  @include for-desktop-up {
-    &:hover {
-      opacity: 0;
-    }
-  }
-}
-
-.animated-logo-container {
-  @include fluid-property('width', $min-vw-home-logo, $max-vw-home-logo, $min-width-home-logo, $max-width-home-logo);
-  @include fluid-property('height', $min-vw-home-logo, $max-vw-home-logo, $min-height-home-logo, $max-height-home-logo);
-
-  display: flex;
-  align-items: center;
-  margin-bottom: rem(60px);
-}
-
-.animated-wittenbrock-logo {
   height: 100%;
   width: 100%;
-}
-
-.letters {
-  opacity: 0;
-  fill: $wittenbrock-logo;
 }
 
 .witten-logo-stroke {
@@ -74,4 +13,39 @@
 .square-border {
   stroke-dasharray: 1458.87;
   stroke-dashoffset: 1458.87;
+}
+
+/* The following styles are unique to the logo found in the navigation bar */
+.wittenbrock-logo-container-nav {
+  @include fluid-property('width', $min-vw-nav-logo, $max-vw-nav-logo, $min-width-nav-logo, $max-width-nav-logo);
+  @include fluid-property('height', $min-vw-nav-logo, $max-vw-nav-logo, $min-height-nav-logo, $max-height-nav-logo);
+
+  display: flex;
+  align-items: center;
+
+  @include for-desktop-up {
+    &:hover .letters-nav {
+      opacity: 0;
+    }
+  }
+}
+
+.letters-nav {
+  fill: $wittenbrock-logo;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* The following styles are unique to the logo found on the homepage */
+.wittenbrock-logo-container-home {
+  @include fluid-property('width', $min-vw-home-logo, $max-vw-home-logo, $min-width-home-logo, $max-width-home-logo);
+  @include fluid-property('height', $min-vw-home-logo, $max-vw-home-logo, $min-height-home-logo, $max-height-home-logo);
+
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(60px);
+}
+
+.letters-home {
+  opacity: 0;
+  fill: $wittenbrock-logo;
 }
