@@ -64,7 +64,7 @@
   }
 }
 
-//HTML Form validation styles
+/* HTML Form validation styles */
 input.error,
 textarea.error {
   outline: none;
@@ -72,7 +72,7 @@ textarea.error {
   border-width: 1px;
   border-style: solid;
 
-  // Use CSS to visually restore valid fields
+  /* Use CSS to visually restore valid fields */
   &:valid {
     border: 1px solid #dadcdd;
   }

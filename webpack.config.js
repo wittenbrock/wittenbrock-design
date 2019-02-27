@@ -95,6 +95,15 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/splash-page.html',
+      filename: 'splash-page.html',
+      hash: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
     new UglifyJsPlugin(),
     new CleanWebpackPlugin('dist', {} ),
     new WebappWebpackPlugin({

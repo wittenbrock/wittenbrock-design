@@ -44,3 +44,34 @@
     }
   }
 }
+
+.animated-logo-container {
+  @include fluid-property('width', $min-vw-home-logo, $max-vw-home-logo, $min-width-home-logo, $max-width-home-logo);
+  @include fluid-property('height', $min-vw-home-logo, $max-vw-home-logo, $min-height-home-logo, $max-height-home-logo);
+
+  display: flex;
+  align-items: center;
+  margin-bottom: rem(60px);
+}
+
+.animated-wittenbrock-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.letters {
+  opacity: 0;
+  fill: $wittenbrock-logo;
+}
+
+.witten-logo-stroke {
+  fill: none;
+  stroke: $wittenbrock-logo;
+  stroke-miterlimit: 10;
+  stroke-width: 18.5px;
+}
+
+.square-border {
+  stroke-dasharray: 1458.87;
+  stroke-dashoffset: 1458.87;
+}
