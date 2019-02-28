@@ -22,9 +22,6 @@ $project-button-shadow-down: 0 0 2px rgba(0, 0, 0, 0.08), 0 2px 2px rgba(0, 0, 0
 $project-button-shadow-up: 0 0 4px rgba(0, 0, 0, 0.08), 0 4px 4px rgba(0, 0, 0, 0.16);
 $nav-bar-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 
-/* Color Gradients */
-$overlay-gradient: linear-gradient(0deg, rgba(89, 130, 255, 0) 0, #5982ff 100%);
-
 /* Text-underline on hover */
 $duration: 0.2s;
 $distance: 8px;
@@ -55,8 +52,8 @@ $max-font-nav: 0.9375rem;
 /* Fluid typography variables for splash-page.html */
 $min-vw-home-font: 20rem;
 $max-vw-home-font: 62.5rem;
-$min-font-home: 0.7rem;
-$max-font-home: 1.2rem;
+$min-font-home: 0.8rem;
+$max-font-home: 1.3rem;
 
 /*
  * ----------------------------------------
@@ -105,9 +102,9 @@ $max-height-home-logo: 12.5rem;
 /* Fluid width variables for the right arrow icon on the homepage */
 $min-vw-home-arrow: 20rem;
 $max-vw-home-arrow: 62.5rem;
-$min-width-home-arrow: 0.4375rem;
-$max-width-home-arrow: 0.6875rem;
+$min-width-home-arrow: 0.55rem;
+$max-width-home-arrow: 0.85rem;
 
 /* Corresponding height variables */
-$min-height-home-arrow: 0.4375rem;
-$max-height-home-arrow: 0.6875rem;
+$min-height-home-arrow: 0.55rem;
+$max-height-home-arrow: 0.85rem;

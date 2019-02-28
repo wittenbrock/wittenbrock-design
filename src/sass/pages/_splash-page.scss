@@ -14,8 +14,10 @@
 }
 
 .right-arrow-icon {
-  @include fluid-property('width', $min-vw-home-arrow, $max-vw-home-arrow, $min-width-home-arrow,$max-width-home-arrow);
-  @include fluid-property('height', $min-vw-home-arrow, $max-vw-home-arrow, $min-height-home-arrow,$max-height-home-arrow);
+  @include fluid-property('width', $min-vw-home-arrow, $max-vw-home-arrow, $min-width-home-arrow, $max-width-home-arrow);
+  @include fluid-property('height', $min-vw-home-arrow, $max-vw-home-arrow, $min-height-home-arrow, $max-height-home-arrow);
 
   fill: inherit;
+  transition-property: fill;
+  transition-delay: 0.35s;
 }

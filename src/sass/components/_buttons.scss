@@ -72,16 +72,43 @@
   }
 }
 
-/* Used on the homepage */
+/* Used on the homepage
+* This transition was inspired by codrops https://github.com/codrops/CreativeLinkEffects
+*/
+
 .enter-button {
   @include fluid-property('font-size', $min-vw-home-font, $max-vw-home-font, $min-font-home, $max-font-home);
 
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 400;
+  color: black;
+  fill: black;
   opacity: 0;
-  color: $black;
-  fill: $black;
 
   &:active {
-    color: red;
-    fill: red;
+    transform: $button-down-press;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    max-width: 0;
+    color: #0972b4;
+    content: attr(data-hover);
+    transition: max-width 0.5s;
+    white-space: nowrap;
+  }
+
+  &:hover::before,
+  &:focus::before {
+    max-width: 100%;
+  }
+
+  &:hover .right-arrow-icon {
+    fill: #0972b4;
   }
 }
