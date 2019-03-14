@@ -72,48 +72,10 @@ $max-font-home: 1.3rem;
  * ----------------------------------------
 */
 
-/* Fluid width variables for svg icons in the navigation bar */
-$min-vw-nav-icons: 2rem;
-$max-vw-nav-icons: 62.5rem;
-$min-width-nav-icons: 1rem;
-$max-width-nav-icons: 1.5rem;
+/* General min and max viewport dimensions */
+$min-vw-320px: 20rem;
+$max-vw-1440px: 90rem;
 
-/* Corresponding height variables */
-$min-height-nav-icons: 1rem;
-$max-height-nav-icons: 1.5rem;
-
-/* Fluid width variables for the Wittenbrock logo in the navigation bar */
-$min-vw-nav-logo: 20rem;
-$max-vw-nav-logo: 53.125rem;
-$min-width-nav-logo: 2.1rem;
-$max-width-nav-logo: 3.5rem;
-
-/* Corresponding height variables */
-$min-height-nav-logo: 2.1rem;
-$max-height-nav-logo: 3.5rem;
-
-/* Fluid height variables for the navigation bar's height */
-$min-vw-nav-bar: 20rem;
-$max-vw-nav-bar: 53.125rem;
-$min-height-nav-bar: 2.5rem;
-$max-height-nav-bar: 4rem;
-
-/* Fluid width variables for the animated Wittenbrock logo on the homepage */
-$min-vw-home-logo: 20rem;
-$max-vw-home-logo: 62.5rem;
-$min-width-home-logo: 6.875rem;
-$max-width-home-logo: 12.5rem;
-
-/* Corresponding height variables */
-$min-height-home-logo: 6.875rem;
-$max-height-home-logo: 12.5rem;
-
-/* Fluid width variables for the right arrow icon on the homepage */
-$min-vw-home-arrow: 20rem;
-$max-vw-home-arrow: 62.5rem;
-$min-width-home-arrow: 0.55rem;
-$max-width-home-arrow: 0.85rem;
-
-/* Corresponding height variables */
-$min-height-home-arrow: 0.55rem;
-$max-height-home-arrow: 0.85rem;
+/* Fluid width, height, margin-bottom dimensions for .wittenbrock-logo-container */
+$min-wittenbrock-logo: 8rem;
+$max-wittenbrock-logo: 12rem;

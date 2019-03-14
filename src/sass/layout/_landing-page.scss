@@ -1,0 +1,13 @@
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.down-arrow {
+  margin: auto;
+}

@@ -77,7 +77,7 @@
 */
 
 .enter-button {
-  @include fluid-property('font-size', $min-vw-home-font, $max-vw-home-font, $min-font-home, $max-font-home);
+  // @include fluid-property('font-size', $min-vw-home-font, $max-vw-home-font, $min-font-home, $max-font-home);
 
   position: relative;
   display: inline-block;
