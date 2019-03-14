@@ -38,7 +38,17 @@ module.exports = {
         }]
       },
       {
-        test: /\.html$/,
+        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+            options: {
+            name: '[name].[ext]',
+            outputPath: 'assets/fonts/'
+          }
+        }]
+      },
+      {
+        test: /\.html$$/,
         loader: 'html-srcsets-loader',
         options: {
           attrs: ['img:src', ':srcset'],
@@ -98,6 +108,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/splash-page.html',
       filename: 'splash-page.html',
+      hash: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/homepage.html',
+      filename: 'homepage.html',
       hash: true,
       minify: {
         removeComments: true,

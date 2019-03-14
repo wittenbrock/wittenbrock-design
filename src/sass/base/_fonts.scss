@@ -1,3 +1,43 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,500&subset=japanese');
+/* woff2 supports Chrome 26+, Opera 23+, Firefox 39+ */
 
-$font-stack: 'Noto Sans JP', sans-serif;
+/* woff supports Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+
+// /* noto-sans-jp-regular - latin_japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    local('Noto Sans Japanese Regular'),
+    local('NotoSansJapanese-Regular'),
+    url('/assets/fonts/noto-sans-jp-v21-latin_japanese-regular.woff2') format('woff2'),
+    url('/assets/fonts/noto-sans-jp-v21-latin_japanese-regular.woff') format('woff');
+}
+
+// /* noto-sans-jp-500 - latin_japanese */
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local('Noto Sans Japanese Medium'),
+    local('NotoSansJapanese-Medium'),
+    url('/assets/fonts/noto-sans-jp-v21-latin_japanese-500.woff2') format('woff2'),
+    url('/assets/fonts/noto-sans-jp-v21-latin_japanese-500.woff') format('woff');
+}
+
+/* league-spartan-bold */
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('League Spartan Bold'),
+    local('LeagueSpartan-Bold'),
+    url('/assets/fonts/leaguespartan-bold.woff2') format('woff2'),
+    url('/assets/fonts/leaguespartan-bold.woff') format('woff');
+}
+
+$font-stack: 'Noto Sans JP', sans-serif; //delete
+$header-font: 'League Spartan', Helvetica, sans-serif;
+$body-font: 'Noto Sans JP', Helvetica, sans-serif;
