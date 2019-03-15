@@ -46,36 +46,49 @@ $button-down-press: translateY(rem(2px));
  * ----------------------------------------
 */
 
-/* Fluid typography variables for index.html and contact.html */
-$min-width-i: 20rem;
-$max-width-i: 35rem;
-$min-font-i: 1rem;
-$max-font-i: 1.125rem;
+/* General min and max viewport dimensions */
+$min-vw-320px: 20rem;
+$max-vw-1440px: 90rem;
 
-/* Fluid typography variables for the navigation bar */
-$min-width-nav: 20rem;
-$max-width-nav: 62.5rem;
-$min-font-nav: 0.5625rem;
-$max-font-nav: 0.9375rem;
+/* Fluid typography variables for <p> */
+$min-font-size-p: 0.875rem;
+$max-font-size-p: 1.125rem;
 
-/* Fluid typography variables for splash-page.html */
-$min-vw-home-font: 20rem;
-$max-vw-home-font: 62.5rem;
-$min-font-home: 0.8rem;
-$max-font-home: 1.3rem;
+/* Fluid typography variables for <h2> */
+$min-font-size-h2: 1.75rem;
+$max-font-size-h2: 3rem;
+
+/* Fluid typography variables for .subtitle */
+$min-font-size-subtitle: 1.125rem;
+$max-font-size-subtitle: 1.5rem;
+
+/* Fluid typography variables for .intro-second-subtitle */
+$min-font-size-second-subtitle: 1.125rem;
+$max-font-size-second-subtitle: 1.25rem;
 
 /*
  * ----------------------------------------
- * Fluid width and height variables
+ * Fluid width, height variables
  * The following variables are used for the mixin fluid-property('width' ...)
  * and the mixin fluid-property('height' ...)
  * ----------------------------------------
 */
 
-/* General min and max viewport dimensions */
-$min-vw-320px: 20rem;
-$max-vw-1440px: 90rem;
-
 /* Fluid width, height, margin-bottom dimensions for .wittenbrock-logo-container */
 $min-wittenbrock-logo: 8rem;
 $max-wittenbrock-logo: 12rem;
+
+/* Fluid margin-bottom dimensions for .intro-title */
+$min-intro-title: 1rem;
+$max-intro-title: 3rem;
+
+/*
+ * ----------------------------------------
+ * Fluid margin variables
+ * The following variables are used for the mixin fluid-property('margin' ...)
+ * ----------------------------------------
+*/
+
+/* Fluid margin-top dimensions for .button-down-arrow */
+$min-button-down-arrow: 8rem;
+$max-button-down-arrow: 12rem;

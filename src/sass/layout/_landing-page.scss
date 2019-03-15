@@ -1,13 +1,15 @@
-.landing-page {
+/* Styles related to the Wittenbrock logo are located in sass/components/_wittenbrock-logo.scss */
+%basic-section-styles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: $white;
   min-width: 100vw;
   min-height: 100vh;
 }
 
-.down-arrow {
-  margin: auto;
+.landing-page {
+  @extend %basic-section-styles;
+
+  background: $white;
 }
