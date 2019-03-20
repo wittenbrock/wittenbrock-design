@@ -12,6 +12,11 @@ AOS.init({
   offset: 100,
 });
 
+/*
+The following form validation code was written by Dave Rupert
+https://daverupert.com/2017/11/happier-html5-forms/
+*/
+
 //contact.html form validation:
 const inputs = document.querySelectorAll('input, textarea');
 
@@ -29,16 +34,21 @@ for(let input of inputs) {
 }
 
 // When the translate button on index.html is clicked:
-document.querySelector('.translate-button').addEventListener('click', () => {
+document.querySelector('.button-translate').addEventListener('click', () => {
   const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
   const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chime of my train-stop.';
-  let visibleText = document.getElementById('visible-text');
-  
-  if (visibleText.textContent === japanese) {
-    visibleText.textContent = english;
-    visibleText.setAttribute('lang', 'en-US')
+  let translatableText = document.getElementById('translatable-text');
+  let translateBtnImg = document.getElementById('button-translate-img');
+
+  if (translatableText.textContent === japanese) {
+    translatableText.textContent = english;
+    translatableText.setAttribute('lang', 'en-US')
+    translateBtnImg.src = 'assets/images/icon-translate-japanese.svg';
+    translateBtnImg.alt = "Translate text to Japanese button"
   } else {
-    visibleText.textContent = japanese;
-    visibleText.setAttribute('lang', 'ja-jp');
+    translatableText.textContent = japanese;
+    translatableText.setAttribute('lang', 'ja-jp');
+    translateBtnImg.src = 'assets/images/icon-translate-english.svg';
+    translateBtnImg.alt = "Translate text to English button"
   }
 });

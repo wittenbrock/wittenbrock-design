@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 100%; //1rem = 16px
   background-color: $purple-black;
-  min-width: rem(320px);
+  min-width: rem(320px); //Are these doing anything? TO DO: check this
   max-width: rem(1440px);
 }
 
@@ -24,13 +24,13 @@ img {
   height: auto;
 }
 
-// Remove text underline.
 a {
   text-decoration: none;
 }
 
 p {
   @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-p, $max-font-size-p);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-p, $max-margin-p);
 
   text-align: justify;
 }
@@ -62,7 +62,5 @@ textarea,
 input,
 button,
 label {
-  // @include fluid-property('font-size', $min-width-i, $max-width-i, $min-font-i, $max-font-i);
-
   display: block;
 }
