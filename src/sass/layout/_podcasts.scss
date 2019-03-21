@@ -1,0 +1,143 @@
+.podcasts {
+  @extend %basic-section-styles;
+}
+
+/* All of the relevant styles nested in .podcasts-part-one */
+
+.podcasts-part-one {
+  @include fluid-property('margin-left', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+  @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.podcasts-section-header {
+  padding-left: rem(16px);
+  padding-right: rem(16px);
+  margin: auto;
+}
+
+.section-title {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-section-title, $max-margin-section-title);
+}
+
+.podcast-subtitle-break-point {
+  display: inline;
+
+  @media screen and (min-width: 500px) {
+    display: block;
+  }
+}
+
+.podcast-grid-one {
+  @include fluid-property('gap', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+
+  display: grid;
+  grid-template-columns: minmax(auto, rem(192px));
+  grid-template-rows: 1fr;
+
+  @media screen and (min-width: 460px) {
+    grid-template-columns: repeat(2, minmax(auto, rem(192px)));
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(3, minmax(auto, rem(256px)));
+  }
+}
+
+/* All of the relevant styles nested in .podcasts-part-two */
+.podcasts-part-two {
+  @include fluid-property('margin-left', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+  @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+
+  min-height: 100vh;
+}
+
+.podcast-grid-two {
+  @include fluid-property('gap', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+
+  display: grid;
+  grid-template-columns: minmax(auto, rem(192px));
+  grid-template-rows: 1fr 1fr;
+
+  @media screen and (min-width: 460px) {
+    grid-template-columns: repeat(2, minmax(auto, rem(192px)));
+    grid-template-rows: 1fr 1fr;
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(3, minmax(auto, rem(256px)));
+  }
+}
+
+.flex-in-460px {
+  display: none;
+
+  @media screen and (min-width: 460px) {
+    display: block;
+  }
+}
+
+.flex-in-600px {
+  display: none;
+
+  @include for-tablet-up {
+    display: block;
+  }
+}
+
+/* All of the related to the podcast overlays */
+.podcast-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: $purple-black-transparent;
+}
+
+.podcast-item {
+  position: relative;
+
+  // @media screen and (max-width: 899.9px) {
+  //   &:focus .podcast-overlay {
+  //     opacity: 100;
+  //   }
+  // }
+
+  // @media screen and (min-width: 900px) {
+  &:hover .podcast-overlay {
+    opacity: 100;
+  }
+  // }
+}
+
+.podcast-episode-num {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-episode, $max-font-size-podcast-episode);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-titles, $max-margin-podcast-titles);
+
+  font-weight: 500;
+}
+
+.podcast-title {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-title, $max-font-size-podcast-title);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-titles, $max-margin-podcast-titles);
+}
+
+.podcast-date {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-date, $max-font-size-podcast-date);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-date, $max-margin-podcast-date);
+}

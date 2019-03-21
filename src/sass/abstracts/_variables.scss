@@ -16,6 +16,7 @@ $wittenbrock-logo: hsl(214, 42%, 23%);
 
 /* new colors */
 $purple-black: hsl(233, 14%, 13%);
+$purple-black-transparent: hsla(233, 14%, 13%, 0.95);
 $orange: 	hsl(11, 70%, 60%);
 $light-gray: hsl(0, 0%, 91%);
 $medium-gray:	hsl(210, 3%, 75%);
@@ -69,6 +70,18 @@ $max-font-size-subtitle: 1.5rem;
 $min-font-size-second-subtitle: 1.125rem;
 $max-font-size-second-subtitle: 1.25rem;
 
+/* Fluid typography variables for .podcast-episode-num */
+$min-font-size-podcast-episode: 0.75rem;
+$max-font-size-podcast-episode: 0.875rem;
+
+/* Fluid typography variables for .podcast-title */
+$min-font-size-podcast-title: 0.875rem;
+$max-font-size-podcast-title: 1rem;
+
+/* Fluid typography variables for .podcast-date */
+$min-font-size-podcast-date: 0.625rem;
+$max-font-size-podcast-date: 0.75rem;
+
 /*
  * ----------------------------------------
  * Fluid width, height variables
@@ -78,16 +91,20 @@ $max-font-size-second-subtitle: 1.25rem;
 */
 
 /* Fluid width, height dimensions for .wittenbrock-logo-container */
-$min-wittenbrock-logo: 8rem;
-$max-wittenbrock-logo: 12rem;
+$min-size-wittenbrock-logo: 8rem;
+$max-size-wittenbrock-logo: 12rem;
 
 /* Fluid width, height dimensions for .button-translate  */
-$min-width-btn-translate: 1.25rem;
-$max-width-btn-translate: 1.5rem;
+$min-size-btn-translate: 1.25rem;
+$max-size-btn-translate: 1.5rem;
 
-/* Fluid width, height dimensions for .translatable-text-container  */
+/* Fluid height dimensions for .translatable-text-container  */
 $min-height-translatable-text: 5.25rem;
 $max-height-translatable-text: 5rem;
+
+/* Fluid width, height dimensions for .podcast-img  */
+// $min-size-podcast-img: 12rem;
+// $max-size-podcast-img: 16rem;
 
 /*
  * ----------------------------------------
@@ -113,6 +130,22 @@ $max-button-down-arrow: 12rem;
 */
 $min-margin-about-text: 3rem;
 $max-margin-about-text: 29rem;
+
+/* Fluid margin-bottom dimensions for .section-title */
+$min-margin-section-title: 1rem;
+$max-margin-section-title: 1.5rem;
+
+/* Fluid margin-left, margin-right and gap dimensions for .podcast-grid-one and two */
+$min-gap-podcast-grid: 1.125rem;
+$max-gap-podcast-grid: 2.25rem;
+
+/* Fluid margin-bottom dimensions for .podcast-episode-num and .podcast-title */
+$min-margin-podcast-titles: 0.5rem;
+$max-margin-podcast-titles: 0.75rem;
+
+/* Fluid margin-bottom dimensions for .podcast-date */
+$min-margin-podcast-date: 1.55rem;
+$max-margin-podcast-date: 4rem;
 
 /*
  * ----------------------------------------

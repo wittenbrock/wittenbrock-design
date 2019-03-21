@@ -21,6 +21,6 @@
 }
 
 .wittenbrock-logo-container {
-  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-wittenbrock-logo, $max-wittenbrock-logo);
-  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-wittenbrock-logo, $max-wittenbrock-logo);
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-wittenbrock-logo, $max-size-wittenbrock-logo);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-wittenbrock-logo, $max-size-wittenbrock-logo);
 }

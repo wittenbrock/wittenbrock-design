@@ -1,6 +1,7 @@
 .btn {
   display: block;
   transition: $hover;
+  margin: auto;
 
   @include for-desktop-up {
     &:hover {
@@ -15,15 +16,12 @@
 
 .button-down-arrow {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
-
-  margin: auto;
 }
 
 .button-translate {
-  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-btn-translate, $max-width-btn-translate);
-  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-width-btn-translate, $max-width-btn-translate);
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
 
-  margin: auto;
   background: $purple-black;
   padding: 0;
   border: none;

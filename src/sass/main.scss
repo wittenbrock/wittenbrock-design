@@ -9,7 +9,6 @@
 
 /* Base */
 @import 'base/base';
-@import 'base/helpers';
 
 /* Components */
 // @import 'components/nav-bar';
@@ -23,7 +22,9 @@
 @import 'layout/introduction';
 @import 'layout/projects';
 @import 'layout/about';
+@import 'layout/podcasts';
 
+@import 'base/helpers';
 /* Pages */
 
 /*

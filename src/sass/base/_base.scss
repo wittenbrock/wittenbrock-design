@@ -4,6 +4,7 @@ html {
   background-color: $purple-black;
   min-width: rem(320px); //Are these doing anything? TO DO: check this
   max-width: rem(1440px);
+  height: 100%;
 }
 
 *,
@@ -33,6 +34,7 @@ p {
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-p, $max-margin-p);
 
   text-align: justify;
+  line-height: 1.5;
 }
 
 h1,
