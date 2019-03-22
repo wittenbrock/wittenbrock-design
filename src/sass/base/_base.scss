@@ -65,4 +65,11 @@ input,
 button,
 label {
   display: block;
+  border: none;
+  outline: none;
+}
+
+::placeholder {
+  color: $dark-gray;
+  opacity: 1;
 }

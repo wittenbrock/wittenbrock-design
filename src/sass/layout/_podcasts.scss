@@ -56,6 +56,7 @@
   @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
 
   min-height: 100vh;
+  margin-bottom: rem(72px);
 }
 
 .podcast-grid-two {
@@ -112,17 +113,9 @@
 .podcast-item {
   position: relative;
 
-  // @media screen and (max-width: 899.9px) {
-  //   &:focus .podcast-overlay {
-  //     opacity: 100;
-  //   }
-  // }
-
-  // @media screen and (min-width: 900px) {
   &:hover .podcast-overlay {
     opacity: 100;
   }
-  // }
 }
 
 .podcast-episode-num {

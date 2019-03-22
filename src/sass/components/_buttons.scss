@@ -1,7 +1,6 @@
 .btn {
   display: block;
   transition: $hover;
-  margin: auto;
 
   @include for-desktop-up {
     &:hover {
@@ -14,6 +13,20 @@
   }
 }
 
+.btn-link {
+  display: block;
+  margin: auto;
+  width: rem(32px);
+  height: rem(32px);
+}
+
+/* margin: auto interrupts the flexbox properties of the play button in the podcast section */
+.btn-play-link {
+  @extend .btn-link;
+
+  margin: inherit;
+}
+
 .button-down-arrow {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 }
@@ -22,6 +35,7 @@
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
 
+  margin: auto;
   background: $purple-black;
   padding: 0;
   border: none;
@@ -32,4 +46,31 @@
 .button-translate-img {
   height: 100%;
   width: 100%;
+}
+
+.button-send {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-button-send, $max-font-size-button-send);
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-button-send, $max-width-button-send);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
+
+  background: $orange;
+  color: $white;
+  font-weight: 500;
+  min-height: rem(32px);
+  cursor: pointer;
+  border-radius: 50px;
+  outline: none;
+  box-shadow: none;
+  margin: auto;
+
+  @include for-desktop-up {
+    &:hover {
+      background: $darker-orange;
+    }
+
+    &:active {
+      transform: $button-down-press;
+    }
+  }
 }
