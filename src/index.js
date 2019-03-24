@@ -33,22 +33,38 @@ for(let input of inputs) {
   })
 }
 
-// When the translate button on index.html is clicked:
-document.querySelector('.button-translate').addEventListener('click', () => {
+// When #button-translate is clicked:
+document.querySelector('#button-translate').addEventListener('click', () => {
   const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
   const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chime of my train-stop.';
   let translatableText = document.getElementById('translatable-text');
   let translateBtnImg = document.getElementById('button-translate-img');
+  let animateBtn = document.getElementById('button-translate');
+  let animateText = translatableText;
 
+  //Trigger the .flip-in-hor-bottom and .fade-in animations;
+  if(!animateBtn.classList.contains('flip-in-hor-bottom')){
+    animateBtn.classList.add('flip-in-hor-bottom');
+    animateText.classList.add('fade-in');
+    // Remove .flip-in-hor-bottom and .fade-in after 0.601 seconds (animation duration is 0.6 seconds);
+    setTimeout(function(){
+      animateBtn.classList.remove('flip-in-hor-bottom');
+      animateText.classList.remove('fade-in');
+    }, 601);
+  } 
+
+  //If the text is Japanese, change it to English;
   if (translatableText.textContent === japanese) {
     translatableText.textContent = english;
-    translatableText.setAttribute('lang', 'en-US')
+    translatableText.setAttribute('lang', 'en-US');
     translateBtnImg.src = 'assets/images/icon-translate-japanese.svg';
-    translateBtnImg.alt = "Translate text to Japanese button"
+    translateBtnImg.alt = "Translate text to Japanese button";
+
+  //If the text is English, change it to Japanese;
   } else {
     translatableText.textContent = japanese;
     translatableText.setAttribute('lang', 'ja-jp');
     translateBtnImg.src = 'assets/images/icon-translate-english.svg';
-    translateBtnImg.alt = "Translate text to English button"
+    translateBtnImg.alt = "Translate text to English button";
   }
 });
