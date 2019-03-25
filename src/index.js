@@ -1,8 +1,11 @@
-import './sass/main.scss';
+import './sass/main.scss'; //custom sass styles
 import AOS from 'aos'; //animate on scroll JavaScript
 import 'aos/dist/aos.css'; //animate on scroll CSS styles
+import MoveTo from 'moveto'; //allows for smooth scrolling between content sections within the document
 
-//Animate On Scroll (AOS) Initialization
+
+
+//Initialize and configure the AOS (Animate on Scroll) library
 AOS.init({
   duration: 500,
   easing: 'ease-in-out',
@@ -12,12 +15,30 @@ AOS.init({
   offset: 100,
 });
 
+
+//Initialize and configure MoveTo.js smooth scrolling library
+document.addEventListener('DOMContentLoaded', function(){
+  const easeFunctions = {
+    easeInQuad: function (t, b, c, d) {
+      t /= d;
+      return c * t * t + b;
+    },
+  }
+  const moveTo = new MoveTo({
+    ease: 'easeInQuad'
+  }, easeFunctions);
+  const triggers = document.getElementsByClassName('trigger-scroll');
+  for (var i = 0; i < triggers.length; i++) {
+    moveTo.registerTrigger(triggers[i]);
+  }
+});
+
 /*
 The following form validation code was written by Dave Rupert
 https://daverupert.com/2017/11/happier-html5-forms/
 */
 
-//contact.html form validation:
+//.contact-form validation:
 const inputs = document.querySelectorAll('input, textarea');
 
 // Loop through inputs and textareas
