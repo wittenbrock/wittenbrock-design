@@ -162,9 +162,9 @@ $max-margin-podcast-titles: 0.75rem;
 $min-margin-podcast-date: 1.55rem;
 $max-margin-podcast-date: 4rem;
 
-/* Fluid margin-bottom dimensions for .contact */
-$min-margin-contact: 6rem;
-$max-margin-contact: 8rem;
+/* Fluid padding-top, padding-bottom, margin-bottom dimensions for .podcasts, .contact, .podcasts-section-header, and .contact-section-header */
+$min-padding-section: 6rem;
+$max-padding-section: 8rem;
 
 /* Fluid padding dimensions for .contact-form */
 $min-padding-contact-form: 2.25rem;

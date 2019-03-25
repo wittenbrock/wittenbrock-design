@@ -1,34 +1,39 @@
 .contact {
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-contact, $max-margin-contact);
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-width: 100vw;
-  border: 2px solid red;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
 
-  @include for-desktop-up {
+  @media screen and (min-width: 600px) {
+    @include fluid-property('padding-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+  }
+
+  @media screen and (min-width: 900px) {
     flex-direction: row;
     justify-content: center;
-    min-height: 60vh;
+    align-items: center;
   }
 }
 
-.contact-header {
+.contact-section-header {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section); /* This is the same dimension as .contact's top and bottom padding */
+
   flex-basis: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-height: rem(512px);
-  margin-bottom: rem(96px);
 
   @media screen and (min-width: 900px) {
     margin: 0;
   }
 
   @media screen and (min-width: 1600px) {
-    flex-basis: rem(800px);
+    flex-basis: rem(512px);
   }
 }
 
@@ -66,7 +71,7 @@
 
   @media screen and (min-width: 1600px) {
     background: none;
-    flex-basis: rem(800px);
+    flex-basis: rem(512px);
   }
 }
 
@@ -78,7 +83,6 @@
   display: flex;
   flex-direction: column;
   flex-basis: rem(512px);
-  height: 100%;
   background: $white;
 }
 

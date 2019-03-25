@@ -2,23 +2,11 @@
   @extend %basic-section-styles;
 }
 
-/* All of the relevant styles nested in .podcasts-part-one */
-
-.podcasts-part-one {
-  @include fluid-property('margin-left', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
-  @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
-  min-height: 100vh;
-}
-
 .podcasts-section-header {
-  padding-left: rem(16px);
-  padding-right: rem(16px);
-  margin: auto;
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section); /* This is the same dimension as .podcasts's top and bottom padding */
+
+  margin-left: rem(16px);
+  margin-right: rem(16px);
 }
 
 .section-title {
@@ -33,42 +21,18 @@
   }
 }
 
-.podcast-grid-one {
+/* All of the styles related to the podcast grid */
+.podcast-grid {
   @include fluid-property('gap', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
-
-  display: grid;
-  grid-template-columns: minmax(auto, rem(192px));
-  grid-template-rows: 1fr;
-
-  @media screen and (min-width: 460px) {
-    grid-template-columns: repeat(2, minmax(auto, rem(192px)));
-  }
-
-  @media screen and (min-width: 600px) {
-    grid-template-columns: repeat(3, minmax(auto, rem(256px)));
-  }
-}
-
-/* All of the relevant styles nested in .podcasts-part-two */
-.podcasts-part-two {
   @include fluid-property('margin-left', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
   @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
 
-  min-height: 100vh;
-  margin-bottom: rem(72px);
-}
-
-.podcast-grid-two {
-  @include fluid-property('gap', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
-
   display: grid;
   grid-template-columns: minmax(auto, rem(192px));
-  grid-template-rows: 1fr 1fr;
+  grid-template-areas: repeat(3, 1fr);
 
   @media screen and (min-width: 460px) {
     grid-template-columns: repeat(2, minmax(auto, rem(192px)));
-    grid-template-rows: 1fr 1fr;
   }
 
   @media screen and (min-width: 600px) {
@@ -92,7 +56,7 @@
   }
 }
 
-/* All of the related to the podcast overlays */
+/* All of the styles related to the podcast overlays */
 .podcast-overlay {
   display: flex;
   flex-direction: column;

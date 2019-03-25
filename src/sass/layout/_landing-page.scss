@@ -1,10 +1,13 @@
 /* Styles related to the Wittenbrock logo are located in sass/components/_wittenbrock-logo.scss */
 %basic-section-styles {
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+  @include fluid-property('padding-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-width: 100vw;
+  width: 100vw;
   min-height: 100vh;
   border: 2px solid red;
 }
