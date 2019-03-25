@@ -69,60 +69,6 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    new HtmlWebpackPlugin({
-      template: './src/recent-work.html',
-      filename: 'recent-work.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/contact.html',
-      filename: 'contact.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/message-sent.html',
-      filename: 'message-sent.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/nav-bar.html',
-      filename: 'nav-bar.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/splash-page.html',
-      filename: 'splash-page.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/homepage.html',
-      filename: 'homepage.html',
-      hash: true,
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
     new UglifyJsPlugin(),
     new CleanWebpackPlugin('dist', {} ),
     new WebappWebpackPlugin({

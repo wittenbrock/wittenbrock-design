@@ -1,44 +1,16 @@
 /*! Custom Styles */
 
 /* Colors */
-$background-color: hsl(210, 14%, 95%);
-$font-color: hsl(0, 0%, 27%);
-// $link-color: #3f689d;
-$active-color: 	hsl(165, 80%, 43%);
-// $hover-color: #4483d9;
-$hover-color: hsl(0, 0%, 0%);
-$dark-blue: hsla(212, 43%, 23%, 1);
-$light-grey:hsl(0, 0%, 40%);
-$black: hsl(0, 0%, 0%);
-$white: hsl(0, 0%, 100%);
-$opaque-white: hsla(0, 0%, 100%, 0.98);
-$wittenbrock-logo: hsl(214, 42%, 23%);
-
-/* new colors */
 $purple-black: hsl(233, 14%, 13%);
 $purple-black-transparent: hsla(233, 14%, 13%, 0.95);
 $orange: 	hsl(11, 70%, 60%);
 $darker-orange: hsl(11, 70%, 50%);
 $red: hsl(0, 100%, 50%);
-$green: hsl(120, 100%, 25%);
 $light-gray: hsl(0, 0%, 91%);
 $medium-gray:	hsl(210, 3%, 75%);
 $dark-gray:	hsl(0, 2%, 39%);
 $black: hsl(0, 0%, 0%);
 $white: hsl(0, 0%, 100%);
-
-/* Box Shadow */
-$logo-shadow: 0 0 5px 5px hsla(214, 43%, 43%, 0.35);
-$project-caption-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.16), 0 0 2px hsla(0, 0%, 0%, 0.08);
-$project-button-shadow: 0 0 2px hsla(0, 0%, 0%, 0.08), 0 2px 2px hsla(0, 0%, 0%, 0.16); //DELETE THIS
-$project-button-shadow-down: 0 0 2px hsla(0, 0%, 0%, 0.08), 0 2px 2px hsla(0, 0%, 0%, 0.16);
-$project-button-shadow-up: 0 0 4px hsla(0, 0%, 0%, 0.08), 0 4px 4px hsla(0, 0%, 0%, 0.16);
-$nav-bar-shadow: 0 1px 3px hsla(0, 0%, 0%, 0.08);
-
-/* Text-underline on hover for .link */
-$duration: 0.2s;
-$distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
 /* Button variables */
 $button-down-press: translateY(rem(2px)); //simulate pressing down on a button
