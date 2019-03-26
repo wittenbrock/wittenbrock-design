@@ -2,7 +2,8 @@
 
 /* Colors */
 $purple-black: hsl(233, 14%, 13%);
-$purple-black-transparent: hsla(233, 14%, 13%, 0.95);
+$project-overlay-transparent: hsla(233, 14%, 13%, 0.90);
+$podcast-overlay-transparent: hsla(233, 14%, 13%, 0.95);
 $orange: 	hsl(11, 70%, 60%);
 $darker-orange: hsl(11, 70%, 50%);
 $red: hsl(0, 100%, 50%);
@@ -93,6 +94,18 @@ $max-height-form-input: 3rem;
 $min-width-button-send: 6rem;
 $max-width-button-send: 8rem;
 
+/* Fluid width for .project-img-container  */
+$min-width-project-img: 17.5rem;
+$max-width-project-img: 73rem;
+
+/* Fluid height for .project-img-container */
+$min-height-project-img: 9.84375rem;
+$max-height-project-img: 41.0625rem;
+
+/* Fluid width for .project-logo */
+$min-width-project-logo: 12rem;
+$max-width-project-logo: 32rem;
+
 /*
  * ----------------------------------------
  * Fluid margin and padding variables
@@ -141,3 +154,7 @@ $max-padding-section: 8rem;
 /* Fluid padding dimensions for .contact-form */
 $min-padding-contact-form: 2.25rem;
 $max-padding-contact-form: 4rem;
+
+/* Fluid margin-bottom dimensions for .project-img-container  */
+$min-margin-project-img: 6rem;
+$max-margin-project-img: 2rem;

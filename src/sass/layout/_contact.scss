@@ -50,12 +50,29 @@
 
 .social-media-link {
   transition: all 0.15s ease-in-out;
+  width: rem(24px);
+  height: rem(24px);
 
   @include for-desktop-up {
     &:hover {
       transform: translateY(rem(-6px)) $scale;
     }
   }
+}
+
+.instagram {
+  background-image: url('/assets/images/social-instagram.svg');
+  background-repeat: no-repeat;
+}
+
+.github {
+  background-image: url('/assets/images/social-github.svg');
+  background-repeat: no-repeat;
+}
+
+.linkedin {
+  background-image: url('/assets/images/social-linkedin.svg');
+  background-repeat: no-repeat;
 }
 
 .form-container {

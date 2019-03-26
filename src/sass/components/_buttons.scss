@@ -13,39 +13,37 @@
   }
 }
 
-.btn-link {
-  display: block;
-  margin: auto;
-  width: rem(32px);
-  height: rem(32px);
-}
-
-/* margin: auto interrupts the flexbox properties of the play button in the podcast section */
-.btn-play-link {
-  @extend .btn-link;
-
-  margin: inherit;
-}
-
 .button-down-arrow {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
+
+  background-image: url('/assets/images/icon-down-arrow.svg');
+  background-repeat: no-repeat;
+  width: rem(32px);
+  height: rem(32px);
+  margin: auto;
+}
+
+.button-project {
+  background-image: url("/assets/images/icon-info.svg");
+  background-repeat: no-repeat;
+  width: rem(32px);
+  min-height: rem(32px);
 }
 
 .button-translate {
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
 
+  background-image: url('/assets/images/icon-translate-english.svg');
+  background-repeat: no-repeat;
   margin: auto;
-  background: $purple-black;
-  padding: 0;
-  border: none;
-  outline: none;
-  box-shadow: none;
 }
 
-.button-translate-img {
-  height: 100%;
-  width: 100%;
+.button-play {
+  background-image: url('/assets/images/icon-play.svg');
+  background-repeat: no-repeat;
+  width: rem(32px);
+  height: rem(32px);
 }
 
 .button-send {
@@ -60,8 +58,6 @@
   min-height: rem(32px);
   cursor: pointer;
   border-radius: 50px;
-  outline: none;
-  box-shadow: none;
   margin: auto;
 
   @include for-desktop-up {
