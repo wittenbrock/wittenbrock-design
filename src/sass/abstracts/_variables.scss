@@ -28,6 +28,9 @@ $hover: hover 0.2s ease-in-out; //ease transition
 /* General min and max viewport dimensions */
 $min-vw-320px: 20rem;
 $min-vw-768px: 48rem;
+$max-vw-416px: 26rem;
+$max-vw-600px: 37.5rem;
+$max-vw-800px: 50rem;
 $max-vw-1440px: 90rem;
 
 /* Fluid typography variables for <p> */
@@ -66,6 +69,25 @@ $max-font-size-form-input: 1rem;
 $min-font-size-button-send: 0.75rem;
 $max-font-size-button-send: 1rem;
 
+/* Fluid typography variables for .caption-title
+* This property uses the viewport variable $max-vw-600px;
+*/
+
+$min-font-size-caption-title: 1.5rem;
+$max-font-size-caption-title: 2rem;
+
+/* Fluid typography variables for .caption-subtitle
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-font-size-caption-subtitle: 1rem;
+$max-font-size-caption-subtitle: 1.25rem;
+
+/* Fluid typography variables for .caption-text
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-font-size-caption-text: 0.875rem;
+$max-font-size-caption-text: 1rem;
+
 /*
  * ----------------------------------------
  * Fluid width, height variables
@@ -79,8 +101,8 @@ $min-size-wittenbrock-logo: 8rem;
 $max-size-wittenbrock-logo: 12rem;
 
 /* Fluid width, height dimensions for .button-translate  */
-$min-size-btn-translate: 1.25rem;
-$max-size-btn-translate: 1.5rem;
+$min-size-btn-translate: 1.5rem;
+$max-size-btn-translate: 1.75rem;
 
 /* Fluid height dimensions for .translatable-text-container  */
 $min-height-translatable-text: 5.25rem;
@@ -90,7 +112,7 @@ $max-height-translatable-text: 5rem;
 $min-height-form-input: 2.25rem;
 $max-height-form-input: 3rem;
 
-/* Fluid width dimensions for .button-send */
+/* Fluid width dimensions for .button-caption-github, .button-caption-website, .button-send */
 $min-width-button-send: 6rem;
 $max-width-button-send: 8rem;
 
@@ -105,6 +127,12 @@ $max-height-project-img: 41.0625rem;
 /* Fluid width for .project-logo */
 $min-width-project-logo: 12rem;
 $max-width-project-logo: 32rem;
+
+/* Fluid width for .project-caption
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-width-project-caption: 18rem;
+$max-width-project-caption: 24rem;
 
 /*
  * ----------------------------------------
@@ -126,7 +154,7 @@ $min-button-down-arrow: 8rem;
 $max-button-down-arrow: 12rem;
 
 /* Fluid margin-right dimensions for .about-text
-* This property uses the viewport variable $min-vw-768px: 48rem;
+* This property uses the viewport variable $min-vw-768px;
 */
 $min-margin-about-text: 3rem;
 $max-margin-about-text: 29rem;
@@ -158,3 +186,9 @@ $max-padding-contact-form: 4rem;
 /* Fluid margin-bottom dimensions for .project-img-container  */
 $min-margin-project-img: 6rem;
 $max-margin-project-img: 2rem;
+
+/* Fluid padding dimensions for .project-caption
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-padding-project-caption: 1rem;
+$max-padding-project-caption: 3rem;

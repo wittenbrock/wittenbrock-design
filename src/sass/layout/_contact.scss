@@ -60,19 +60,27 @@
   }
 }
 
-.instagram {
-  background-image: url('/assets/images/social-instagram.svg');
+%social-icon {
   background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.instagram {
+  @extend %social-icon;
+
+  background-image: url('/assets/social-instagram.svg');
 }
 
 .github {
-  background-image: url('/assets/images/social-github.svg');
-  background-repeat: no-repeat;
+  @extend %social-icon;
+
+  background-image: url('/assets/social-github.svg');
 }
 
 .linkedin {
-  background-image: url('/assets/images/social-linkedin.svg');
-  background-repeat: no-repeat;
+  @extend %social-icon;
+
+  background-image: url('/assets/social-linkedin.svg');
 }
 
 .form-container {

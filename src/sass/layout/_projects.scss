@@ -23,9 +23,13 @@
 }
 
 .project-overlay {
+  /* The overlay has the exact same width and height as its container at all times
+   * height: 100%; has edge case errors where the overlay doesn't cover the image at times
+   */
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+
   position: absolute;
-  width: 100%;
-  height: 100%;
   background: $project-overlay-transparent;
   z-index: 1;
 }
@@ -53,4 +57,48 @@
   position: absolute;
   z-index: 2;
   height: auto;
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.project-caption {
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('padding-left', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-project-caption, $max-width-project-caption);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  color: $black;
+  max-height: rem(320px);
+  margin-right: rem(16px);
+  margin-left: rem(16px);
+}
+
+// .caption-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-title {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-title, $max-font-size-caption-title);
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-subtitle {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-subtitle, $max-font-size-caption-subtitle);
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-text {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-text, $max-font-size-caption-text);
+
+  line-height: 1.75;
+  margin-bottom: 0;
+  hyphens: auto;
 }

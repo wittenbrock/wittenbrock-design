@@ -3,7 +3,16 @@ import AOS from 'aos'; //animate on scroll JavaScript
 import 'aos/dist/aos.css'; //animate on scroll CSS styles
 import MoveTo from 'moveto'; //allows for smooth scrolling between content sections within the document
 
-
+// Import images used in css by background-img: url();
+import './assets/images/icons/icon-back-arrow.svg';
+import './assets/images/icons/icon-down-arrow.svg';
+import './assets/images/icons/icon-info.svg';
+import './assets/images/icons/icon-play.svg';
+import './assets/images/icons/icon-translate-english.svg';
+import './assets/images/icons/icon-translate-japanese.svg';
+import './assets/images/icons/social-media-icons/social-github.svg';
+import './assets/images/icons/social-media-icons/social-instagram.svg';
+import './assets/images/icons/social-media-icons/social-linkedin.svg';
 
 //Initialize and configure the AOS (Animate on Scroll) library:
 AOS.init({
@@ -78,14 +87,14 @@ document.querySelector('#button-translate').addEventListener('click', () => {
   if (translatableText.textContent === japanese) {
     translatableText.textContent = english;
     translatableText.setAttribute('lang', 'en-US');
-    translateBtn.style.backgroundImage = 'url(assets/images/icon-translate-japanese.svg)';
+    translateBtn.style.backgroundImage = 'url(/assets/icon-translate-japanese.svg)';
     btnText.textContent = 'Translate English text to Japanese';
 
   //If the text is English, change it to Japanese;
   } else {
     translatableText.textContent = japanese;
     translatableText.setAttribute('lang', 'ja-jp');
-    translateBtn.style.backgroundImage = 'url(assets/images/icon-translate-english.svg)';
+    translateBtn.style.backgroundImage = 'url(/assets/icon-translate-english.svg)';
     btnText.textContent = 'Translate Japanese text to English';
   }
 });
@@ -112,13 +121,13 @@ document.addEventListener('click', function (event) {
 
   //If the button's background-image is the info icon, change it to back-arrow icon;
   if (projectBtnText.textContent === 'Read project caption') {
-    projectBtn.style.backgroundImage = 'url(assets/images/icon-back-arrow.svg)';
+    projectBtn.style.backgroundImage = 'url(/assets/icon-back-arrow.svg)';
     projectBtnText.textContent = 'View project image';
   }
 
   //If the button's background-image is the back-arrow icon, change it to info icon;
   else {
-    projectBtn.style.backgroundImage = 'url(assets/images/icon-info.svg)';
+    projectBtn.style.backgroundImage = 'url(/assets/icon-info.svg)';
     projectBtnText.textContent = 'Read project caption';
   }
 }, false);

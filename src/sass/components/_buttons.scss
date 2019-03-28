@@ -13,40 +13,89 @@
   }
 }
 
-.button-down-arrow {
-  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
-
-  background-image: url('/assets/images/icon-down-arrow.svg');
+%button-image {
   background-repeat: no-repeat;
-  width: rem(32px);
-  height: rem(32px);
-  margin: auto;
+  background-size: cover;
 }
 
-.button-project {
-  background-image: url("/assets/images/icon-info.svg");
-  background-repeat: no-repeat;
+%button-size {
   width: rem(32px);
   min-height: rem(32px);
 }
 
+.button-down-arrow {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
+
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-down-arrow.svg');
+  margin: auto;
+}
+
+.button-project {
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-info.svg');
+}
+
+%rounded-button {
+  font-weight: 500;
+  min-height: rem(32px);
+  border-radius: 50px;
+  margin: auto;
+
+  @media screen and (min-width: 900px) {
+    &:active {
+      transform: $button-down-press;
+    }
+  }
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+%caption-button {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-button-send, $max-font-size-button-send);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-button-send, $max-width-button-send);
+}
+
+.button-caption-github {
+  @extend %rounded-button;
+  @extend %caption-button;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: $orange;
+  color: $white;
+
+  @include for-desktop-up {
+    &:hover {
+      background: $darker-orange;
+    }
+  }
+}
+
 .button-translate {
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
-  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
+  @include fluid-property('min-height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
 
-  background-image: url('/assets/images/icon-translate-english.svg');
-  background-repeat: no-repeat;
+  @extend %button-image;
+
+  background-image: url('/assets/icon-translate-english.svg');
   margin: auto;
 }
 
 .button-play {
-  background-image: url('/assets/images/icon-play.svg');
-  background-repeat: no-repeat;
-  width: rem(32px);
-  height: rem(32px);
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets//icon-play.svg');
 }
 
 .button-send {
+  @extend %rounded-button;
+
   @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-button-send, $max-font-size-button-send);
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-button-send, $max-width-button-send);
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
@@ -54,19 +103,11 @@
 
   background: $orange;
   color: $white;
-  font-weight: 500;
-  min-height: rem(32px);
   cursor: pointer;
-  border-radius: 50px;
-  margin: auto;
 
   @include for-desktop-up {
     &:hover {
       background: $darker-orange;
-    }
-
-    &:active {
-      transform: $button-down-press;
     }
   }
 }

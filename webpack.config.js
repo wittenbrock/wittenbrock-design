@@ -1,13 +1,12 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
 
-// const baseLoaders = ["css-loader", "postcss-loader", "sass-loader"];
-// const mode = process.env.NODE_ENV || 'production';
-const devMode = process.env.NODE_ENV !== 'production';
+const baseLoaders = ['css-loader', 'postcss-loader', 'sass-loader'];
+const mode = process.env.NODE_ENV || 'production';
 
 module.exports = {
   entry: {
@@ -25,34 +24,9 @@ module.exports = {
     rules: [{
         test: /\.s?css$/,
         use: [
-          devMode ? 'style-loader' : {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: '../',
-            }
-          },
-          {
-            // translates CSS into CommonJS
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            // Autoprefixer usw.
-            loader: 'postcss-loader',
-            options: {
-              ident: 'postcss',
-            },
-          },
-          {
-            // compiles Sass to CSS, using Node Sass by default
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          }
-        ],
+          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          ...baseLoaders
+        ]
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/,
@@ -60,9 +34,9 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'assets/images/'
+            outputPath: 'assets/',
           }
-        }]
+        }, ]
       },
       {
         test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
@@ -70,12 +44,12 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'assets/fonts/'
+            outputPath: 'fonts/'
           }
         }]
       },
       {
-        test: /\.html$$/,
+        test: /\.html$/,
         loader: 'html-srcsets-loader',
         options: {
           attrs: ['img:src', ':srcset'],
@@ -85,7 +59,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.[contenthash].css",
+      filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -96,13 +70,17 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    new UglifyJsPlugin(),
-    new CleanWebpackPlugin('dist', {}),
+    new UglifyJsPlugin({
+      cache: true,
+      parallel: true,
+      sourceMap: true
+    }),
+    new CleanWebpackPlugin(),
     new WebappWebpackPlugin({
       logo: './src/assets/images/favicon.png',
-      persistentCache: true,
-      inject: true,
-      title: 'Wittenbrock Design',
+      cache: true,
+      prefix: 'favicons',
+      inject: true
     }),
   ]
 };
