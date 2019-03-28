@@ -23,7 +23,7 @@
 }
 
 .project-overlay {
-  /* The overlay has the exact same width and height as its container at all times
+  /* The overlay has the exact same width and height as .project-img-container at all times
    * height: 100%; has edge case errors where the overlay doesn't cover the image at times
    */
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
@@ -72,17 +72,9 @@
   align-items: center;
   background: $white;
   color: $black;
-  max-height: rem(320px);
   margin-right: rem(16px);
   margin-left: rem(16px);
 }
-
-// .caption-container {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-// }
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 .caption-title {

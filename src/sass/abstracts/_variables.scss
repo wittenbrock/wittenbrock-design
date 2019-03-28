@@ -2,7 +2,7 @@
 
 /* Colors */
 $purple-black: hsl(233, 14%, 13%);
-$project-overlay-transparent: hsla(233, 14%, 13%, 0.90);
+$project-overlay-transparent: hsla(233, 14%, 13%, 0.9);
 $podcast-overlay-transparent: hsla(233, 14%, 13%, 0.95);
 $orange: 	hsl(11, 70%, 60%);
 $darker-orange: hsl(11, 70%, 50%);
@@ -192,3 +192,7 @@ $max-margin-project-img: 2rem;
 */
 $min-padding-project-caption: 1rem;
 $max-padding-project-caption: 3rem;
+
+/* Fluid margin-bottom dimensions for .button-caption-github  */
+$min-margin-button-github: 1.25rem;
+$max-margin-button-github: 2.25rem;

@@ -63,6 +63,9 @@
   @extend %rounded-button;
   @extend %caption-button;
 
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-github, $max-margin-button-github);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-600px, $min-margin-button-github, $max-margin-button-github);
+
   display: flex;
   align-items: center;
   justify-content: center;
