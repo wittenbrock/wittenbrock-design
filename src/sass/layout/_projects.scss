@@ -13,6 +13,19 @@
   height: 100vh;
 }
 
+.project-container {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project-container, $max-margin-project-container);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(32px);
+}
+
 .project-image {
   position: absolute;
   z-index: 0;
@@ -35,16 +48,7 @@
   z-index: 1;
 }
 
-.project-container {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .project-img-container {
-
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
 
@@ -75,8 +79,6 @@
   @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
   @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-project-caption, $max-width-project-caption);
 
-  position: absolute;
-  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -104,4 +106,13 @@
   line-height: 1.75;
   margin-bottom: 0;
   hyphens: auto;
+}
+
+.caption-button-container {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

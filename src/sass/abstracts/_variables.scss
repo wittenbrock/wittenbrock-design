@@ -63,9 +63,9 @@ $max-font-size-podcast-date: 0.75rem;
 $min-font-size-form-input: 0.875rem;
 $max-font-size-form-input: 1rem;
 
-/* Fluid typography variables for .button-send */
-$min-font-size-button-send: 0.75rem;
-$max-font-size-button-send: 1rem;
+/* Fluid typography variables for %rounded-button */
+$min-font-size-rounded-button: 0.75rem;
+$max-font-size-rounded-button: 1rem;
 
 /* Fluid typography variables for .caption-title
 * This property uses the viewport variable $max-vw-600px;
@@ -110,9 +110,9 @@ $max-height-translatable-text: 5rem;
 $min-height-form-input: 2.25rem;
 $max-height-form-input: 3rem;
 
-/* Fluid width dimensions for .button-caption-github, .button-caption-website, .button-send */
-$min-width-button-send: 6rem;
-$max-width-button-send: 8rem;
+/* Fluid width dimensions for %rounded-button */
+$min-width-rounded-button: 6rem;
+$max-width-rounded-button: 8rem;
 
 /* Fluid width for .project-img-container  */
 $min-width-project-img: 17.5rem;
@@ -181,9 +181,9 @@ $max-padding-section: 8rem;
 $min-padding-contact-form: 2.25rem;
 $max-padding-contact-form: 4rem;
 
-/* Fluid bottom dimensions for .button-project */
-$min-bottom-button-project: 6rem;
-$max-bottom-button-project: 2rem;
+/* Fluid margin-bottom dimensions for .project-container  */
+$min-margin-project-container: 6rem;
+$max-margin-project-container: 2rem;
 
 /* Fluid padding dimensions for .project-caption
 * This property uses the viewport variable $max-vw-600px;
@@ -191,6 +191,6 @@ $max-bottom-button-project: 2rem;
 $min-padding-project-caption: 1rem;
 $max-padding-project-caption: 3rem;
 
-/* Fluid margin-bottom dimensions for .button-caption-github  */
-$min-margin-button-github: 1.25rem;
-$max-margin-button-github: 2.25rem;
+/* Fluid margin-top and margin-bottom dimensions for .caption-button-container  */
+$min-margin-button-container: 1.25rem;
+$max-margin-button-container: 2.25rem;

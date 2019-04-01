@@ -21,6 +21,7 @@
 %button-size {
   width: rem(32px);
   min-height: rem(32px);
+  border-radius: 50%;
 }
 
 .button-down-arrow {
@@ -37,14 +38,13 @@
   @extend %button-image;
   @extend %button-size;
 
-  @include fluid-property('bottom', $min-vw-320px, $max-vw-1440px, $min-bottom-button-project, $max-bottom-button-project);
-
-  position: absolute;
-  z-index: 100;
   background-image: url('/assets/icon-info.svg');
 }
 
 %rounded-button {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-rounded-button, $max-font-size-rounded-button);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-rounded-button, $max-width-rounded-button);
+
   font-weight: 500;
   min-height: rem(32px);
   border-radius: 50px;
@@ -59,20 +59,33 @@
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 %caption-button {
-  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-button-send, $max-font-size-button-send);
-  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-button-send, $max-width-button-send);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* Uses $max-vw-600px instead of $max-vw-1440px */
 .button-caption-github {
   @extend %rounded-button;
   @extend %caption-button;
 
-  @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-github, $max-margin-button-github);
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-600px, $min-margin-button-github, $max-margin-button-github);
+  background: none;
+  color: $dark-gray;
+  border: 2px solid $dark-gray;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include for-desktop-up {
+    &:hover {
+      background: $dark-gray;
+      color: $white;
+    }
+  }
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.button-caption-website {
+  @extend %rounded-button;
+  @extend %caption-button;
+
   background: $orange;
   color: $white;
 
@@ -103,8 +116,6 @@
 .button-send {
   @extend %rounded-button;
 
-  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-button-send, $max-font-size-button-send);
-  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-button-send, $max-width-button-send);
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
 
