@@ -11,23 +11,10 @@
   width: 1px;
 }
 
-.margin-zero {
-  margin: 0;
+.not-displayed {
+  display: none !important;
 }
 
-.display-block {
-  //used in recent-work.html
-  display: block;
-
-  @media screen and (min-width: 675px) {
-    display: inline;
-  }
-}
-
-.display-none {
-  display: none;
-}
-
-.margin-right {
-  margin-right: rem(36px);
+.position-absolute {
+  position: absolute;
 }

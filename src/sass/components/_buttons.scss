@@ -37,6 +37,10 @@
   @extend %button-image;
   @extend %button-size;
 
+  @include fluid-property('bottom', $min-vw-320px, $max-vw-1440px, $min-bottom-button-project, $max-bottom-button-project);
+
+  position: absolute;
+  z-index: 100;
   background-image: url('/assets/icon-info.svg');
 }
 

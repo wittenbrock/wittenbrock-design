@@ -4,6 +4,7 @@
 }
 
 .project {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,19 +35,27 @@
   z-index: 1;
 }
 
+.project-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .project-img-container {
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project-img, $max-margin-project-img);
+
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
 
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   @include for-desktop-up {
     &:hover .project-image {
-      opacity: 100;
+      opacity: 1;
     }
   }
 }
@@ -66,6 +75,8 @@
   @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
   @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-project-caption, $max-width-project-caption);
 
+  position: absolute;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: center;

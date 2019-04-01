@@ -3,7 +3,7 @@ import AOS from 'aos'; //animate on scroll JavaScript
 import 'aos/dist/aos.css'; //animate on scroll CSS styles
 import MoveTo from 'moveto'; //allows for smooth scrolling between content sections within the document
 
-// Import images used in css by background-img: url();
+// Import images used by CSS for background-img: url();
 import './assets/images/icons/icon-back-arrow.svg';
 import './assets/images/icons/icon-down-arrow.svg';
 import './assets/images/icons/icon-info.svg';
@@ -14,7 +14,12 @@ import './assets/images/icons/social-media-icons/social-github.svg';
 import './assets/images/icons/social-media-icons/social-instagram.svg';
 import './assets/images/icons/social-media-icons/social-linkedin.svg';
 
-//Initialize and configure the AOS (Animate on Scroll) library:
+/* 
+* -----------------------------------------------------------------------------
+* Initialize and configure the AOS (Animate on Scroll) library:
+* -----------------------------------------------------------------------------
+*/
+
 AOS.init({
   duration: 500,
   easing: 'ease-in-out',
@@ -24,8 +29,12 @@ AOS.init({
   offset: 100,
 });
 
+/* 
+* -----------------------------------------------------------------------------
+* Initialize and configure MoveTo.js smooth scrolling library
+* -----------------------------------------------------------------------------
+*/
 
-//Initialize and configure MoveTo.js smooth scrolling library:
 document.addEventListener('DOMContentLoaded', function(){
   const easeFunctions = {
     easeInQuad: function (t, b, c, d) {
@@ -42,9 +51,13 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 });
 
-/*
-The following form validation code was written by Dave Rupert
-https://daverupert.com/2017/11/happier-html5-forms/
+/* 
+* -----------------------------------------------------------------------------
+* Contact Form Validation
+*
+* The following form validation code was written by Dave Rupert:
+* https://daverupert.com/2017/11/happier-html5-forms/
+* -----------------------------------------------------------------------------
 */
 
 //.contact-form validation:
@@ -63,6 +76,40 @@ for(let input of inputs) {
   })
 }
 
+/* 
+* -----------------------------------------------------------------------------
+* Helper Functions
+*
+* show(), hide(), toggleVisibility() are used by the translate button;
+* addThenRemoveClass() is used by the translate button and the project button;
+* -----------------------------------------------------------------------------
+*/
+
+// Show an element. Note: .not-displayed is marked !important in _helpers.scss;
+const show = elem => elem.classList.remove('not-displayed');
+
+// Hide an element;
+const hide = elem => elem.classList.add('not-displayed');
+
+// Toggle an element's visibility. If the element is not visible, show it. Otherwise, hide it;
+const toggleVisibility = elem => elem.classList.contains('not-displayed') ? show(elem) : hide(elem);
+
+// Add a CSS class to an HTML element, then remove it after a duration of time has taken place;
+// Accepted inputs are HTML element, string, and number;
+const addThenRemoveClass = (elem, cssClass, removalTime) => {
+  elem.classList.add(cssClass);
+
+  setTimeout(function(){
+    elem.classList.remove(cssClass);
+  }, removalTime);
+}
+
+/* 
+* -----------------------------------------------------------------------------
+* The Translate Button
+* -----------------------------------------------------------------------------
+*/
+
 // When #button-translate is clicked:
 document.querySelector('#button-translate').addEventListener('click', () => {
   const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
@@ -71,26 +118,21 @@ document.querySelector('#button-translate').addEventListener('click', () => {
   let translateBtn = document.getElementById('button-translate');
   let btnText = document.getElementById('button-translate-text')
 
-  //Trigger the .flip-in-hor-bottom and .fade-in animations;
+  // Animate the button with .flip-in-hor-bottom and the text with .fade-in,
+  // then remove them after 0.601s;
   if(!translateBtn.classList.contains('flip-in-hor-bottom')) {
-    translateBtn.classList.add('flip-in-hor-bottom');
-    translatableText.classList.add('fade-in');
-
-    // Remove .flip-in-hor-bottom and .fade-in after 0.601 seconds (animation duration is 0.6 seconds);
-    setTimeout(function(){
-      translateBtn.classList.remove('flip-in-hor-bottom');
-      translatableText.classList.remove('fade-in');
-    }, 601);
+    addThenRemoveClass(translateBtn, 'flip-in-hor-bottom', 601);
+    addThenRemoveClass(translatableText, 'fade-in', 601);
   } 
 
-  //If the text is Japanese, change it to English;
+  // If the text is Japanese, change it to English;
   if (translatableText.textContent === japanese) {
     translatableText.textContent = english;
     translatableText.setAttribute('lang', 'en-US');
     translateBtn.style.backgroundImage = 'url(/assets/icon-translate-japanese.svg)';
     btnText.textContent = 'Translate English text to Japanese';
 
-  //If the text is English, change it to Japanese;
+  // If the text is English, change it to Japanese;
   } else {
     translatableText.textContent = japanese;
     translatableText.setAttribute('lang', 'ja-jp');
@@ -99,33 +141,71 @@ document.querySelector('#button-translate').addEventListener('click', () => {
   }
 });
 
-// When a .button-project is clicked:
+/* 
+* -----------------------------------------------------------------------------
+* The Project Button
+* -----------------------------------------------------------------------------
+*/
+
+// When a DOM element is clicked;
 document.addEventListener('click', function (event) {
 
 	// If the clicked element doesn't have .button-project, immediately exit the function;
 	if (!event.target.matches('.button-project')) return;
 
-	//Store the .button-project that was clicked;
+	/* 
+  * Store the .project-button that was clicked,
+  * it's text, it's affiliated .project-img-container, and its .project-caption;
+  */
 	let projectBtn = event.target;
   let projectBtnText = projectBtn.childNodes[0];
+  let projectImg = projectBtn.parentNode.childNodes[1].childNodes[0];
+  let projectCaption = projectBtn.parentNode.childNodes[1].childNodes[1];
 
-  //Animate .button-project with .flip-in-hor-bottom;
-  if(!projectBtn.classList.contains('flip-in-hor-bottom')) {
-    projectBtn.classList.add('flip-in-hor-bottom');
+  // Hide the project image and show the project caption:
+  if(projectCaption.classList.contains('not-displayed')) {
+    // Animate the project image as it disappears;
+    addThenRemoveClass(projectImg, 'slide-out-left', 501);
 
-    // Remove .flip-in-hor-bottom after 0.601 seconds (animation duration is 0.6 seconds);
+    // Once the project image has finished animating:
     setTimeout(function(){
-      projectBtn.classList.remove('flip-in-hor-bottom');
-    }, 601);
+      // Hide the project image;
+      toggleVisibility(projectImg);
+      // Show the project caption;
+      toggleVisibility(projectCaption);
+      // Animate the project caption as it appears;
+      addThenRemoveClass(projectCaption, 'slide-in-right', 501);
+    }, 500);
   }
 
-  //If the button's background-image is the info icon, change it to back-arrow icon;
+  // Hide the project caption and show the project image:
+  else {
+    // Animate the project caption as it disappears;
+    addThenRemoveClass(projectCaption, 'slide-out-left', 501);
+
+    // Once the project caption has finished animating:
+    setTimeout(function(){
+      // Hide the project caption;
+      toggleVisibility(projectCaption);
+      // Show the project image;
+      toggleVisibility(projectImg);
+      // Animate the project image as it appears;
+      addThenRemoveClass(projectImg, 'slide-in-right', 501);
+    }, 500);
+  }
+
+  // Animate .button-project with .flip-in-hor-bottom;
+  if (!projectBtn.classList.contains('flip-in-hor-bottom')) {
+    addThenRemoveClass(projectBtn, 'flip-in-hor-bottom', 601);
+  }
+
+  // If the button's background-image is the info icon, change it to back-arrow icon;
   if (projectBtnText.textContent === 'Read project caption') {
     projectBtn.style.backgroundImage = 'url(/assets/icon-back-arrow.svg)';
     projectBtnText.textContent = 'View project image';
   }
 
-  //If the button's background-image is the back-arrow icon, change it to info icon;
+  // If the button's background-image is the back-arrow icon, change it to info icon;
   else {
     projectBtn.style.backgroundImage = 'url(/assets/icon-info.svg)';
     projectBtnText.textContent = 'Read project caption';

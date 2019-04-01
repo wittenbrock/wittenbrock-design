@@ -28,9 +28,7 @@ $hover: hover 0.2s ease-in-out; //ease transition
 /* General min and max viewport dimensions */
 $min-vw-320px: 20rem;
 $min-vw-768px: 48rem;
-$max-vw-416px: 26rem;
 $max-vw-600px: 37.5rem;
-$max-vw-800px: 50rem;
 $max-vw-1440px: 90rem;
 
 /* Fluid typography variables for <p> */
@@ -183,9 +181,9 @@ $max-padding-section: 8rem;
 $min-padding-contact-form: 2.25rem;
 $max-padding-contact-form: 4rem;
 
-/* Fluid margin-bottom dimensions for .project-img-container  */
-$min-margin-project-img: 6rem;
-$max-margin-project-img: 2rem;
+/* Fluid bottom dimensions for .button-project */
+$min-bottom-button-project: 6rem;
+$max-bottom-button-project: 2rem;
 
 /* Fluid padding dimensions for .project-caption
 * This property uses the viewport variable $max-vw-600px;
