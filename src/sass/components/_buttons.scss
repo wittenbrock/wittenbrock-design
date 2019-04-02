@@ -120,7 +120,7 @@
   @extend %button-image;
   @extend %button-size;
 
-  background-image: url('/assets//icon-play.svg');
+  background-image: url('/assets/icon-play.svg');
 }
 
 .button-send {
@@ -138,4 +138,11 @@
       background: $darker-orange;
     }
   }
+}
+
+.button-home {
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-home.svg');
 }

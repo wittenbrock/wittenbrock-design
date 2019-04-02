@@ -1,0 +1,16 @@
+.message-sent {
+  @extend %basic-section-styles;
+}
+
+.message-sent-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-subtitle {
+  @extend .subtitle;
+
+  margin-bottom: rem(64px);
+}

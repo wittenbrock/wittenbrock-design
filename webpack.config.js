@@ -1,7 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
 require("babel-register");
@@ -22,8 +22,7 @@ module.exports = {
     contentBase: './dist'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
@@ -64,6 +63,17 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: 'style.[contenthash].css',
@@ -77,10 +87,14 @@ module.exports = {
         collapseWhitespace: true
       }
     }),
-    new UglifyJsPlugin({
-      cache: true,
-      parallel: true,
-      sourceMap: true
+    new HtmlWebpackPlugin({
+      template: './src/message-sent.html',
+      filename: 'message-sent.html',
+      hash: true,
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true
+      }
     }),
     new CleanWebpackPlugin(),
     new WebappWebpackPlugin({
@@ -89,5 +103,5 @@ module.exports = {
       prefix: 'favicons',
       inject: true
     }),
-  ]
+  ],
 };

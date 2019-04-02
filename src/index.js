@@ -8,6 +8,7 @@ import './assets/images/icons/icon-back-arrow.svg';
 import './assets/images/icons/icon-down-arrow.svg';
 import './assets/images/icons/icon-info.svg';
 import './assets/images/icons/icon-play.svg';
+import './assets/images/icons/icon-home.svg';
 import './assets/images/icons/icon-translate-english.svg';
 import './assets/images/icons/icon-translate-japanese.svg';
 
