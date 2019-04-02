@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
+require("babel-register");
 
 const baseLoaders = ['css-loader', 'postcss-loader', 'sass-loader'];
 const mode = process.env.NODE_ENV || 'production';
@@ -21,7 +22,13 @@ module.exports = {
     contentBase: './dist'
   },
   module: {
-    rules: [{
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
+      {
         test: /\.s?css$/,
         use: [
           mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
