@@ -24,13 +24,23 @@
   border-radius: 50%;
 }
 
-.button-down-arrow {
+/* Located on the splash page */
+.button-down-arrow-one {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 
   @extend %button-image;
   @extend %button-size;
 
   background-image: url('/assets/icon-down-arrow.svg');
+  margin: auto;
+}
+
+/* Located on the introduction page */
+.button-down-arrow-two {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
+
+  @extend %button-size;
+
   margin: auto;
 }
 

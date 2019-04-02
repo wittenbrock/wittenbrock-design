@@ -29,11 +29,6 @@
 .project-image {
   position: absolute;
   z-index: 0;
-
-  @include for-desktop-up {
-    opacity: 0;
-    transition: opacity 1.3s ease;
-  }
 }
 
 .project-overlay {
@@ -56,12 +51,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @include for-desktop-up {
-    &:hover .project-image {
-      opacity: 1;
-    }
-  }
 }
 
 .project-logo {

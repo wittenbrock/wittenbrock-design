@@ -10,9 +10,6 @@ import './assets/images/icons/icon-info.svg';
 import './assets/images/icons/icon-play.svg';
 import './assets/images/icons/icon-translate-english.svg';
 import './assets/images/icons/icon-translate-japanese.svg';
-import './assets/images/icons/social-media-icons/social-github.svg';
-import './assets/images/icons/social-media-icons/social-instagram.svg';
-import './assets/images/icons/social-media-icons/social-linkedin.svg';
 
 /* 
 * -----------------------------------------------------------------------------
@@ -21,11 +18,8 @@ import './assets/images/icons/social-media-icons/social-linkedin.svg';
 */
 
 AOS.init({
-  duration: 500,
   easing: 'ease-in-out',
-  delay: 150,
   once: true,
-  anchorPlacement: 'bottom-bottom',
   offset: 100,
 });
 

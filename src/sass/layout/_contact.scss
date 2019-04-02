@@ -55,32 +55,9 @@
 
   @include for-desktop-up {
     &:hover {
-      transform: translateY(rem(-6px)) $scale;
+      animation: jello-horizontal 0.9s both;
     }
   }
-}
-
-%social-icon {
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.instagram {
-  @extend %social-icon;
-
-  background-image: url('/assets/social-instagram.svg');
-}
-
-.github {
-  @extend %social-icon;
-
-  background-image: url('/assets/social-github.svg');
-}
-
-.linkedin {
-  @extend %social-icon;
-
-  background-image: url('/assets/social-linkedin.svg');
 }
 
 .form-container {
