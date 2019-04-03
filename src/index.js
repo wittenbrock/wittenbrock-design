@@ -1,6 +1,6 @@
 import './sass/main.scss'; //custom sass styles
 import AOS from 'aos'; //animate on scroll JavaScript
-import 'aos/dist/aos.css'; //animate on scroll CSS styles
+// import 'aos/dist/aos.css'; //animate on scroll CSS styles
 import MoveTo from 'moveto'; //allows for smooth scrolling between content sections within the document
 
 // Import images used by CSS for background-img: url();

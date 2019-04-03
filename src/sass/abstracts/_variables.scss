@@ -2,7 +2,7 @@
 
 /* Colors */
 $purple-black: hsl(233, 14%, 13%);
-$project-overlay-transparent: hsla(233, 14%, 13%, 0.9);
+$project-overlay-transparent: hsla(233, 14%, 13%, 0.8);
 $podcast-overlay-transparent: hsla(233, 14%, 13%, 0.95);
 $orange: 	hsl(11, 70%, 60%);
 $darker-orange: hsl(11, 70%, 50%);
@@ -194,3 +194,7 @@ $max-padding-project-caption: 3rem;
 /* Fluid margin-top and margin-bottom dimensions for .caption-button-container  */
 $min-margin-button-container: 1.25rem;
 $max-margin-button-container: 2.25rem;
+
+/* Fluid margin-bottom dimensions for .project-bottom */
+$min-margin-project: 0.75rem;
+$max-margin-project: 3rem;

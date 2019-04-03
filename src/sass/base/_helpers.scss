@@ -1,6 +1,5 @@
 /* Hide element while making it readable for screen readers */
 .screen-reader-only {
-  //used on index.html, recent-work.html, contact.html, message-sent.html
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -11,6 +10,13 @@
   width: 1px;
 }
 
+/* Used to hide and show the project images and project captions
+* Must be marked important to override the class's display property when added
+*/
 .not-displayed {
   display: none !important;
+}
+
+.margin-zero {
+  margin: 0;
 }

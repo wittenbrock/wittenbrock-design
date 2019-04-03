@@ -2,6 +2,7 @@
 @import 'base/fonts';
 @import 'vendors/mini-reset';
 @import 'vendors/normalize';
+@import 'vendors/animate-on-scroll';
 
 /* Abstracts */
 @import 'abstracts/mixins';
@@ -9,7 +10,6 @@
 
 /* Base */
 @import 'base/base';
-@import 'base/helpers';
 
 /* Components */
 @import 'components/buttons';
@@ -23,3 +23,8 @@
 @import 'layout/podcasts';
 @import 'layout/contact';
 @import 'layout/message-sent';
+
+/* Base
+* Imported last so that helper classes have a higher specificity via the cascade
+*/
+@import 'base/helpers';

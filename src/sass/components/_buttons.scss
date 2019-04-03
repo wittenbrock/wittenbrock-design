@@ -110,8 +110,6 @@
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
   @include fluid-property('min-height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
 
-  @extend %button-image;
-
   background-image: url('/assets/icon-translate-english.svg');
   margin: auto;
 }
