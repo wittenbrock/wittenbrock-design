@@ -1,6 +1,5 @@
 import './sass/main.scss'; //custom sass styles
-import AOS from 'aos'; //animate on scroll JavaScript
-// import 'aos/dist/aos.css'; //animate on scroll CSS styles
+import AOS from 'aos'; //animate on scroll JavaScript library
 import MoveTo from 'moveto'; //allows for smooth scrolling between content sections within the document
 
 // Import images used by CSS for background-img: url();
@@ -12,11 +11,17 @@ import './assets/images/icons/icon-home.svg';
 import './assets/images/icons/icon-translate-english.svg';
 import './assets/images/icons/icon-translate-japanese.svg';
 
+//Import fonts used by @font-face;
+import './assets/fonts/leaguespartan-bold.eot';
+import './assets/fonts/leaguespartan-bold.ttf';
+import './assets/fonts/leaguespartan-bold.woff';
+import './assets/fonts/leaguespartan-bold.woff2';
+
 /* 
-* -----------------------------------------------------------------------------
-* Initialize and configure the AOS (Animate on Scroll) library:
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Initialize and configure the AOS (Animate on Scroll) library:
+ * -----------------------------------------------------------------------------
+ */
 
 AOS.init({
   easing: 'ease-in-out',
@@ -25,12 +30,12 @@ AOS.init({
 });
 
 /* 
-* -----------------------------------------------------------------------------
-* Initialize and configure MoveTo.js smooth scrolling library
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Initialize and configure MoveTo.js smooth scrolling library
+ * -----------------------------------------------------------------------------
+ */
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   const easeFunctions = {
     easeInQuad: function (t, b, c, d) {
       t /= d;
@@ -47,24 +52,24 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 /* 
-* -----------------------------------------------------------------------------
-* Contact Form Validation
-*
-* The following form validation code was written by Dave Rupert:
-* https://daverupert.com/2017/11/happier-html5-forms/
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Contact Form Validation
+ *
+ * The following form validation code was written by Dave Rupert:
+ * https://daverupert.com/2017/11/happier-html5-forms/
+ * -----------------------------------------------------------------------------
+ */
 
 //.contact-form validation:
 const inputs = document.querySelectorAll('input, textarea');
 
 // Loop through inputs and textareas;
-for(let input of inputs) {
+for (let input of inputs) {
   // Just before submit, the invalid event will fire, add .error class;
   input.addEventListener('invalid', (event) => {
-    input.classList.add('error');    
+    input.classList.add('error');
   }, false);
-  
+
   // Immediately add the .error class if input field is invalid;
   input.addEventListener('blur', (event) => {
     input.checkValidity();
@@ -72,13 +77,13 @@ for(let input of inputs) {
 }
 
 /* 
-* -----------------------------------------------------------------------------
-* Helper Functions
-*
-* show(), hide(), toggleVisibility() are used by the translate button;
-* addThenRemoveClass() is used by the translate button and the project button;
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * Helper Functions
+ *
+ * show(), hide(), toggleVisibility() are used by the translate button;
+ * addThenRemoveClass() is used by the translate button and the project button;
+ * -----------------------------------------------------------------------------
+ */
 
 // Show an element. Note: .not-displayed is marked !important in _helpers.scss;
 const show = elem => elem.classList.remove('not-displayed');
@@ -94,16 +99,16 @@ const toggleVisibility = elem => elem.classList.contains('not-displayed') ? show
 const addThenRemoveClass = (elem, cssClass, removalTime) => {
   elem.classList.add(cssClass);
 
-  setTimeout(function(){
+  setTimeout(function () {
     elem.classList.remove(cssClass);
   }, removalTime);
 }
 
 /* 
-* -----------------------------------------------------------------------------
-* The Translate Button
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * The Translate Button
+ * -----------------------------------------------------------------------------
+ */
 
 // When #button-translate is clicked:
 document.querySelector('#button-translate').addEventListener('click', () => {
@@ -115,10 +120,10 @@ document.querySelector('#button-translate').addEventListener('click', () => {
 
   // Animate the button with .flip-in-hor-bottom and the text with .fade-in,
   // then remove them after 0.601s;
-  if(!translateBtn.classList.contains('flip-in-hor-bottom')) {
+  if (!translateBtn.classList.contains('flip-in-hor-bottom')) {
     addThenRemoveClass(translateBtn, 'flip-in-hor-bottom', 601);
     addThenRemoveClass(translatableText, 'fade-in', 601);
-  } 
+  }
 
   // If the text is Japanese, change it to English;
   if (translatableText.textContent === japanese) {
@@ -127,7 +132,7 @@ document.querySelector('#button-translate').addEventListener('click', () => {
     translateBtn.style.backgroundImage = 'url(/assets/icon-translate-japanese.svg)';
     btnText.textContent = 'Translate English text to Japanese';
 
-  // If the text is English, change it to Japanese;
+    // If the text is English, change it to Japanese;
   } else {
     translatableText.textContent = japanese;
     translatableText.setAttribute('lang', 'ja-jp');
@@ -137,33 +142,33 @@ document.querySelector('#button-translate').addEventListener('click', () => {
 });
 
 /* 
-* -----------------------------------------------------------------------------
-* The Project Button
-* -----------------------------------------------------------------------------
-*/
+ * -----------------------------------------------------------------------------
+ * The Project Button
+ * -----------------------------------------------------------------------------
+ */
 
 // When a DOM element is clicked;
 document.addEventListener('click', function (event) {
 
-	// If the clicked element doesn't have .button-project, immediately exit the function;
-	if (!event.target.matches('.button-project')) return;
+  // If the clicked element doesn't have .button-project, immediately exit the function;
+  if (!event.target.matches('.button-project')) return;
 
-	/* 
-  * Store the .project-button that was clicked,
-  * it's text, it's affiliated .project-img-container, and its .project-caption;
-  */
-	let projectBtn = event.target;
+  /* 
+   * Store the .project-button that was clicked,
+   * it's text, it's affiliated .project-img-container, and its .project-caption;
+   */
+  let projectBtn = event.target;
   let projectBtnText = projectBtn.childNodes[0];
   let projectImg = projectBtn.parentNode.childNodes[1].childNodes[0];
   let projectCaption = projectBtn.parentNode.childNodes[1].childNodes[1];
 
   // Hide the project image and show the project caption:
-  if(projectCaption.classList.contains('not-displayed')) {
+  if (projectCaption.classList.contains('not-displayed')) {
     // Animate the project image as it disappears;
     addThenRemoveClass(projectImg, 'slide-out-left', 501);
 
     // Once the project image has finished animating:
-    setTimeout(function(){
+    setTimeout(function () {
       // Hide the project image;
       toggleVisibility(projectImg);
       // Show the project caption;
@@ -179,7 +184,7 @@ document.addEventListener('click', function (event) {
     addThenRemoveClass(projectCaption, 'slide-out-left', 501);
 
     // Once the project caption has finished animating:
-    setTimeout(function(){
+    setTimeout(function () {
       // Hide the project caption;
       toggleVisibility(projectCaption);
       // Show the project image;
@@ -206,5 +211,3 @@ document.addEventListener('click', function (event) {
     projectBtnText.textContent = 'Read project caption';
   }
 }, false);
-
-

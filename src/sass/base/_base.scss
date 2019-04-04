@@ -2,7 +2,7 @@ html {
   box-sizing: border-box;
   font-size: 100%; //1rem = 16px
   background-color: $purple-black;
-  min-width: rem(320px); //Are these doing anything? TO DO: check this
+  min-width: rem(320px);
   max-width: rem(1440px);
   height: 100%;
 }
@@ -44,6 +44,8 @@ h4,
 h5,
 h6 {
   font-family: $header-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
   text-align: center;
 }

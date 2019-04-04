@@ -3,7 +3,8 @@
 }
 
 .podcasts-section-header {
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section); /* This is the same dimension as .podcasts's top and bottom padding */
+  /* This is the same dimension as .podcasts's top and bottom padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
 
   margin-left: rem(16px);
   margin-right: rem(16px);

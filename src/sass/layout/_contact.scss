@@ -19,7 +19,8 @@
 }
 
 .contact-section-header {
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section); /* This is the same dimension as .contact's top and bottom padding */
+  /* This is the same dimension as .contact's top and bottom padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
 
   flex-basis: 50%;
   display: flex;
@@ -39,7 +40,9 @@
 
 .contact-subtitle {
   @extend .subtitle;
-  @extend .section-title; /* Extend the margin: bottom properties of .section-title, so that they're equal */
+
+  /* Extend the margin: bottom properties of .section-title, so that they're equal */
+  @extend .section-title;
 }
 
 .social-media-container {

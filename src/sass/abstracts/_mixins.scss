@@ -1,10 +1,14 @@
 /* Media queries: mobile first design */
 @mixin for-tablet-up {
-  @media only screen and (min-width: 600px) { @content; }
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
 }
 
 @mixin for-desktop-up {
-  @media only screen and (min-width: 900px) { @content; }
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
 }
 
 /* Fluid Mixin
@@ -34,11 +38,12 @@
   $a3: unit($min-size);
   $a4: unit($max-size);
 
-  @if $a1 == $a2 and $a1 == $a3 and $a1 == $a4 {
+  @if $a1==$a2 and $a1==$a3 and $a1==$a4 {
     & {
       #{$property}: $min-size;
 
-      @media screen and (min-width: rem-to-px($min-vw)) { //all media queries are in px
+      @media screen and (min-width: rem-to-px($min-vw)) {
+        //all media queries are in px
         #{$property}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
       }
 

@@ -124,8 +124,9 @@
 .button-send {
   @extend %rounded-button;
 
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
-  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form); /* same dimensions as .contact-form's padding */
+  /* same dimensions as .contact-form's padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
 
   background: $orange;
   color: $white;

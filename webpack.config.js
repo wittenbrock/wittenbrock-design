@@ -45,7 +45,7 @@ module.exports = {
         }, ]
       },
       {
-        test: /\.(woff|woff2)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(ttf|eot|woff|woff2)$/,
         use: [{
           loader: 'file-loader',
           options: {
