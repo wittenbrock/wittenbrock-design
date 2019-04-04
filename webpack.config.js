@@ -1,12 +1,18 @@
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const WebappWebpackPlugin = require('webapp-webpack-plugin');
+require("babel-register");
+
+const baseLoaders = ['css-loader', 'postcss-loader', 'sass-loader'];
+const mode = process.env.NODE_ENV || 'production';
 
 module.exports = {
-  entry: { main: './src/index.js', },
+  entry: {
+    main: './src/index.js',
+  },
   output: {
     filename: '[name].[chunkhash].js',
     path: path.resolve(__dirname, 'dist')
@@ -16,15 +22,16 @@ module.exports = {
     contentBase: './dist'
   },
   module: {
-    rules: [
+    rules: [{
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: ['babel-loader'],
+      },
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
-          "style-loader",
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
+          mode === 'development' ? 'style-loader' : MiniCssExtractPlugin.loader,
+          ...baseLoaders
         ]
       },
       {
@@ -33,7 +40,17 @@ module.exports = {
           loader: 'file-loader',
           options: {
             name: '[name].[ext]',
-            outputPath: 'assets/images/'
+            outputPath: 'assets/',
+          }
+        }, ]
+      },
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
           }
         }]
       },
@@ -46,31 +63,25 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "style.[contenthash].css",
+      filename: 'style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
-      inject: 'body',
       template: './src/index.html',
       filename: 'index.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/recent-work.html',
-      filename: 'recent-work.html',
-      minify: {
-        removeComments: true,
-        collapseWhitespace: true
-      }
-    }),
-    new HtmlWebpackPlugin({
-      inject: 'body',
-      template: './src/contact.html',
-      filename: 'contact.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
@@ -79,18 +90,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/message-sent.html',
       filename: 'message-sent.html',
+      hash: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true
       }
     }),
-    new UglifyJsPlugin(),
-    new CleanWebpackPlugin('dist', {} ),
-    new FaviconsWebpackPlugin({
+    new CleanWebpackPlugin(),
+    new WebappWebpackPlugin({
       logo: './src/assets/images/favicon.png',
-      persistentCache: true,
-      inject: true,
-      title: 'Wittenbrock Design',
+      cache: true,
+      prefix: 'favicons',
+      inject: true
     }),
-  ]
+  ],
 };

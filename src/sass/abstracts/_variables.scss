@@ -1,25 +1,200 @@
+/*! Custom Styles */
+
 /* Colors */
-$background-color: #EFF1F3;
-$font-color: #454545;
-$link-color: #3F689D;
-$active-color: #16C598;
-$hover-color: #4483d9;
-$dark-blue: rgba(33,56,83, 1);
-$white: white;
-$light-grey:rgb(102, 102, 102);
+$purple-black: hsl(233, 14%, 13%);
+$project-overlay-transparent: hsla(233, 14%, 13%, 0.8);
+$podcast-overlay-transparent: hsla(233, 14%, 13%, 0.95);
+$orange: hsl(11, 70%, 60%);
+$darker-orange: hsl(11, 70%, 50%);
+$red: hsl(0, 100%, 50%);
+$light-gray: hsl(0, 0%, 91%);
+$medium-gray: hsl(210, 3%, 75%);
+$dark-gray: hsl(0, 2%, 39%);
+$black: hsl(0, 0%, 0%);
+$white: hsl(0, 0%, 100%);
 
-/* Box Shadow */
-$logo-shadow: 0px 0px 5px 5px rgba(63,104,157,0.35);
-$project-caption-shadow: 0 2px 4px rgba(0,0,0,.16),0 0 2px rgba(0,0,0,.08);
-$project-button-shadow: 0 0 2px rgba(0,0,0,.08), 0 2px 2px rgba(0,0,0,.16);
+/* Button variables */
+$button-down-press: translateY(rem(2px)); //simulate pressing down on a button
+$scale: scale(1.1); //make the button larger during hover state
+$hover: hover 0.2s ease-in-out; //ease transition
 
-/* Color Gradients */
-$overlay-gradient: linear-gradient(0deg,rgba(89,130,255,0) 0,#5982ff 100%);
+/*
+ * ----------------------------------------
+ * Fluid typography variables
+ * The following variables are used for the mixin fluid-property('font-size' ...)
+ * ----------------------------------------
+*/
 
-/* Text-underline on hover*/
-$duration: .2s;
-$distance: 8px;
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
+/* General min and max viewport dimensions */
+$min-vw-320px: 20rem;
+$min-vw-768px: 48rem;
+$max-vw-600px: 37.5rem;
+$max-vw-1440px: 90rem;
 
-/* Simulate button down press */
-$button-down-press: translateY(2px);
+/* Fluid typography variables for <p> */
+$min-font-size-p: 0.875rem;
+$max-font-size-p: 1.125rem;
+
+/* Fluid typography variables for <h2> */
+$min-font-size-h2: 1.75rem;
+$max-font-size-h2: 3rem;
+
+/* Fluid typography variables for .subtitle */
+$min-font-size-subtitle: 1.125rem;
+$max-font-size-subtitle: 1.5rem;
+
+/* Fluid typography variables for .intro-second-subtitle */
+$min-font-size-second-subtitle: 1.125rem;
+$max-font-size-second-subtitle: 1.25rem;
+
+/* Fluid typography variables for .podcast-episode-num */
+$min-font-size-podcast-episode: 0.75rem;
+$max-font-size-podcast-episode: 0.875rem;
+
+/* Fluid typography variables for .podcast-title */
+$min-font-size-podcast-title: 0.875rem;
+$max-font-size-podcast-title: 1rem;
+
+/* Fluid typography variables for .podcast-date */
+$min-font-size-podcast-date: 0.625rem;
+$max-font-size-podcast-date: 0.75rem;
+
+/* Fluid typography variables for .form-input, form-textarea, and ::placeholder text */
+$min-font-size-form-input: 0.875rem;
+$max-font-size-form-input: 1rem;
+
+/* Fluid typography variables for %rounded-button */
+$min-font-size-rounded-button: 0.75rem;
+$max-font-size-rounded-button: 1rem;
+
+/* Fluid typography variables for .caption-title
+* This property uses the viewport variable $max-vw-600px;
+*/
+
+$min-font-size-caption-title: 1.5rem;
+$max-font-size-caption-title: 2rem;
+
+/* Fluid typography variables for .caption-subtitle
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-font-size-caption-subtitle: 1rem;
+$max-font-size-caption-subtitle: 1.25rem;
+
+/* Fluid typography variables for .caption-text
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-font-size-caption-text: 0.875rem;
+$max-font-size-caption-text: 1rem;
+
+/*
+ * ----------------------------------------
+ * Fluid width, height variables
+ * The following variables are used for the mixin fluid-property('width' ...)
+ * and the mixin fluid-property('height' ...)
+ * ----------------------------------------
+*/
+
+/* Fluid width, height dimensions for .wittenbrock-logo-container */
+$min-size-wittenbrock-logo: 8rem;
+$max-size-wittenbrock-logo: 12rem;
+
+/* Fluid width, height dimensions for .button-translate  */
+$min-size-btn-translate: 1.5rem;
+$max-size-btn-translate: 1.75rem;
+
+/* Fluid height dimensions for .translatable-text-container  */
+$min-height-translatable-text: 5.25rem;
+$max-height-translatable-text: 5rem;
+
+/* Fluid height dimensions for .form-input */
+$min-height-form-input: 2.25rem;
+$max-height-form-input: 3rem;
+
+/* Fluid width dimensions for %rounded-button */
+$min-width-rounded-button: 6rem;
+$max-width-rounded-button: 8rem;
+
+/* Fluid width for .project-img-container  */
+$min-width-project-img: 17.5rem;
+$max-width-project-img: 73rem;
+
+/* Fluid height for .project-img-container */
+$min-height-project-img: 9.84375rem;
+$max-height-project-img: 41.0625rem;
+
+/* Fluid width for .project-logo */
+$min-width-project-logo: 12rem;
+$max-width-project-logo: 32rem;
+
+/* Fluid width for .project-caption
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-width-project-caption: 18rem;
+$max-width-project-caption: 24rem;
+
+/*
+ * ----------------------------------------
+ * Fluid margin and padding variables
+ * The following variables are used for the mixin fluid-property('margin' ...)
+ * ----------------------------------------
+*/
+
+/* Fluid margin-bottom dimensions for <p> */
+$min-margin-p: 0.75rem;
+$max-margin-p: 1.25rem;
+
+/* Fluid margin-bottom dimensions for .intro-title */
+$min-intro-title: 1rem;
+$max-intro-title: 3rem;
+
+/* Fluid margin-top dimensions for .button-down-arrow */
+$min-button-down-arrow: 8rem;
+$max-button-down-arrow: 12rem;
+
+/* Fluid margin-right dimensions for .about-text
+* This property uses the viewport variable $min-vw-768px;
+*/
+$min-margin-about-text: 3rem;
+$max-margin-about-text: 29rem;
+
+/* Fluid margin-bottom dimensions for .section-title */
+$min-margin-section-title: 1rem;
+$max-margin-section-title: 1.5rem;
+
+/* Fluid margin-left, margin-right and gap dimensions for .podcast-grid-one and two */
+$min-gap-podcast-grid: 1.125rem;
+$max-gap-podcast-grid: 2.25rem;
+
+/* Fluid margin-bottom dimensions for .podcast-episode-num and .podcast-title */
+$min-margin-podcast-titles: 0.5rem;
+$max-margin-podcast-titles: 0.75rem;
+
+/* Fluid margin-bottom dimensions for .podcast-date */
+$min-margin-podcast-date: 1.55rem;
+$max-margin-podcast-date: 4rem;
+
+/* Fluid padding-top, padding-bottom, margin-bottom dimensions for .podcasts, .contact, .podcasts-section-header, and .contact-section-header */
+$min-padding-section: 6rem;
+$max-padding-section: 8rem;
+
+/* Fluid padding dimensions for .contact-form */
+$min-padding-contact-form: 2.25rem;
+$max-padding-contact-form: 4rem;
+
+/* Fluid margin-bottom dimensions for .project-container  */
+$min-margin-project-container: 6rem;
+$max-margin-project-container: 2rem;
+
+/* Fluid padding dimensions for .project-caption
+* This property uses the viewport variable $max-vw-600px;
+*/
+$min-padding-project-caption: 1rem;
+$max-padding-project-caption: 3rem;
+
+/* Fluid margin-top and margin-bottom dimensions for .caption-button-container  */
+$min-margin-button-container: 1.25rem;
+$max-margin-button-container: 2.25rem;
+
+/* Fluid margin-bottom dimensions for .project-bottom */
+$min-margin-project: 0.75rem;
+$max-margin-project: 3rem;

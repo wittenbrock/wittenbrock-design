@@ -1,0 +1,17 @@
+/* When the send button on the form is clicked, the user is taken to a "message sent successfully" page */
+.message-sent {
+  @extend %basic-section-styles;
+}
+
+.message-sent-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-subtitle {
+  @extend .subtitle;
+
+  margin-bottom: rem(64px);
+}

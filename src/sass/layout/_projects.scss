@@ -1,0 +1,109 @@
+/* %basic-section-styles can be found in sass/layout/_landing-page.scss */
+.projects {
+  @extend %basic-section-styles;
+}
+
+.project {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project, $max-margin-project);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.project-container {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project-container, $max-margin-project-container);
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(32px);
+}
+
+.project-image {
+  position: absolute;
+  z-index: 0;
+}
+
+.project-overlay {
+  /* The overlay has the exact same width and height as .project-img-container at all times
+   * height: 100%; has edge case errors where the overlay doesn't cover the image at times
+   */
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+
+  position: absolute;
+  background: $project-overlay-transparent;
+  z-index: 1;
+}
+
+.project-img-container {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-logo {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-logo, $max-width-project-logo);
+
+  position: absolute;
+  z-index: 2;
+  height: auto;
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.project-caption {
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('padding-left', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-project-caption, $max-width-project-caption);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $white;
+  color: $black;
+  margin-right: rem(16px);
+  margin-left: rem(16px);
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-title {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-title, $max-font-size-caption-title);
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-subtitle {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-subtitle, $max-font-size-caption-subtitle);
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.caption-text {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-text, $max-font-size-caption-text);
+
+  line-height: 1.75;
+  margin-bottom: 0;
+  hyphens: auto;
+}
+
+.caption-button-container {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
+
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}

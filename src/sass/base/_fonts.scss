@@ -1,3 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,500&subset=japanese');
+/* Noto Sans JP 400 and 500 */
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500&subset=japanese');
 
-$font-stack: 'Noto Sans JP', Helvetica, sans-serif;
+/* league-spartan-bold */
+@font-face {
+  font-family: 'League Spartan';
+  font-style: normal;
+  font-weight: 700;
+  src:
+    local('League Spartan Bold'),
+    local('LeagueSpartan-Bold'),
+    url('/fonts/leaguespartan-bold.woff2') format('woff2'),
+    url('/fonts/leaguespartan-bold.woff') format('woff');
+}
+
+$header-font: 'League Spartan', sans-serif;
+$body-font: 'Noto Sans JP', sans-serif;

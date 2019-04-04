@@ -1,0 +1,70 @@
+/* %basic-section-styles can be found in sass/layout/_landing-page.scss
+* For any styles related to the translate button, please see sass/components/_buttons.scss
+*/
+
+.about {
+  @extend %basic-section-styles;
+
+  align-content: stretch;
+
+  @include for-tablet-up {
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: 1440px) {
+    display: grid;
+    grid-template-columns: rem(464px) rem(512px) rem(464px);
+    grid-template-rows: 1fr;
+    justify-content: center;
+  }
+}
+
+.about-title {
+  margin-bottom: rem(24px);
+
+  @include for-tablet-up {
+    margin-left: rem(48px);
+    margin-right: rem(48px);
+    margin-bottom: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 0;
+    margin: auto;
+  }
+}
+
+.about-text {
+  max-width: rem(400px);
+  margin-left: rem(16px);
+  margin-right: rem(16px);
+
+  @include for-tablet-up {
+    max-width: rem(512px);
+    margin-left: 0;
+    margin-right: rem(48px);
+  }
+
+  @media screen and (min-width: 768px) {
+    @include fluid-property('margin-right', $min-vw-768px, $max-vw-1440px, $min-margin-about-text, $max-margin-about-text);
+  }
+
+  @media screen and (min-width: 1439.9px) {
+    margin: initial;
+  }
+}
+
+.translatable-text-container {
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-translatable-text, $max-height-translatable-text);
+
+  position: relative;
+}
+
+.translatable-text {
+  position: absolute;
+  max-width: rem(400px);
+
+  @include for-tablet-up {
+    max-width: rem(512px);
+  }
+}

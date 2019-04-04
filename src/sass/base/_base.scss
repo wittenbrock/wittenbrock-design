@@ -1,8 +1,10 @@
 html {
   box-sizing: border-box;
-  font-size: 62.5%; /* 1rem = 10px */
-  background-color: $white;
-  min-width: 307px;
+  font-size: 100%; //1rem = 16px
+  background-color: $purple-black;
+  min-width: rem(320px);
+  max-width: rem(1440px);
+  height: 100%;
 }
 
 *,
@@ -12,53 +14,66 @@ html {
 }
 
 body {
-  font-family: $font-stack;
-  color: $font-color;
-  font-weight: 300;
-  line-height: 1.5;
+  font-family: $body-font;
+  color: $white;
+  font-weight: 400;
 }
 
-// Remove text underline.
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   text-decoration: none;
 }
 
 p {
-  font-size: 1.7rem; //17px
-  
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-p, $max-font-size-p);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-p, $max-margin-p);
 
-  @include for-tablet-up {
-    font-size: 1.8rem; 
-  }
+  text-align: justify;
+  line-height: 1.5;
 }
 
-h1, h2, h3, h4,  h5, h6,
-p,
-header {
-  margin-bottom: 1.44rem; //16px
-  
-
-  @include for-tablet-up {
-    margin-bottom: 1.6rem;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $header-font;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  text-align: center;
 }
 
-abbr[title] {
-  border-bottom: none;
-  cursor: inherit;
-  text-decoration: none;
+h2 {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-h2, $max-font-size-h2);
 }
 
 //Make form elements stack on top of each other in a column
+//These elements are used in contact.html
 textarea,
 input,
 button,
 label {
   display: block;
-  font-weight: 300;
-  font-size: 1.5rem; //6% reduction in size
+  border: none;
+  outline: none;
+}
 
-  @include for-tablet-up {
-    font-size: 1.6rem; //18px
-  }
+::placeholder {
+  color: $dark-gray;
+  opacity: 1;
+}
+
+button {
+  background: $purple-black;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }

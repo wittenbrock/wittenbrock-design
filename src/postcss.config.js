@@ -4,6 +4,6 @@ module.exports = {
     require('cssnano')({
       preset: 'default',
     }),
-    require("css-mqpacker"),
+    require('postcss-rem')
   ],
 };

@@ -1,0 +1,101 @@
+.podcasts {
+  @extend %basic-section-styles;
+}
+
+.podcasts-section-header {
+  /* This is the same dimension as .podcasts's top and bottom padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+
+  margin-left: rem(16px);
+  margin-right: rem(16px);
+}
+
+.section-title {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-section-title, $max-margin-section-title);
+}
+
+.podcast-subtitle-break-point {
+  display: inline;
+
+  @media screen and (min-width: 500px) {
+    display: block;
+  }
+}
+
+/* All of the styles related to the podcast grid */
+.podcast-grid {
+  @include fluid-property('gap', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+  @include fluid-property('margin-left', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+  @include fluid-property('margin-right', $min-vw-320px, $max-vw-1440px, $min-gap-podcast-grid, $max-gap-podcast-grid);
+
+  display: grid;
+  grid-template-columns: minmax(auto, rem(192px));
+  grid-template-areas: repeat(3, 1fr);
+
+  @media screen and (min-width: 460px) {
+    grid-template-columns: repeat(2, minmax(auto, rem(192px)));
+  }
+
+  @media screen and (min-width: 600px) {
+    grid-template-columns: repeat(3, minmax(auto, rem(256px)));
+  }
+}
+
+.flex-in-460px {
+  display: none;
+
+  @media screen and (min-width: 460px) {
+    display: block;
+  }
+}
+
+.flex-in-600px {
+  display: none;
+
+  @include for-tablet-up {
+    display: block;
+  }
+}
+
+/* All of the styles related to the podcast overlays */
+.podcast-overlay {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  background: $podcast-overlay-transparent;
+}
+
+.podcast-item {
+  position: relative;
+
+  &:hover .podcast-overlay {
+    opacity: 1;
+  }
+}
+
+.podcast-episode-num {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-episode, $max-font-size-podcast-episode);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-titles, $max-margin-podcast-titles);
+
+  font-weight: 500;
+}
+
+.podcast-title {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-title, $max-font-size-podcast-title);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-titles, $max-margin-podcast-titles);
+}
+
+.podcast-date {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-podcast-date, $max-font-size-podcast-date);
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-podcast-date, $max-margin-podcast-date);
+}

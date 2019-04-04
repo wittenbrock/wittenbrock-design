@@ -1,8 +1,55 @@
 /* Media queries: mobile first design */
 @mixin for-tablet-up {
-  @media only screen and (min-width: 40em) { @content; } //640px
+  @media only screen and (min-width: 600px) {
+    @content;
+  }
 }
 
 @mixin for-desktop-up {
-  @media only screen and (min-width: 53.125em) { @content; } //850px
+  @media only screen and (min-width: 900px) {
+    @content;
+  }
+}
+
+/* Fluid Mixin
+ * Original idea from https://css-tricks.com/snippets/css/fluid-typography
+ * Modified by adding the $property value, so that it can be used for any property.
+ * Requires a min and max viewport sizes and min and max sizes for the property.
+ * All media queries output to pixels.
+ */
+
+/* Removes units */
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+/* Converts rems to pixels */
+@function rem-to-px($size) {
+  $rems: $size * 16;
+  $pixels: strip-unit($rems);
+
+  @return #{$pixels}px;
+}
+
+/* All inputted values must be in rems, $property must be a string */
+@mixin fluid-property($property, $min-vw, $max-vw, $min-size, $max-size) {
+  $a1: unit($min-vw);
+  $a2: unit($max-vw);
+  $a3: unit($min-size);
+  $a4: unit($max-size);
+
+  @if $a1==$a2 and $a1==$a3 and $a1==$a4 {
+    & {
+      #{$property}: $min-size;
+
+      @media screen and (min-width: rem-to-px($min-vw)) {
+        //all media queries are in px
+        #{$property}: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+
+      @media screen and (min-width: rem-to-px($max-vw)) {
+        #{$property}: $max-size;
+      }
+    }
+  }
 }

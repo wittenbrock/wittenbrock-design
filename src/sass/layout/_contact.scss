@@ -1,0 +1,144 @@
+.contact {
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+
+  @media screen and (min-width: 600px) {
+    @include fluid-property('padding-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+  }
+
+  @media screen and (min-width: 900px) {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.contact-section-header {
+  /* This is the same dimension as .contact's top and bottom padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-height: rem(512px);
+
+  @media screen and (min-width: 900px) {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 1600px) {
+    flex-basis: rem(512px);
+  }
+}
+
+.contact-subtitle {
+  @extend .subtitle;
+
+  /* Extend the margin: bottom properties of .section-title, so that they're equal */
+  @extend .section-title;
+}
+
+.social-media-container {
+  display: flex;
+  justify-content: space-between;
+  width: rem(208px);
+}
+
+.social-media-link {
+  transition: all 0.15s ease-in-out;
+  width: rem(24px);
+  height: rem(24px);
+
+  @include for-desktop-up {
+    &:hover {
+      animation: jello-horizontal 0.9s both;
+    }
+  }
+}
+
+.form-container {
+  max-height: rem(512px);
+  display: flex;
+  justify-content: center;
+
+  @media screen and (min-width: 900px) {
+    justify-content: flex-start;
+    flex-basis: 50%;
+    background: $white;
+  }
+
+  @media screen and (min-width: 1600px) {
+    background: none;
+    flex-basis: rem(512px);
+  }
+}
+
+.contact-form {
+  @include fluid-property('padding-left', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+  @include fluid-property('padding-right', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+
+  display: flex;
+  flex-direction: column;
+  flex-basis: rem(512px);
+  background: $white;
+}
+
+.form-input {
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-form-input, $max-height-form-input);
+
+  background: $light-gray;
+  width: 100%;
+  margin-bottom: rem(24px);
+  padding-left: rem(12px);
+}
+
+.form-textarea {
+  background: $light-gray;
+  width: 100%;
+  height: rem(192px);
+  padding: rem(12px);
+
+  @include for-desktop-up {
+    margin-bottom: 0;
+  }
+}
+
+::placeholder,
+.form-input,
+.form-textarea {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-form-input, $max-font-size-form-input);
+}
+
+.form-input,
+.form-textarea {
+  &:focus {
+    border: 1px solid $dark-gray;
+  }
+
+  &:invalid {
+    box-shadow: none; //remove Firefox's red box-shadow on invalid elements
+  }
+}
+
+/* HTML Form validation styles */
+input.error,
+textarea.error {
+  @extend .shake-horizontal;
+
+  border-color: $red;
+  border-width: 1px;
+  border-style: solid;
+
+  /* Use CSS to visually restore valid fields */
+  &:valid {
+    border: none;
+  }
+}

@@ -1,0 +1,45 @@
+%basic-section-styles {
+  @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+  @include fluid-property('padding-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.landing-page {
+  @extend %basic-section-styles;
+
+  background: $white;
+}
+
+/* Styles related to the Wittenbrock Logo */
+.wittenbrock-logo {
+  height: 100%;
+  width: 100%;
+}
+
+.witten-logo-stroke {
+  fill: none;
+  stroke: $purple-black;
+  stroke-miterlimit: 10;
+  stroke-width: 18.5px;
+}
+
+.letters {
+  opacity: 0;
+  fill: $purple-black;
+}
+
+.square-border {
+  stroke-dasharray: 1458.87;
+  stroke-dashoffset: 1458.87;
+}
+
+.wittenbrock-logo-container {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-wittenbrock-logo, $max-size-wittenbrock-logo);
+  @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-size-wittenbrock-logo, $max-size-wittenbrock-logo);
+}

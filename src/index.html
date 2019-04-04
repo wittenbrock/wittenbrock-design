@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
+
 <head>
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-133453058-1"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
     gtag('js', new Date());
 
     gtag('config', 'UA-133453058-1');
@@ -13,75 +17,429 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0,">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
   <meta name="robots" content="index, follow">
   <meta name="google-site-verification" content="I4ye90KjI4xTFLT4Iq64Z6fBSDlN6jSb6kod4j37w_Q">
   <meta name="google" content="notranslate">
   <meta name="author" content="William Wittenbrock">
-  <meta name="description" content="Front end web developer and JavaScript specialist - I am William Wittenbrock and this is my online portfolio. Check out my latest projects.">
-  <title>Wittenbrock Design | Home</title>
+  <meta name="description"
+    content="Front end web developer and JavaScript specialist - I am William Wittenbrock and this is my online portfolio. Check out my latest projects.">
+  <title>Wittenbrock Design</title>
 </head>
+
 <body>
-  <div class="main-container">
-    <div class="top-border"></div>
-    <figure class="large-wittenbrock-logo">
-      <img class="circle-square" src="assets/images/circle-in-square-800x800.svg" alt="A circle in a square.">
-      <img class="wittenbrock-logo" src="assets/images/wittenbrock-design-logo.svg" alt="The Wittenbrock Design logo.">
-    </figure>
-    <article class="about">
-      <header>
-        <h1 class="screen-reader-only">Wittenbrock Design</h1>
-        <p class="article-header margin-zero">I design and code beautiful websites, and I love what I do.</p>
-        <h2 class="name-header">I am <b>William Wittenbrock</b>.</h2>
-      </header>
-      <p>I am looking for a junior developer position. My expertise is in front end web development.</p>
-      <p>
-        I have experience building small and medium websites with <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>, and JavaScript. Check out my latest <a class="link"
-        href="recent-work.html" target="_blank">projects</a>.
-      </p>
-      <p>
-        When I’m not programming, I am constantly learning and taking <a class="link" href="https://www.instagram.com/wittenbrock/"
-          target="_blank" rel="noopener noreferrer nofollow">photos</a>.
-      </p>
-      <p class="margin-zero">I previously worked as a high school English teacher in Tokyo, Japan.</p>
-      <p>
-        <span class="svg-icon-handler translate-button-container">
-          <svg class="translate-button" viewBox="0 0 224 224" xmlns="http://www.w3.org/2000/svg" width="21px" height="21px">
-            <title>Click to translate</title>
-            <path d="M178.5 115.5v-7h-28V98h-7v10.5h-13.416l2.916 7h30.142c-2.153 3.82-5.722 9.464-10.892 15.494-3.147-3.507-6.335-7.427-9.373-11.802l-5.75 3.994c3.364 4.847 6.888 9.16 10.346 12.98-1.85 1.862-3.846 3.717-6.002 5.53l4.498 5.36c2.272-1.907 4.38-3.857 6.332-5.8 10.097 10.07 18.588 15.407 19.1 15.732l3.686-5.953c-.12-.073-8.306-5.215-18.01-14.917 7.64-8.767 12.15-16.884 14.01-20.608z"/>
-            <path d="M185.5 63h-69.545l-11.2-29.26c-.5-1.33-1.82-2.24-3.255-2.24h-63C32.725 31.5 28 36.225 28 42v112c0 5.775 4.725 10.5 10.5 10.5h67.48l9.695 29.12c.385 1.2 1.4 2.065 2.625 2.3.245.035.455.07.7.07h66.5c5.775 0 10.5-4.725 10.5-10.5v-112c0-5.775-4.725-10.5-10.5-10.5zm-147 94.5A3.51 3.51 0 0 1 35 154V42a3.51 3.51 0 0 1 3.5-3.5h60.585l42.84 119zm74.865 7h25.83L120.4 185.64zm75.635 21a3.51 3.51 0 0 1-3.5 3.5h-58.695l22.82-25.7h-.035c.105-.105.2-.2.28-.315.665-.945.805-2.17.385-3.255L118.615 70H185.5a3.51 3.51 0 0 1 3.5 3.5z"/>
-            <path d="M139.195 164.5L120.4 185.64l-7.035-21.14zM84.602 112h-15.26l-3.528 14H56l16.674-52.5h8.554L98 126h-9.817zm-13.048-7h10.853L76.95 85z"/>
-          </svg>
-        </span>
-        <span id="visible-text" lang="ja-jp" dir="ltr">東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。</span>
-      </p>
-      <figure class="contact-icons">
-        <a class="social-media-icon" href="https://www.linkedin.com/in/william-wittenbrock/" target="_blank" rel="noopener noreferrer nofollow">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66">
-            <title>William's LinkedIn profile</title>
-            <circle class="circle" cx="32" cy="32" r="30" fill="none" stroke="#3F689D" stroke-width="4"/>
-            <path class="icon" d="M25.18 42.87h-5.36V26.856h5.36zm-2.683-18.2h-.035a2.779 2.779 0 1 1 .07-5.541 2.78 2.78 0 1 1-.034 5.541M44.5 42.87h-5.35v-8.565c0-2.153-.787-3.63-2.726-3.63a2.907 2.907 0 0 0-2.742 1.962 3.552 3.552 0 0 0-.178 1.291v8.944h-5.36V26.856h5.36v2.27a5.309 5.309 0 0 1 4.824-2.649c3.53 0 6.17 2.3 6.17 7.21z"/>
-          </svg>
-        </a>
-          
-        <a class="social-media-icon" href="contact.html" target="_blank">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66">
-            <title>Email William</title>
-            <circle class="circle" cx="32" cy="32" r="30" fill="none" stroke="#3F689D" stroke-width="4"/>
-            <path class="icon" d="M42.778 22.33L32 30.58l-10.778-8.25zM44.5 41.67h-25V25.68L32 35.248l12.5-9.568z"/>
-          </svg>
-        </a>
-        
-        <a class="social-media-icon" href="https://github.com/wittenbrock" target="_blank" rel="noopener noreferrer nofollow">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 66 66">
-            <title>William's Github profile</title>
-            <circle class="circle" cx="32" cy="32" r="30" fill="none" stroke="#3F689D" stroke-width="4"/>
-            <path class="icon" d="M35.42 25.195h-3.344q.06.532.06 1.923v9.202q0 1.42-.06 2.012h3.344q-.06-.68-.06-2.2V27.06q0-1.302.06-1.864zm-10.772-.148a4.942 4.942 0 0 0-3.462 1.331 4.831 4.831 0 0 0-.68 6.213 3.385 3.385 0 0 0 1.686 1.48v.06q-.947.414-.947 2.07a2.074 2.074 0 0 0 1.006 1.894v.06q-2.75.916-2.75 3.402a3.361 3.361 0 0 0 1.834 3.166 7.611 7.611 0 0 0 3.698.799q5.473 0 5.474-4.586 0-2.87-4.23-3.52a2.388 2.388 0 0 1-1.479-.71 1.108 1.108 0 0 1-.385-.769 1.198 1.198 0 0 1 1.183-1.272 4.51 4.51 0 0 0 2.944-1.672 5.082 5.082 0 0 0 1.139-3.299 3.889 3.889 0 0 0-.237-1.272 11.294 11.294 0 0 0 1.183-.326l.001-3.047a9.415 9.415 0 0 1-3.285.71 5.336 5.336 0 0 0-2.692-.71zm.325 14.765q2.485 0 2.485 1.5 0 1.598-2.278 1.597-2.603 0-2.604-1.54 0-1.568 2.397-1.568zM24.766 32q-1.864 0-1.864-2.042 0-2.2 1.864-2.2a1.634 1.634 0 0 1 1.391.68 2.606 2.606 0 0 1 .414 1.48q0 2.07-1.805 2.07zm8.996-13.522a1.93 1.93 0 0 0-1.465.651 2.219 2.219 0 0 0-.607 1.568 2.182 2.182 0 0 0 .607 1.538 1.93 1.93 0 0 0 1.465.651 1.899 1.899 0 0 0 1.435-.651 2.182 2.182 0 0 0 .606-1.538 2.219 2.219 0 0 0-.606-1.568 1.899 1.899 0 0 0-1.435-.651zM44.5 37.947v-2.96a2.881 2.881 0 0 1-1.657.503q-1.3 0-1.302-1.983v-5.503h1.272q.355 0 .754.03.4.03.547.03v-2.87H41.54V23.98a8.247 8.247 0 0 1 .089-1.272h-3.432a7.985 7.985 0 0 1 .089 1.332v1.154h-1.45v2.87a7.452 7.452 0 0 1 1.006-.089l.444.03v.06h-.03v5.296A8.036 8.036 0 0 0 38.878 37a3.091 3.091 0 0 0 2.988 1.538 5.465 5.465 0 0 0 2.633-.591z"/>
-          </svg>
-        </a>
-          
+  <section class="landing-page">
+    <h1 class="screen-reader-only">Wittenbrock Design</h1>
+    <div>
+      <figure class="wittenbrock-logo-container">
+        <svg class="wittenbrock-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+          <title>Wittenbrock Design</title>
+          <g class="letters slide-in-fwd-center">
+            <path d="M151.437,145.677h-18.5v-98h18.5Z" />
+            <path d="M265.555,66.177v21.25h28v18.5h-28v21.25h28v18.5h-46.5v-98h46.5v18.5Z" />
+            <path d="M356.283,47.677v98h-18.5l-21.1-50.227v50.227h-18.5v-98h18.5l21.1,50.46V47.677Z" />
+            <path d="M126.437,272.742v21.25h25v18.5h-25v21.25h25v18.5h-43.5v-98h43.5v18.5Z" />
+            <path d="M224.652,254.242v98h-18.5v-98Z" />
+            <path
+              d="M109.312,303.242A49.221,49.221,0,0,0,63.187,254.35v0l-.223-.011c-.293-.017-.585-.033-.879-.045-.448-.026-.9-.049-1.345-.049H44.687v98q7.623,0,15.248,0h.474c.155,0,.31-.009.465-.012q.339-.006.676-.017l.47-.018q.526-.022,1.048-.055l.119-.006h0A49.221,49.221,0,0,0,109.312,303.242ZM63.187,333.711V272.772a30.616,30.616,0,0,1,0,60.939Z" />
+            <path
+              d="M293.833,249.029H280.561a49,49,0,0,1,0-97.994h13.272v18.359H280.561a30.639,30.639,0,0,0,0,61.277h13.272Z" />
+            <path
+              d="M356.283,254.242v98h-18.5v-.084l-.159.067L316.711,302.2v50.038h-18.5v-98h18.5l21.072,50.4v-50.4Z" />
+            <path
+              d="M333.494,195.94l22.766,53.089h-18.5l-21.073-49.142v49.142h-18.5v-98h18.5v41.576l21.1-41.576h18.5Z" />
+            <path
+              d="M114.5,145.675v0H96v0l-9.8-50.41-9.8,50.41v0H57.9v0l-19.049-98h18.5l9.8,50.411,9.8-50.411h18.5l9.8,50.411,9.8-50.411h18.5Z" />
+            <path
+              d="M96.124,217.446a30.758,30.758,0,0,0-10.8-23.307,25.2,25.2,0,0,0,6.091-16.374c0-14.475-12.586-26.292-28.226-26.708v-.028h-18.5v98h18.5v0C81.363,248.942,96.124,234.809,96.124,217.446ZM72.913,177.765c0,4.237-4.373,7.847-9.726,8.2v-16.4C68.54,169.918,72.913,173.528,72.913,177.765Zm-9.726,52.76V204.366c7.975.078,14.437,5.914,14.437,13.08S71.162,230.448,63.187,230.525Z" />
+            <path
+              d="M204.919,321.433c-.028,11.556-5.854,21.648-15.585,27A33.708,33.708,0,0,1,173.306,353c-3.717.226-5.288,0-7.932,0a57.252,57.252,0,0,1-9.168-1,.766.766,0,0,0-.153,0q.078-9.217.157-18.433a63.306,63.306,0,0,0,8.9,1.114c4.187.185,4.25.3,8.1-.253a26.165,26.165,0,0,0,7.244-2.158c3.764-2.069,6.628-5.964,6.03-10.887-.489-4.027-4.723-8.275-9.765-12.766-22.382-16.951-21.626-31.42-19.094-38.649,2.424-6.924,8.514-12.157,17.147-14.736,6.729-2.009,14.456-2.67,20.832-.555,4.536,1.5,2.817.759,6.2,2.291v21.665a30.885,30.885,0,0,0-12.7-6.47c-6.715-1.751-12.045-.258-13.711,3.2-1.76,3.656,2.407,9.7,7.882,14.857C194.2,298.924,204.949,308.889,204.919,321.433Z" />
+            <path
+              d="M158.907,249.029l-18.958-44.212c6.582-5.207,9.8-13.982,9.8-24.123,0-16.2-13.848-29.4-30.971-29.653v-.012h-18.5v98h18.5V198.6l21.625,50.43Zm-27.654-68.335c0,6.012-5.55,10.926-12.471,11.153V169.54C125.7,169.767,131.253,174.682,131.253,180.694Zm-12.471,12.732.029.088h-.029Z" />
+            <path
+              d="M242.746,66.177H226.981v79.488h-18.5V66.177h-18.5v79.5h-18.5v-79.5H155.746v-18.5h52.735v-.012h18.5v.012h15.765Z" />
+            <path
+              d="M244.641,303.078a30.646,30.646,0,0,0,30.611,30.612h.238V312.334H258.533V293.992h35.3v58.04H275.252a48.954,48.954,0,0,1,0-97.908h18.581v18.343H275.252A30.646,30.646,0,0,0,244.641,303.078Z" />
+          </g>
+          <circle class="witten-logo-stroke bounce-in-top" cx="200" cy="200" r="39.625" />
+          <polyline class="square-border witten-logo-stroke draw"
+            points="8.138 20.204 382.613 20.204 382.613 379.796 17.387 379.796 17.387 20.212" />
+        </svg>
       </figure>
+      <a class="btn button-down-arrow-one bounce-down trigger-scroll" href="#introduction">
+        <span class="screen-reader-only">Scroll down to the next section.</span>
+      </a>
+    </div>
+  </section>
+  <section id="introduction" class="introduction">
+    <div>
+      <header>
+        <h2 class="intro-title" data-aos="fade-in">
+          <span>I design and code</span>
+          <span class="intro-title-break-point">beautiful websites.</span>
+        </h2>
+        <p class="intro-title intro-first-subtitle" data-aos="fade-in" data-aos-delay="100">I am William Wittenbrock.
+        </p>
+        <p class="intro-second-subtitle" data-aos="fade-in" data-aos-delay="200">I love what I do.</p>
+      </header>
+      <a class="btn button-down-arrow-two trigger-scroll" href="#projects">
+        <span class="screen-reader-only">Scroll down to the next section.</span>
+        <img src="assets/images/icons/icon-down-arrow.svg" alt="Down arrow" aria-hidden="true" data-aos="zoom-in"
+          data-aos-delay="300">
+      </a>
+    </div>
+  </section>
+  <section class="projects">
+    <h2 class="screen-reader-only">Projects</h2>
+    <!-- Project One: Fluor -->
+    <div id="projects" class="project">
+      <h3 class="screen-reader-only">Project One: Fluor, an e-commerce site</h3>
+      <div class="project-container">
+        <a href="https://wittenbrock.github.io/fluor-e-commerce-website/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <div class="project-img-container">
+            <img class="project-image" src="assets/images/project-images/project-img-fluor-1168.png" alt="Fluor website"
+              data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000" data-aos-anchor-placement="top">
+            <div class="project-overlay"></div>
+            <img class="project-logo" src="assets/images/project-logos/logo-fluor.svg" alt="Fluor Logo">
+          </div>
+        </a>
+        <div class="project-caption not-displayed">
+          <h4 class="caption-title" aria-hidden="true">Fluor</h4>
+          <p class="caption-subtitle" aria-hidden="true">An e-commerce site.</p>
+          <p class="caption-text">My goal for this project was to learn how to use Sass by creating a Sass-driven
+            website. In particular, I wanted to practice using 7-1 Sass Architecture, variables, and nesting.</p>
+          <div class="caption-button-container">
+            <a class="button-caption-website" href="https://wittenbrock.github.io/fluor-e-commerce-website/"
+              target="_blank" rel="noopener noreferrer nofollow">Website</a>
+            <a class="button-caption-github" href="https://github.com/wittenbrock/fluor-e-commerce-website"
+              target="_blank" rel="noopener noreferrer nofollow">Github</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn button-project" type="button">
+        <span class="screen-reader-only">Read project caption</span>
+      </button>
+    </div>
+    <!-- Project Two: Portland School of Japanese Cuisine -->
+    <div id="projects" class="project">
+      <h3 class="screen-reader-only">Project Two: Portland School of Japanese Cuisine</h3>
+      <div class="project-container">
+        <a href="https://wittenbrock.github.io/freecodecamp-product-landing-page/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <div class="project-img-container">
+            <img class="project-image" src="assets/images/project-images/project-img-japanese-cuisine-1168.png"
+              alt="Portland School of Japanese Cuisine website" data-aos="fade-in" data-aos-duration="1000"
+              data-aos-delay="1000" data-aos-anchor-placement="top">
+            <div class="project-overlay"></div>
+            <img class="project-logo" src="assets/images/project-logos/logo-japanese-cuisine.svg"
+              alt="Portland School of Japanese Cuisine logo">
+          </div>
+        </a>
+        <div class="project-caption not-displayed">
+          <h4 class="caption-title" aria-hidden="true">School of Japanese Cuisine</h4>
+          <p class="caption-subtitle" aria-hidden="true">Study the fine art of Japanese cooking.</p>
+          <p class="caption-text">My goal for this project was to build a product landing page with a user submission
+            form and an embedded video.</p>
+          <div class="caption-button-container">
+            <a class="button-caption-website" href="https://wittenbrock.github.io/freecodecamp-product-landing-page/"
+              target="_blank" rel="noopener noreferrer nofollow">Website</a>
+            <a class="button-caption-github"
+              href="https://github.com/wittenbrock/freecodecamp-responsive-websites-final-projects/tree/master/03-product-landing-page"
+              target="_blank" rel="noopener noreferrer nofollow">Github</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn button-project" type="button">
+        <span class="screen-reader-only">Read project caption</span>
+      </button>
+    </div>
+    <!-- Project Three: Studio Ghibili Tribute Page -->
+    <div id="projects" class="project">
+      <h3 class="screen-reader-only">Project Three: Studio Ghibili Tribute Page</h3>
+      <div class="project-container">
+        <a href="https://wittenbrock.github.io/freecodecamp-tribute-page/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <div class="project-img-container">
+            <img class="project-image" src="assets/images/project-images/project-img-ghibili-1168.jpg"
+              alt="Studio Ghibili Tribute Page website" data-aos="fade-in" data-aos-duration="1000"
+              data-aos-delay="1000" data-aos-anchor-placement="top">
+            <div class="project-overlay"></div>
+            <img class="project-logo" src="assets/images/project-logos/logo-studio-ghibili.svg"
+              alt="Studio Ghibili logo">
+          </div>
+        </a>
+        <div class="project-caption not-displayed">
+          <h4 class="caption-title" aria-hidden="true">Studio Ghibili</h4>
+          <p class="caption-subtitle" aria-hidden="true">A tribute page to the famous studio.</p>
+          <p class="caption-text">My goal for this project was to make a website responsive with media queries and
+            relative units.</p>
+          <div class="caption-button-container">
+            <a class="button-caption-website" href="https://wittenbrock.github.io/freecodecamp-tribute-page/"
+              target="_blank" rel="noopener noreferrer nofollow">Website</a>
+            <a class="button-caption-github"
+              href="https://github.com/wittenbrock/freecodecamp-responsive-websites-final-projects/tree/master/01-tribute-page"
+              target="_blank" rel="noopener noreferrer nofollow">Github</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn button-project" type="button">
+        <span class="screen-reader-only">Read project caption</span>
+      </button>
+    </div>
+    <!-- Project Four: Myspace -->
+    <div id="projects" class="project margin-zero">
+      <h3 class="screen-reader-only">Project Four: Tom's Myspace Page</h3>
+      <div class="project-container">
+        <a href="https://wittenbrock.github.io/myspace-website-clone/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <div class="project-img-container">
+            <img class="project-image" src="assets/images/project-images/project-img-myspace-1168.png"
+              alt="Myspace website" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="1000"
+              data-aos-anchor-placement="top">
+            <div class="project-overlay"></div>
+            <img class="project-logo" src="assets/images/project-logos/logo-myspace.svg" alt="Myspace L\logo">
+          </div>
+        </a>
+        <div class="project-caption not-displayed">
+          <h4 class="caption-title" aria-hidden="true">Myspace</h4>
+          <p class="caption-subtitle" aria-hidden="true">Tom's famous Myspace page.</p>
+          <p class="caption-text">The goal of this project was to solidify my knowledge of CSS Flexbox and CSS Grid by
+            building a website with a relatively complex layout.</p>
+          <div class="caption-button-container">
+            <a class="button-caption-website" href="https://wittenbrock.github.io/myspace-website-clone/"
+              target="_blank" rel="noopener noreferrer nofollow">Website</a>
+            <a class="button-caption-github" href="https://github.com/wittenbrock/myspace-website-clone" target="_blank"
+              rel="noopener noreferrer nofollow">Github</a>
+          </div>
+        </div>
+      </div>
+      <button class="btn button-project" type="button">
+        <span class="screen-reader-only">Read project caption</span>
+      </button>
+    </div>
+  </section>
+  <section class="about">
+    <h2 class="about-title" data-aos="fade-right">About</h2>
+    <article class="about-text">
+      <p>My expertise is in front end web development. I have experience
+        building small and medium websites with HTML CSS, and JavaScript.</p>
+      <p>I am passionate about building web applications that enrich the lives of others.</p>
+      <p>Creating responsive and beautiful websites that work on a wide range of devices is my focus.</p>
+      <p>When I’m not programming, you’ll find me reading, taking photos, and looking for the best ramen shop in town.
+      </p>
+      <p>Before I was a developer, I lived and worked in Tokyo as a high school English teacher.</p>
+      <p class="translatable-text-container">
+        <span id="translatable-text" class="translatable-text" lang="ja-jp"
+          dir="ltr">東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。</span>
+      </p>
+      <button id="button-translate" class="btn button-translate" type="button">
+        <span id="button-translate-text" class="screen-reader-only">Translate Japanese text to English</span>
+      </button>
     </article>
-  </div> <!-- .main-container ends -->
+  </section>
+  <section class="podcasts">
+    <header class="podcasts-section-header">
+      <h2 class="section-title">I love podcasts.</h2>
+      <p class="subtitle">
+        <span>These are a few of the podcasts that I enjoy,</span>
+        <span class="podcast-subtitle-break-point">that I hope you might enjoy as well.</span>
+    </header>
+    <figure class="podcast-grid">
+      <!-- Reply All -->
+      <div class="podcast-item" data-aos="zoom-in">
+        <h3 class="screen-reader-only">Reply All</h3>
+        <img srcset="assets/images/podcast-images/podcast-reply-all-podcast-384.png 384w,
+                       assets/images/podcast-images/podcast-reply-all-podcast-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-reply-all-podcast-512.png"
+          alt="Reply All Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 130</p>
+          <h4 class="podcast-title">The Snapchat Thief</h4>
+          <p class="podcast-date">Nov 8, 2018</p>
+          <a class="btn button-play" href="https://www.gimletmedia.com/reply-all/130-lizard#episode-player"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- StartUp -->
+      <div class="podcast-item flex-in-460px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">StartUp</h3>
+        <img srcset="assets/images/podcast-images/podcast-start-up-384.png 384w,
+                       assets/images/podcast-images/podcast-start-up-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-start-up-512.png"
+          alt="StarUp Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 1</p>
+          <h4 class="podcast-title">How Not to Pitch a Billionaire</h4>
+          <p class="podcast-date">Apr 5, 2014</p>
+          <a class="btn button-play"
+            href="https://www.gimletmedia.com/startup/1-how-not-to-pitch-a-billionaire#episode-player" target="_blank"
+            rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- This American Life -->
+      <div class="podcast-item flex-in-600px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">This American Life</h3>
+        <img srcset="assets/images/podcast-images/podcast-this-american-life-384.png 384w,
+                       assets/images/podcast-images/podcast-this-american-life-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-this-american-life-512.png"
+          alt="This American Life Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 129</p>
+          <h4 class="podcast-title">Cars</h4>
+          <p class="podcast-date">Dec 13, 2013</p>
+          <a class="btn button-play" href="https://www.thisamericanlife.org/513/129-cars" target="_blank"
+            rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- How I Built This -->
+      <div class="podcast-item" data-aos="zoom-in">
+        <h3 class="screen-reader-only">How I Built</h3>
+        <img srcset="assets/images/podcast-images/podcast-how-i-built-this-384.png 384w,
+                       assets/images/podcast-images/podcast-how-i-built-this-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-how-i-built-this-512.png"
+          alt="How I Built This Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 6</p>
+          <h4 class="podcast-title">Airbnb: Joe Gebbia</h4>
+          <p class="podcast-date">Oct 16, 2016</p>
+          <a class="btn button-play" href="https://one.npr.org/?sharedMediaId=497820565:497945288" target="_blank"
+            rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- Planet Money -->
+      <div class="podcast-item" data-aos="zoom-in">
+        <h3 class="screen-reader-only">Planet Money</h3>
+        <img srcset="assets/images/podcast-images/podcast-planet-money-384.png 384w,
+                       assets/images/podcast-images/podcast-planet-money-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-planet-money-512.png"
+          alt="Planet Money Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 427</p>
+          <h4 class="podcast-title">LeBron James Is Still Underpaid</h4>
+          <p class="podcast-date">Jun 11, 2018</p>
+          <a class="btn button-play"
+            href="https://www.npr.org/sections/money/2018/07/11/628137929/episode-427-lebron-james-is-still-underpaid"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- Binge Mode -->
+      <div class="podcast-item flex-in-460px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">Binge Mode</h3>
+        <img srcset="assets/images/podcast-images/podcast-binge-mode-384.png 384w,
+                       assets/images/podcast-images/podcast-binge-mode-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-binge-mode-512.png"
+          alt="Binge Mode Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 97</p>
+          <h4 class="podcast-title">Harry Potter</h4>
+          <p class="podcast-date">Jun 11, 018</p>
+          <a class="btn button-play"
+            href="https://www.theringer.com/binge-mode/2018/6/11/17448022/harry-potter-and-the-sorcerers-stone-chapters-1-5"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- The Moth -->
+      <div class="podcast-item flex-in-460px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">The Moth</h3>
+        <img srcset="assets/images/podcast-images/podcast-the-moth-384.png 384w,
+                       assets/images/podcast-images/podcast-the-moth-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-the-moth-512.png"
+          alt="The Moth Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 1</p>
+          <h4 class="podcast-title">Doctors, Saints, and Secrets</h4>
+          <p class="podcast-date">Jan 5, 2013</p>
+          <a class="btn button-play" href="https://themoth.org/radio-hour/doctors-saints-and-secrets" target="_blank"
+            rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- Criminal -->
+      <div class="podcast-item flex-in-600px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">Criminal</h3>
+        <img srcset="assets/images/podcast-images/podcast-criminal-384.png 384w,
+                       assets/images/podcast-images/podcast-criminal-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-criminal-512.png"
+          alt="Criminal Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 31</p>
+          <h4 class="podcast-title">American Dream</h4>
+          <p class="podcast-date">Nov 23, 2015</p>
+          <a class="btn button-play" href="https://thisiscriminal.com/episode-31-american-dream-11-17-2015/"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+      <!-- Ear Hustle -->
+      <div class="podcast-item flex-in-600px" data-aos="zoom-in">
+        <h3 class="screen-reader-only">Ear Hustle</h3>
+        <img srcset="assets/images/podcast-images/podcast-earhustle-384.png 384w,
+                       assets/images/podcast-images/podcast-earhustle-512.png 512w" sizes="(max-width: 599px) 192px,
+                      (max-width: 1440px) 256px" src="assets/images/podcast-images/podcast-earhustle-512.png"
+          alt="Ear Hustle Podcast Cover Art">
+        <div class="podcast-overlay">
+          <p class="podcast-episode-num">Episode 4</p>
+          <h4 class="podcast-title">The SHU</h4>
+          <p class="podcast-date">Jul 26, 2017</p>
+          <a class="btn button-play" href="https://www.earhustlesq.com/listen/2017/7/26/episode-four-the-shu"
+            target="_blank" rel="noopener noreferrer nofollow">
+            <span class="screen-reader-only">Visit the podcast's website</span>
+          </a>
+        </div>
+      </div>
+    </figure>
+  </section>
+  <section class="contact">
+    <header class="contact-section-header">
+      <h2 class="section-title">Drop me a line.</h2>
+      <p class="contact-subtitle">My coding mind is always open.</p>
+      <div class="social-media-container">
+        <a class="social-media-link" href="https://www.instagram.com/wittenbrock/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <span class="screen-reader-only">Visit William's Instagram profile</span>
+          <img src="assets/images/icons/social-media-icons/social-instagram.svg" alt="Instagram icon" aria-hidden="true"
+            data-aos="zoom-in">
+        </a>
+        <a class="social-media-link" href="https://github.com/wittenbrock" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <span class="screen-reader-only">Visit William's Github profile</span>
+          <img src="assets/images/icons/social-media-icons/social-github.svg" alt="Github icon" aria-hidden="true"
+            data-aos="zoom-in" data-aos-delay="200">
+        </a>
+        <a class="social-media-link" href="https://www.linkedin.com/in/william-wittenbrock/" target="_blank"
+          rel="noopener noreferrer nofollow">
+          <span class="screen-reader-only">Visit William's LinkedIn profile</span>
+          <img src="assets/images/icons/social-media-icons/social-linkedin.svg" alt="Github icon" aria-hidden="true"
+            data-aos="zoom-in" data-aos-delay="400">
+        </a>
+      </div>
+    </header>
+    <div class="form-container">
+      <form class="contact-form" name="contact" method="POST" data-netlify="true" action="/message-sent.html">
+        <label class="screen-reader-only" for="name">Name</label>
+        <input id="name" class="form-input" type="text" name="name" placeholder="Name" required>
+        <label class="screen-reader-only" for="email">Email</label>
+        <input id="email" class="form-input" type="email" name="email" placeholder="Email" required>
+        <label class="screen-reader-only" for="message">Message</label>
+        <textarea id="message" class="form-textarea" name="message" placeholder="Message" required></textarea>
+        <button class="button-send" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
 </body>
+
 </html>

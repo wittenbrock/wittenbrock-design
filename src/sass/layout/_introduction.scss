@@ -1,0 +1,35 @@
+/* %basic-section-styles can be found in sass/layout/_landing-page.scss */
+.introduction {
+  @extend %basic-section-styles;
+}
+
+.intro-title {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-intro-title, $max-intro-title);
+}
+
+.intro-title-break-point {
+  display: block;
+  margin-top: rem(8px);
+
+  @media screen and (min-width: 700px) {
+    display: inline;
+  }
+}
+
+.subtitle {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-subtitle, $max-font-size-subtitle);
+
+  text-align: center;
+}
+
+.intro-first-subtitle {
+  @extend .subtitle;
+
+  font-weight: 500;
+}
+
+.intro-second-subtitle {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-second-subtitle, $max-font-size-second-subtitle);
+
+  text-align: center;
+}

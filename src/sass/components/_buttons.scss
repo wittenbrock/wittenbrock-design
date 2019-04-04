@@ -1,61 +1,147 @@
-%button-base-styles {
-	display: block;
-  width: 10rem;
-  background: $hover-color;
-  font-family: $font-stack;
-	font-size: 1.25rem;
+.btn {
+  display: block;
+  transition: $hover;
+
+  @include for-desktop-up {
+    &:hover {
+      transform: $scale;
+    }
+
+    &:active {
+      transform: $button-down-press;
+    }
+  }
+}
+
+%button-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%button-size {
+  width: rem(32px);
+  min-height: rem(32px);
+  border-radius: 50%;
+}
+
+/* Located on the splash page */
+.button-down-arrow-one {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
+
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-down-arrow.svg');
+  margin: auto;
+}
+
+/* Located on the introduction page */
+.button-down-arrow-two {
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
+
+  @extend %button-size;
+
+  margin: auto;
+}
+
+.button-project {
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-info.svg');
+}
+
+%rounded-button {
+  @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-rounded-button, $max-font-size-rounded-button);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-rounded-button, $max-width-rounded-button);
+
+  font-weight: 500;
+  min-height: rem(32px);
+  border-radius: 50px;
+  margin: auto;
+
+  @media screen and (min-width: 900px) {
+    &:active {
+      transform: $button-down-press;
+    }
+  }
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+%caption-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.button-caption-github {
+  @extend %rounded-button;
+  @extend %caption-button;
+
+  background: none;
+  color: $dark-gray;
+  border: 2px solid $dark-gray;
+
+  @include for-desktop-up {
+    &:hover {
+      background: $dark-gray;
+      color: $white;
+    }
+  }
+}
+
+/* Uses $max-vw-600px instead of $max-vw-1440px */
+.button-caption-website {
+  @extend %rounded-button;
+  @extend %caption-button;
+
+  background: $orange;
   color: $white;
-  text-transform: uppercase;
-	font-weight: 500;
-  text-align: center;
-	padding: .8rem 1.4rem;
-  border: 2px solid $hover-color;
-  border-radius: 8px;
-	box-shadow: $project-button-shadow;
-
-  &:active {
-    color: $white;
-    background: $active-color;
-    border: 2px solid $active-color;
-    transform: $button-down-press;
-  }
 
   @include for-desktop-up {
     &:hover {
-      background: transparent;
-      color: $hover-color;
+      background: $darker-orange;
     }
   }
 }
 
-.project-button {
-  @extend %button-base-styles;
-  display: inline-block;
-  margin-right: 1rem;
+.button-translate {
+  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
+  @include fluid-property('min-height', $min-vw-320px, $max-vw-1440px, $min-size-btn-translate, $max-size-btn-translate);
+
+  background-image: url('/assets/icon-translate-english.svg');
+  margin: auto;
 }
 
-.github-button {
-  background: $light-grey;
-  border: solid 2px $light-grey;
-  margin-left: 1rem;
+.button-play {
+  @extend %button-image;
+  @extend %button-size;
 
-  &:active {
-    color: $white;
-    background: $light-grey;
-    border: 2px solid $light-grey;
-    transform: $button-down-press;
-  }
+  background-image: url('/assets/icon-play.svg');
+}
+
+.button-send {
+  @extend %rounded-button;
+
+  /* same dimensions as .contact-form's padding */
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-padding-contact-form, $max-padding-contact-form);
+
+  background: $orange;
+  color: $white;
+  cursor: pointer;
 
   @include for-desktop-up {
     &:hover {
-      background: transparent;
-      color: $light-grey;
+      background: $darker-orange;
     }
   }
 }
 
-.form-button {
-  @extend %button-base-styles;
-  margin: 3rem auto;
-  width: 15rem;
+.button-home {
+  @extend %button-image;
+  @extend %button-size;
+
+  background-image: url('/assets/icon-home.svg');
 }
