@@ -126,11 +126,11 @@ $max-height-project-img: 41.0625rem;
 $min-width-project-logo: 12rem;
 $max-width-project-logo: 32rem;
 
-/* Fluid width for .project-caption
+/* Fluid width and height for .project-caption
 * This property uses the viewport variable $max-vw-600px;
 */
-$min-width-project-caption: 18rem;
-$max-width-project-caption: 24rem;
+$min-size-project-caption: 18rem;
+$max-size-project-caption: 24rem;
 
 /*
  * ----------------------------------------
@@ -191,7 +191,7 @@ $max-margin-project-container: 2rem;
 $min-padding-project-caption: 1rem;
 $max-padding-project-caption: 3rem;
 
-/* Fluid margin-top and margin-bottom dimensions for .caption-button-container  */
+/* Fluid margin-top dimensions for .caption-button-container  */
 $min-margin-button-container: 1.25rem;
 $max-margin-button-container: 2.25rem;
 
