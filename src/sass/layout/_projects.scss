@@ -65,10 +65,10 @@
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 .project-caption {
-  @include fluid-property('padding-top', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
   @include fluid-property('padding-left', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
   @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
-  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-project-caption, $max-width-project-caption);
+  @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-size-project-caption, $min-size-project-caption);
+  @include fluid-property('min-height', $min-vw-320px, $max-vw-600px, $min-size-project-caption, $min-size-project-caption);
 
   display: flex;
   flex-direction: column;
@@ -83,6 +83,8 @@
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 .caption-title {
   @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-title, $max-font-size-caption-title);
+  
+  margin-top: auto;
 }
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
@@ -101,9 +103,9 @@
 
 .caption-button-container {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
 
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: auto;
 }

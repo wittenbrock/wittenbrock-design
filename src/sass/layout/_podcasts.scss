@@ -78,8 +78,10 @@
 .podcast-item {
   position: relative;
 
-  &:hover .podcast-overlay {
-    opacity: 1;
+  @media (hover) {
+    &:hover .podcast-overlay {
+      opacity: 1;
+    }
   }
 }
 

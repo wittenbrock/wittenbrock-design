@@ -56,7 +56,7 @@
   width: rem(24px);
   height: rem(24px);
 
-  @include for-desktop-up {
+  @media (hover) {
     &:hover {
       animation: jello-horizontal 0.9s both;
     }
