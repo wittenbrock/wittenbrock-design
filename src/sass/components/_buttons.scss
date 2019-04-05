@@ -2,7 +2,7 @@
   display: block;
   transition: $hover;
 
-  @include for-desktop-up {
+  @media (hover) {
     &:hover {
       transform: $scale;
     }
@@ -83,7 +83,7 @@
   color: $dark-gray;
   border: 2px solid $dark-gray;
 
-  @include for-desktop-up {
+  @media (hover) {
     &:hover {
       background: $dark-gray;
       color: $white;
@@ -132,7 +132,7 @@
   color: $white;
   cursor: pointer;
 
-  @include for-desktop-up {
+  @media (hover) {
     &:hover {
       background: $darker-orange;
     }
