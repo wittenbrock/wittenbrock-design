@@ -41,8 +41,7 @@
 .contact-subtitle {
   @extend .subtitle;
 
-  /* Extend the margin: bottom properties of .section-title, so that they're equal */
-  @extend .section-title;
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-contact-subtitle, $max-margin-contact-subtitle);
 }
 
 .social-media-container {

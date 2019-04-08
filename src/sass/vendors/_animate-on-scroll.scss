@@ -1,3 +1,7 @@
+/*
+ * Delays and Durations
+ */
+
 [data-aos][data-aos][data-aos-duration="100"],
 body[data-aos-duration="100"] [data-aos] {
   transition-duration: 0.1s;
@@ -73,10 +77,18 @@ body[data-aos-delay="1000"] [data-aos].aos-animate {
   transition-delay: 1s;
 }
 
+/*
+ * Easing
+ */
+
 [data-aos][data-aos][data-aos-easing=ease-in-out],
 body[data-aos-easing=ease-in-out] [data-aos] {
   transition-timing-function: ease-in-out;
 }
+
+/*
+ * Fade animations
+ */
 
 [data-aos^=fade][data-aos^=fade] {
   opacity: 0;
@@ -91,6 +103,10 @@ body[data-aos-easing=ease-in-out] [data-aos] {
 [data-aos=fade-right] {
   transform: translate3d(-100px, 0, 0);
 }
+
+/*
+ * Zoom animations
+ */
 
 [data-aos^=zoom][data-aos^=zoom] {
   opacity: 0;
