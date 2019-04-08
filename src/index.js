@@ -113,7 +113,7 @@ const addThenRemoveClass = (elem, cssClass, removalTime) => {
 // When #button-translate is clicked:
 document.querySelector('#button-translate').addEventListener('click', () => {
   const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
-  const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chime of my train-stop.';
+  const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chimes of the train-stops.';
   let translatableText = document.getElementById('translatable-text');
   let translateBtn = document.getElementById('button-translate');
   let btnText = document.getElementById('button-translate-text')
