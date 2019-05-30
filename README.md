@@ -8,7 +8,7 @@ A portfolio website featuring my latest projects.
 
 ## Features
 * Utilizes a bespoke layout and custom made icons and assets
-* Focuses the user's attention to specific content with scroll animations and CSS animations
+* Focuses the user's attention on specific content with scroll animations and CSS animations
 * Is mobile and desktop friendly
 
 ## Installation
