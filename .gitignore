@@ -27,6 +27,3 @@ node_modules/
 
 # Adobe XD Mockup #
 portfolio.xd
-
-# Style Lint Rules #
-.stylelintrc
