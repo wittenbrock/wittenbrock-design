@@ -11,7 +11,7 @@
   "description": "Portfolio site for William Wittenbrock",
   "repository": {
     "type": "git",
-    "url": "github: wittenbrock/wittenbrock.github.io"
+    "url": "github: wittenbrock/wittenbrock-design"
   },
   "main": "index.js",
   "scripts": {
