@@ -7,9 +7,11 @@
 A portfolio website featuring my latest projects.
 
 ## Features
-* Utilizes a bespoke layout and custom made icons and assets
-* Focuses the user's attention on specific content with scroll animations and CSS animations
-* Is mobile and desktop friendly
+* Presents projects with a bespoke layout and custom made icons and assets
+* Animates assets to guide the user’s attention and increase usability
+* Follows responsive design best practices, including using relative units, designing mobile layouts first, and integrating media queries that dynamically reorganize and resize content
+* Includes a development environment with Babel transpiling, Webpack module bundling, a development server, and CSS linting
+
 
 ## Installation
 
