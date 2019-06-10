@@ -20,6 +20,7 @@
 
 %button-size {
   width: rem(32px);
+  height: rem(32px);
   min-height: rem(32px);
   border-radius: 50%;
 }
@@ -56,6 +57,7 @@
   @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-rounded-button, $max-width-rounded-button);
 
   font-weight: 500;
+  height: rem(36px);
   min-height: rem(32px);
   border-radius: 50px;
   margin: auto;

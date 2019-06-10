@@ -37,7 +37,7 @@ AOS.init({
 
 document.addEventListener('DOMContentLoaded', function () {
   const easeFunctions = {
-    easeInQuad: function (t, b, c, d) {
+    easeInQuad(t, b, c, d) {
       t /= d;
       return c * t * t + b;
     },
@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
     ease: 'easeInQuad'
   }, easeFunctions);
   const triggers = document.getElementsByClassName('trigger-scroll');
-  for (var i = 0; i < triggers.length; i++) {
+  for (let i = 0; i < triggers.length; i++) {
     moveTo.registerTrigger(triggers[i]);
   }
 });
@@ -64,14 +64,14 @@ document.addEventListener('DOMContentLoaded', function () {
 const inputs = document.querySelectorAll('input, textarea');
 
 // Loop through inputs and textareas;
-for (let input of inputs) {
+for (const input of inputs) {
   // Just before submit, the invalid event will fire, add .error class;
-  input.addEventListener('invalid', (event) => {
+  input.addEventListener('invalid', () => {
     input.classList.add('error');
   }, false);
 
   // Immediately add the .error class if input field is invalid;
-  input.addEventListener('blur', (event) => {
+  input.addEventListener('blur', () => {
     input.checkValidity();
   })
 }
@@ -114,9 +114,9 @@ const addThenRemoveClass = (elem, cssClass, removalTime) => {
 document.querySelector('#button-translate').addEventListener('click', () => {
   const japanese = '東京には好きなことがたくさんあったけど、その中でも特に好きなのはラーメンと桜と駅の発車メロディでした。';
   const english = 'There were many things I liked about Tokyo, but what I loved most was the ramen, the cherry blossoms, and the chimes of the train-stops.';
-  let translatableText = document.getElementById('translatable-text');
-  let translateBtn = document.getElementById('button-translate');
-  let btnText = document.getElementById('button-translate-text')
+  const translatableText = document.getElementById('translatable-text');
+  const translateBtn = document.getElementById('button-translate');
+  const btnText = document.getElementById('button-translate-text')
 
   // Animate the button with .flip-in-hor-bottom and the text with .fade-in,
   // then remove them after 0.601s;
@@ -157,10 +157,10 @@ document.addEventListener('click', function (event) {
    * Store the .project-button that was clicked,
    * it's text, it's affiliated .project-img-container, and its .project-caption;
    */
-  let projectBtn = event.target;
-  let projectBtnText = projectBtn.childNodes[0];
-  let projectImg = projectBtn.parentNode.childNodes[1].childNodes[0];
-  let projectCaption = projectBtn.parentNode.childNodes[1].childNodes[1];
+  const projectBtn = event.target;
+  const projectBtnText = projectBtn.childNodes[0];
+  const projectImg = projectBtn.parentNode.childNodes[1].childNodes[0];
+  const projectCaption = projectBtn.parentNode.childNodes[1].childNodes[1];
 
   // Hide the project image and show the project caption:
   if (projectCaption.classList.contains('not-displayed')) {
@@ -181,7 +181,7 @@ document.addEventListener('click', function (event) {
   // Hide the project caption and show the project image:
   else {
     // Animate the project caption as it disappears;
-    addThenRemoveClass(projectCaption, 'slide-out-left', 501);
+    addThenRemoveClass(projectCaption, 'slide-out-right', 501);
 
     // Once the project caption has finished animating:
     setTimeout(function () {
@@ -190,7 +190,7 @@ document.addEventListener('click', function (event) {
       // Show the project image;
       toggleVisibility(projectImg);
       // Animate the project image as it appears;
-      addThenRemoveClass(projectImg, 'slide-in-right', 501);
+      addThenRemoveClass(projectImg, 'slide-in-left', 501);
     }, 500);
   }
 
