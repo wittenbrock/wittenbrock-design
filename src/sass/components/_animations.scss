@@ -54,6 +54,8 @@
  * flip-in-hor-bottom
  * fade-in
  * slide-in-right
+ * slide-in-left
+ * slide-in-right
  * slide-out-left
  * jello-horizontal
  * ----------------------------------------
@@ -215,6 +217,38 @@
   100% {
     transform: translateX(0);
     opacity: 1;
+  }
+}
+
+.slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-out-right {
+  animation: slide-out-right 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+}
+
+@keyframes slide-out-right {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(1000px);
+    opacity: 0;
   }
 }
 

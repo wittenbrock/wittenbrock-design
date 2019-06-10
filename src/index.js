@@ -181,7 +181,7 @@ document.addEventListener('click', function (event) {
   // Hide the project caption and show the project image:
   else {
     // Animate the project caption as it disappears;
-    addThenRemoveClass(projectCaption, 'slide-out-left', 501);
+    addThenRemoveClass(projectCaption, 'slide-out-right', 501);
 
     // Once the project caption has finished animating:
     setTimeout(function () {
@@ -190,7 +190,7 @@ document.addEventListener('click', function (event) {
       // Show the project image;
       toggleVisibility(projectImg);
       // Animate the project image as it appears;
-      addThenRemoveClass(projectImg, 'slide-in-right', 501);
+      addThenRemoveClass(projectImg, 'slide-in-left', 501);
     }, 500);
   }
 
