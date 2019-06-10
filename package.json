@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "aos": "^2.3.4",
-    "file-loader": "^4.0.0",
     "moveto": "^1.8.1"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-dslemay": "^2.0.1",
+    "file-loader": "^4.0.0",
     "html-srcsets-loader": "^0.5.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
