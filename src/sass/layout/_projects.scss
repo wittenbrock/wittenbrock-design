@@ -1,4 +1,8 @@
 /* %basic-section-styles can be found in sass/layout/_landing-page.scss */
+.section-title {
+  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-section-title, $max-margin-section-title);
+}
+
 .projects {
   @extend %basic-section-styles;
 }
@@ -51,16 +55,23 @@
 
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.project-logo {
-  @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-logo, $max-width-project-logo);
-
-  position: absolute;
+.project-title {
+  position: relative;
   z-index: 2;
-  height: auto;
+  color: $white;
+}
+
+.project-subtitle {
+  @extend .subtitle;
+
+  position: relative;
+  z-index: 2;
+  color: white;
 }
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */

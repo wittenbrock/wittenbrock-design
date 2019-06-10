@@ -10,10 +10,6 @@
   margin-right: rem(16px);
 }
 
-.section-title {
-  @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-section-title, $max-margin-section-title);
-}
-
 .podcast-subtitle-break-point {
   display: inline;
 
