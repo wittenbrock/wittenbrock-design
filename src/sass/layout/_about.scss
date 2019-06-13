@@ -23,9 +23,9 @@
   margin-bottom: rem(24px);
 
   @include for-tablet-up {
+    margin-bottom: 0;
     margin-left: rem(48px);
     margin-right: rem(48px);
-    margin-bottom: 0;
   }
 
   @media screen and (min-width: 768px) {
@@ -35,14 +35,14 @@
 }
 
 .about-text {
-  max-width: rem(400px);
   margin-left: rem(16px);
   margin-right: rem(16px);
+  max-width: rem(400px);
 
   @include for-tablet-up {
-    max-width: rem(512px);
     margin-left: 0;
     margin-right: rem(48px);
+    max-width: rem(512px);
   }
 
   @media screen and (min-width: 768px) {
@@ -61,8 +61,8 @@
 }
 
 .translatable-text {
-  position: absolute;
   max-width: rem(400px);
+  position: absolute;
 
   @include for-tablet-up {
     max-width: rem(512px);

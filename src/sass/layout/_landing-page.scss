@@ -1,13 +1,13 @@
 %basic-section-styles {
   @include fluid-property('padding-top', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
   @include fluid-property('padding-bottom', $min-vw-320px, $max-vw-1440px, $min-padding-section, $max-padding-section);
+  align-items: center;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 100%;
   min-height: 100vh;
+  width: 100%;
 }
 
 .landing-page {
@@ -30,8 +30,8 @@
 }
 
 .letters {
-  opacity: 0;
   fill: $purple-black;
+  opacity: 0;
 }
 
 .square-border {

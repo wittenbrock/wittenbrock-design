@@ -1,7 +1,7 @@
 html {
+  background-color: $purple-black;
   box-sizing: border-box;
   font-size: 100%; //1rem = 16px
-  background-color: $purple-black;
   height: 100%;
 }
 
@@ -12,16 +12,16 @@ html {
 }
 
 body {
-  font-family: $body-font;
   color: $white;
+  font-family: $body-font;
   font-weight: 400;
   width: 100vw;
 }
 
 img {
   display: block;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 a {
@@ -31,9 +31,9 @@ a {
 p {
   @include fluid-property('font-size', $min-vw-320px, $max-vw-1440px, $min-font-size-p, $max-font-size-p);
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-p, $max-margin-p);
+  line-height: 1.5;
 
   text-align: justify;
-  line-height: 1.5;
 }
 
 h1,
@@ -60,10 +60,10 @@ textarea,
 input,
 button,
 label {
-  display: block;
-  border: none;
-  outline: none;
+  border: 0;
   border-radius: 0;
+  display: block;
+  outline: none;
 }
 
 ::placeholder {
@@ -73,8 +73,8 @@ label {
 
 button {
   background: $purple-black;
-  padding: 0;
-  border: none;
-  outline: none;
+  border: 0;
   box-shadow: none;
+  outline: none;
+  padding: 0;
 }

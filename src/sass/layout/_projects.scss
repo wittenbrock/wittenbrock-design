@@ -9,27 +9,27 @@
 
 .project {
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project, $max-margin-project);
-
-  position: relative;
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  width: 100%;
   min-height: 100vh;
+
+  position: relative;
+  width: 100%;
 }
 
 .project-container {
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
   @include fluid-property('margin-bottom', $min-vw-320px, $max-vw-1440px, $min-margin-project-container, $max-margin-project-container);
-
-  position: relative;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin-bottom: rem(32px);
+
+  position: relative;
 }
 
 .project-image {
@@ -43,35 +43,35 @@
    */
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
+  background: $project-overlay-transparent;
 
   position: absolute;
-  background: $project-overlay-transparent;
   z-index: 1;
 }
 
 .project-img-container {
   @include fluid-property('width', $min-vw-320px, $max-vw-1440px, $min-width-project-img, $max-width-project-img);
   @include fluid-property('height', $min-vw-320px, $max-vw-1440px, $min-height-project-img, $max-height-project-img);
-
-  position: relative;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+
+  position: relative;
 }
 
 .project-title {
+  color: $white;
   position: relative;
   z-index: 2;
-  color: $white;
 }
 
 .project-subtitle {
   @extend .subtitle;
+  color: $white;
 
   position: relative;
   z-index: 2;
-  color: white;
 }
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
@@ -80,15 +80,15 @@
   // @include fluid-property('padding-right', $min-vw-320px, $max-vw-600px, $min-padding-project-caption, $max-padding-project-caption);
   @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-size-project-caption, $max-size-project-caption);
   @include fluid-property('min-height', $min-vw-320px, $max-vw-600px, $min-size-project-caption, $max-size-project-caption);
+  align-items: center;
+  background: $white;
+  color: $black;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  background: $white;
-  color: $black;
-  margin-right: rem(16px);
   margin-left: rem(16px);
+  margin-right: rem(16px);
 }
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
@@ -106,17 +106,17 @@
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 .caption-text {
   @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-caption-text, $max-font-size-caption-text);
+  hyphens: auto;
 
   line-height: 1.75;
   margin-bottom: 0;
-  hyphens: auto;
 }
 
 .caption-button-container {
   @include fluid-property('margin-top', $min-vw-320px, $max-vw-600px, $min-margin-button-container, $max-margin-button-container);
 
   display: flex;
-  width: 100%;
   justify-content: space-between;
   margin-bottom: auto;
+  width: 100%;
 }
