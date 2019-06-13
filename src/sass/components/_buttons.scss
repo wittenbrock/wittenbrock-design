@@ -19,18 +19,18 @@
 }
 
 %button-size {
-  width: rem(32px);
+  border-radius: 50%;
   height: rem(32px);
   min-height: rem(32px);
-  border-radius: 50%;
+  width: rem(32px);
 }
 
 /* Located on the splash page */
 .button-down-arrow-one {
-  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 
   @extend %button-image;
   @extend %button-size;
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 
   background-image: url('/assets/icon-down-arrow.svg');
   margin: auto;
@@ -38,9 +38,9 @@
 
 /* Located on the introduction page */
 .button-down-arrow-two {
-  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 
   @extend %button-size;
+  @include fluid-property('margin-top', $min-vw-320px, $max-vw-1440px, $min-button-down-arrow, $max-button-down-arrow);
 
   margin: auto;
 }
@@ -55,12 +55,12 @@
 %rounded-button {
   @include fluid-property('font-size', $min-vw-320px, $max-vw-600px, $min-font-size-rounded-button, $max-font-size-rounded-button);
   @include fluid-property('width', $min-vw-320px, $max-vw-600px, $min-width-rounded-button, $max-width-rounded-button);
+  border-radius: 50px;
 
   font-weight: 500;
   height: rem(36px);
-  min-height: rem(32px);
-  border-radius: 50px;
   margin: auto;
+  min-height: rem(32px);
 
   @media screen and (min-width: 900px) {
     &:active {
@@ -71,8 +71,8 @@
 
 /* Uses $max-vw-600px instead of $max-vw-1440px */
 %caption-button {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
@@ -82,8 +82,8 @@
   @extend %caption-button;
 
   background: none;
-  color: $dark-gray;
   border: 2px solid $dark-gray;
+  color: $dark-gray;
 
   @media (hover) {
     &:hover {
