@@ -2,9 +2,7 @@
 
 # Wittenbrock Design
 
-[www.wittenbrockdesign.com](https://www.wittenbrockdesign.com/)
-
-A portfolio website featuring my latest projects.
+My first portfolio site, now retired. The domain wittenbrockdesign.com now features my new site.
 
 ## Features
 * Presents projects with a bespoke layout and custom made icons and assets
